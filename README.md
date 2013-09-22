@@ -12,6 +12,8 @@ There have been many efforts to try solving the problem of finding unused CSS in
 
 The challenge with many of these projects is that whilst they solve the problem of discovering unused CSS, they don't actually generate what you're really after - a leaner build of your project CSS containing only those rules you used. Finding that a more recent project called [uncss](https://github.com/giakki/uncss) did try tackling this, I set out to create a grunt task that would add this to your build chain.
 
+Edit: I am currently also investigating [mincss](http://www.peterbe.com/plog/mincss) which might do what I'm after but is a Python script.
+
 ## Limitations
 
 This project currently has a number of important limitations. `uncss` currently doesn't run with PhantomJS, meaning styles that are dynamically added via JavaScript are not taken into account. 
