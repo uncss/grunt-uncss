@@ -32,7 +32,9 @@ module.exports = function(grunt) {
     uncss: {
       bootstrap: {
         files: {
-          'test/functional/tidy.css': ['test/functional/index.html']
+          'test/functional/css/tidy.css': [
+          'test/functional/index.html',
+          'test/functional/test2.html']
         }
       }
     },
