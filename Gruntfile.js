@@ -55,6 +55,13 @@ module.exports = function(grunt) {
       }
     },
 
+    compare_size: {
+      files: [
+        "app/css/**",
+        "dist/css/tidy.css"
+      ]
+    },
+
     // Unit tests.
     nodeunit: {
       tests: ['test/*_test.js'],
@@ -82,6 +89,7 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-contrib-watch');
   grunt.loadNpmTasks('grunt-processhtml');
   grunt.loadNpmTasks('grunt-contrib-copy');
+  grunt.loadNpmTasks('grunt-compare-size');
 
   // Whenever the "test" task is run, first clean the "tmp" dir, then run this
   // plugin's task(s), then test the result.
@@ -93,7 +101,8 @@ module.exports = function(grunt) {
     'clean',
     'processhtml:dist', 
     'copy:dist',
-    'uncss:bootstrap'
+    'uncss:bootstrap',
+    'compare_size'
   ]);
 
 };
