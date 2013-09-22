@@ -32,8 +32,8 @@ module.exports = function(grunt) {
       bootstrap: {
         files: {
           'dist/css/tidy.css': [
-          'app/test.html',
-          'app/test2.html']
+          'app/index.html',
+          'app/about.html']
         }
       }
     },
@@ -41,8 +41,8 @@ module.exports = function(grunt) {
     processhtml: {
       dist: {
         files: {
-          'dist/index.html': ['app/test.html'],
-          'dist/index2.html': ['app/test2.html']
+          'dist/index.html': ['app/index.html'],
+          'dist/about.html': ['app/about.html']
         }
       }
     },
