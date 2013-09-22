@@ -2,6 +2,12 @@
 
 A grunt task for generating CSS files containing only those styles used in your project. *Note: this project has not yet been released*
 
+## Preview
+
+Taking a Bootstrap project using >120KB of CSS down to 20KB. The trimming process does not yet generate 1:1 expected output, but it's close.
+
+![](http://i.imgur.com/0QhdbOd.gif)
+
 ## The problem
 
 Many developers use less than 10% of the CSS included with projects like Twitter Bootstrap. As a result, they can end up with fairly bloated stylesheets which can significantly increase page load time and affect performance. `grunt-uncss` is an attempt to help with by generating a CSS file containing only the CSS actually used in your project.
