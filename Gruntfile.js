@@ -25,7 +25,7 @@ module.exports = function(grunt) {
 
     // Before generating any new files, remove any previously-created files.
     clean: {
-      tests: ['tmp'],
+      tests: ['tmp', 'dist'],
     },
 
     uncss: {
@@ -48,7 +48,7 @@ module.exports = function(grunt) {
     },
 
     copy: {
-      main: {
+      dist: {
         files: [
           {expand: true, cwd: 'app/', src: ['img/**', 'js/**', '*.png', '*.xml', '*.txt', '*.ico', '!*.html'], dest: 'dist/'}
         ]
@@ -89,6 +89,11 @@ module.exports = function(grunt) {
   grunt.registerTask('dev', ['jshint', 'connect', 'test', 'watch']);
 
   // By default, lint and run all tests.
-  grunt.registerTask('default', ['uncss','processhtml', 'copy']);
+  grunt.registerTask('default', [
+    'clean',
+    'processhtml:dist', 
+    'copy:dist',
+    'uncss:bootstrap'
+  ]);
 
 };
