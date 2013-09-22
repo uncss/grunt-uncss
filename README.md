@@ -4,9 +4,11 @@ A grunt task for generating CSS files containing only those styles used in your 
 
 ## Preview
 
-Taking a Bootstrap project using >120KB of CSS down to 20KB. The trimming process does not yet generate 1:1 expected output, but it's close.
+Taking a Bootstrap project using >120KB of CSS down to 20KB. The trimming process does not yet generate 1:1 expected output, but it's close. 
 
 ![](http://i.imgur.com/0QhdbOd.gif)
+
+Issues are largely to do with pseudo-selector support in the parser used.
 
 ## The problem
 
@@ -18,7 +20,7 @@ There have been many efforts to try solving the problem of finding unused CSS in
 
 The challenge with many of these projects is that whilst they solve the problem of discovering unused CSS, they don't actually generate what you're really after - a leaner build of your project CSS containing only those rules you used. Finding that a more recent project called [uncss](https://github.com/giakki/uncss) did try tackling this, I set out to create a grunt task that would add this to your build chain.
 
-Edit: I am currently also investigating [mincss](http://www.peterbe.com/plog/mincss) which might do what I'm after but is a Python script.
+I am currently also investigating [mincss](http://www.peterbe.com/plog/mincss) which might do what I'm after but is a Python script.
 
 ## Limitations
 
@@ -30,26 +32,25 @@ Once it has been released and is in a stable state I intend on moving this proje
 
 ## Configuration
 
-
 Sample configuration:
 
-```
-    uncss: {
-      bootstrap: {
-        files: {
-          'dist/css/tidy.css': [
-          'app/index.html',
-          'app/test2.html']
-        }
-      }
-    },
+```shell
+uncss: {
+  bootstrap: {
+    files: {
+      'dist/css/tidy.css': [
+      'app/index.html',
+      'app/about.html']
+    }
+  }
+}
 ```
 
 Which you can then use alongside a processor like `processhtml` to
 rewrite the location of your stylesheet to `tidy.css` using a block
 like:
 
-```
+```html
 <!-- build:css css/tidy.css -->
 <link rel="stylesheet" href="css/normalize.css">
 <link rel="stylesheet" href="css/main.css">
@@ -59,18 +60,20 @@ like:
 
 and some configuration like:
 
-```
-    processhtml: {
-      dist: {
-        files: {
-          'dist/index.html': ['app/index.html'],
-          'dist/test2.html': ['app/test2.html']
-        }
-      }
+```shell
+processhtml: {
+  dist: {
+    files: {
+      'dist/index.html': ['app/index.html'],
+      'dist/about.html': ['app/about.html']
     }
+  }
+}
 ```
 
-There is a test project included under the `app` directory which you can build by running `grunt`.
+There is a test project included under the `app` directory which you can build by running `grunt`. It also includes a `grunt compare_size` task for getting a feel of the before and after CSS sizes:
+
+![](http://i.imgur.com/bUseCPh.png)
 
 ## License
 
