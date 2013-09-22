@@ -28,14 +28,30 @@ module.exports = function(grunt) {
       tests: ['tmp'],
     },
 
-    // Configuration to be run (and then tested).
     uncss: {
       bootstrap: {
         files: {
-          'test/functional/css/tidy.css': [
-          'test/functional/index.html',
-          'test/functional/test2.html']
+          'dist/css/tidy.css': [
+          'app/index.html',
+          'app/test2.html']
         }
+      }
+    },
+
+    processhtml: {
+      dist: {
+        files: {
+          'dist/index.html': ['app/index.html'],
+          'dist/test2.html': ['app/test2.html']
+        }
+      }
+    },
+
+    copy: {
+      main: {
+        files: [
+          {expand: true, cwd: 'app/', src: ['img/**', 'js/**', '*.png', '*.xml', '*.txt', '*.ico', '!*.html'], dest: 'dist/'}
+        ]
       }
     },
 
@@ -64,6 +80,8 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-contrib-clean');
   grunt.loadNpmTasks('grunt-contrib-nodeunit');
   grunt.loadNpmTasks('grunt-contrib-watch');
+  grunt.loadNpmTasks('grunt-processhtml');
+  grunt.loadNpmTasks('grunt-contrib-copy');
 
   // Whenever the "test" task is run, first clean the "tmp" dir, then run this
   // plugin's task(s), then test the result.
@@ -71,6 +89,6 @@ module.exports = function(grunt) {
   grunt.registerTask('dev', ['jshint', 'connect', 'test', 'watch']);
 
   // By default, lint and run all tests.
-  grunt.registerTask('default', ['uncss']);
+  grunt.registerTask('default', ['uncss','processhtml', 'copy']);
 
 };

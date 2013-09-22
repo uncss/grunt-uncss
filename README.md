@@ -28,17 +28,43 @@ Once it has been released and is in a stable state I intend on moving this proje
 Sample configuration:
 
 ```
-// Configuration to be run (and then tested).
-uncss: {
-  bootstrap: {
+    uncss: {
+      bootstrap: {
         files: {
-          'test/functional/css/tidy.css': [
-          'test/functional/index.html',
-          'test/functional/test2.html']
+          'dist/css/tidy.css': [
+          'app/index.html',
+          'app/test2.html']
         }
-  }
-},
+      }
+    },
 ```
+
+Which you can then use alongside a processor like `processhtml` to
+rewrite the location of your stylesheet to `tidy.css` using a block
+like:
+
+```
+<!-- build:css css/tidy.css -->
+<link rel="stylesheet" href="css/normalize.css">
+<link rel="stylesheet" href="css/main.css">
+<link rel="stylesheet" href="css/bootstrap.css">
+<!-- /build -->
+```
+
+and some configuration like:
+
+```
+    processhtml: {
+      dist: {
+        files: {
+          'dist/index.html': ['app/index.html'],
+          'dist/test2.html': ['app/test2.html']
+        }
+      }
+    }
+```
+
+There is a test project included under the `app` directory which you can build by running `grunt`.
 
 ## License
 
