@@ -24,9 +24,9 @@ I am currently also investigating [mincss](http://www.peterbe.com/plog/mincss) w
 
 ## Limitations
 
-This project currently has a number of important limitations. `uncss` currently doesn't run with PhantomJS, meaning styles that are dynamically added via JavaScript are not taken into account. There are also cases where not all styles are getting correctly parsed out.
+This project currently has a number of important limitations. `uncss` currently doesn't run with PhantomJS, meaning styles that are dynamically added via JavaScript are not taken into account. 
 
-A better solution to this would be hooking into `helium` (mentioned earlier). Unfortunately, getting it working as a module we can use via grunt is non-trivial work, however this is currently being tackled as part of the [helium-cli](https://github.com/villadora/helium-cli) project. 
+A potentially better solution to this would be hooking into `helium` (mentioned earlier). Unfortunately, getting it working as a module we can use via grunt is non-trivial work, however this is currently being tackled as part of the [helium-cli](https://github.com/villadora/helium-cli) project. 
 
 Once it has been released and is in a stable state I intend on moving this project over to using it.
 
