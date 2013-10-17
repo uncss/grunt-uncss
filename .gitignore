@@ -3,3 +3,4 @@ npm-debug.log
 tmp
 .DS_Store
 dist
+.sizecache
