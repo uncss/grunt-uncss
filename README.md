@@ -4,11 +4,9 @@ A grunt task for generating CSS files containing only those styles used in your 
 
 ## Preview
 
-Taking a Bootstrap project using >120KB of CSS down to 20KB. The trimming process does not yet generate 1:1 expected output, but it's close. 
+Taking a Bootstrap project using >120KB of CSS down to 11KB. The trimming process does not yet generate 1:1 expected output, but it's very close. 
 
-![](http://i.imgur.com/0QhdbOd.gif)
-
-Issues are largely to do with pseudo-selector support in the parser used.
+![](http://i.imgur.com/uhWMALH.gif)
 
 ## The problem
 
@@ -24,13 +22,7 @@ I am currently also investigating [mincss](http://www.peterbe.com/plog/mincss) w
 
 ## Limitations
 
-This project currently has a number of important limitations. `uncss` currently doesn't run with PhantomJS, meaning styles that are dynamically added via JavaScript are not taken into account. 
-
-A potentially better solution to this would be hooking into `helium` (mentioned earlier). Unfortunately, getting it working as a module we can use via grunt is non-trivial work, however this is currently being tackled as part of the [helium-cli](https://github.com/villadora/helium-cli) project. 
-
-Once it has been released and is in a stable state I intend on moving this project over to using it.
-
-Update: uncss is also currently exploring a PhantomJS implementation.
+`uncss` currently doesn't run with PhantomJS, but will support this soon.
 
 ## Configuration
 
@@ -38,14 +30,15 @@ Sample configuration:
 
 ```shell
 uncss: {
-  bootstrap: {
+  dist: {
     files: {
-      'dist/css/tidy.css': [
-      'app/index.html',
-      'app/about.html']
+      'dist/css/tidy.css': ['app/index.html','app/about.html']
+      }
+    },
+    options: {
+      compress:true
     }
-  }
-}
+},
 ```
 
 Which you can then use alongside a processor like `processhtml` to
@@ -71,6 +64,12 @@ processhtml: {
     }
   }
 }
+```
+
+Options supported include `compress` which will compress the generated CSS and `ignore` which allows you to tell the parser to ignore specific selectors. E.g:
+
+```javascript
+ignore: ['#added_at_runtime', '.created_by_jQuery']
 ```
 
 There is a test project included under the `app` directory which you can build by running `grunt` after an `npm install`. It also includes a `grunt compare_size` task for getting a feel of the before and after CSS sizes:

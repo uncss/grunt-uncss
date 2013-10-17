@@ -39,6 +39,7 @@ module.exports = function (grunt) {
                 uncss(src, options, function (output) {
                     grunt.file.write(f.dest, output);
                 });
+                done();
             } catch (e) {
                 console.log(e);
                 var err = new Error('Uncss failed.');
