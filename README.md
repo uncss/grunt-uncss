@@ -1,6 +1,8 @@
 # grunt-uncss
 
->A grunt task for generating CSS files containing only those styles used in your project. *Note: this project has not yet been released*
+>A grunt task for removing unused CSS from your projects. Works across multiple files.
+
+*Note: this project has not yet been released*
 
 ## Preview
 
@@ -44,9 +46,6 @@ uncss: {
     files: {
       'dist/css/tidy.css': ['app/index.html','app/about.html']
       }
-    },
-    options: {
-      compress:true
     }
 },
 ```
@@ -88,6 +87,47 @@ processhtml: {
 
 ```javascript
 ignore: ['#added_at_runtime', '.created_by_jQuery']
+```
+
+### Usage examples
+
+```shell
+// Remove unused CSS across multiple files
+uncss: {
+  dist: {
+    files: {
+      'dist/css/tidy.css': ['app/index.html','app/about.html']
+      }
+    }
+},
+```
+
+```shell
+// Remove unused CSS across multiple files, compressing the final output
+uncss: {
+  dist: {
+    files: {
+      'dist/css/tidy.css': ['app/index.html','app/about.html']
+      }
+    },
+    options: {
+      compress:true
+    }
+}
+```
+
+```shell
+// Remove unused CSS across multiple files, ignoring specific selectors
+uncss: {
+  dist: {
+    files: {
+      'dist/css/tidy.css': ['app/index.html','app/about.html']
+      }
+    },
+    options: {
+      ignore: ['#added_at_runtime', '.created_by_jQuery']
+    }
+}
 ```
 
 ### Test project
