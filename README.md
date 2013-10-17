@@ -30,6 +30,8 @@ A potentially better solution to this would be hooking into `helium` (mentioned 
 
 Once it has been released and is in a stable state I intend on moving this project over to using it.
 
+Update: uncss is also currently exploring a PhantomJS implementation.
+
 ## Configuration
 
 Sample configuration:
@@ -71,7 +73,7 @@ processhtml: {
 }
 ```
 
-There is a test project included under the `app` directory which you can build by running `grunt`. It also includes a `grunt compare_size` task for getting a feel of the before and after CSS sizes:
+There is a test project included under the `app` directory which you can build by running `grunt` after an `npm install`. It also includes a `grunt compare_size` task for getting a feel of the before and after CSS sizes:
 
 ![](http://i.imgur.com/bUseCPh.png)
 

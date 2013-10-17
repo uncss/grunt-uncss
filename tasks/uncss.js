@@ -6,48 +6,51 @@
  * Licensed under the MIT license.
  */
 
+'use strict';
 
-module.exports = function(grunt) {
+module.exports = function (grunt) {
+    var uncss = require('uncss');
+    var path = require('path');
 
-  'use strict';
+    grunt.registerMultiTask('uncss', 'Remove unused CSS', function () {
 
-  var uncss  = require('uncss');
-  var path   = require('path');
+        var done = this.async();
+        var options = this.options({
+            compress: false,
+            ignore: ['']
+        });
 
-  grunt.registerMultiTask('uncss', 'Remove unused CSS', function() {
+        this.files.forEach(function (f) {
+            var src = f.src.filter(function (filepath) {
+                // Warn on and remove invalid source files (if nonull was set).
+                if (!grunt.file.exists(filepath)) {
+                    grunt.log.warn('Source file "' + filepath + '" not found.');
+                    return false;
+                } else {
+                    return true;
+                }
+            });
 
-    var done = this.async();
+            if (src.length === 0) {
+                grunt.log.warn('Destination (' + f.dest + ') not written because src files were empty.');
+                return;
+            }
+            try {
+                uncss(src, options, function (output) {
+                    grunt.file.write(f.dest, output);
+                });
+            } catch (e) {
+                console.log(e);
+                var err = new Error('Uncss failed.');
+                if (e.msg) {
+                    err.message += ', ' + e.msg + '.';
+                }
+                err.origError = e;
+                grunt.log.warn('Uncssing source "' + src + '" failed.');
+                grunt.fail.warn(err);
+            }
+        });
 
-    var options = this.options({
-      compress:false
     });
-
-    this.files.forEach(function(f) {
-
-      // Check path validity
-      var valid = f.src.filter(function(filepath) {
-        if (!grunt.file.exists(filepath)) {
-          grunt.log.warn('Source file "' + filepath + '" not found.');
-          return false;
-        } else {
-          return true;
-        }
-      });
-
-      // If valid, continue
-      uncss(valid, options, function (output) {
-        try{
-          grunt.file.write(f.dest, output);
-          grunt.log.writeln('File ' + f.dest + ' created.');
-        } catch (e) {
-          grunt.log.error(e);
-          grunt.fail.warn('Writing file failed.');
-        }
-      });
-
-    });
-
-
-  });
 
 };

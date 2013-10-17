@@ -29,13 +29,14 @@ module.exports = function(grunt) {
     },
 
     uncss: {
-      bootstrap: {
+      dist: {
         files: {
-          'dist/css/tidy.css': [
-          'app/index.html',
-          'app/about.html']
+          'dist/css/tidy.css': ['app/index.html','app/about.html']
+          }
+        },
+        options: {
+          compress:true
         }
-      }
     },
 
     processhtml: {
@@ -99,9 +100,9 @@ module.exports = function(grunt) {
   // By default, lint and run all tests.
   grunt.registerTask('default', [
     'clean',
-    'processhtml:dist', 
+    'processhtml:dist',
     'copy:dist',
-    'uncss:bootstrap',
+    'uncss:dist',
     'compare_size'
   ]);
 
