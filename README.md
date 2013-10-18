@@ -6,7 +6,7 @@
 
 ## Preview
 
-Taking a Bootstrap project using >120KB of CSS down to 11KB. The trimming process does not yet generate 1:1 expected output, but it's very close. 
+Taking a multi-page project using Bootstrap with >120KB of CSS down to 11KB. 
 
 ![](http://i.imgur.com/uhWMALH.gif)
 
@@ -140,15 +140,28 @@ There is a test project included under the `app` directory which you can build b
 
 ## The problem
 
-Many developers use less than 10% of the CSS included with projects like Twitter Bootstrap. As a result, they can end up with fairly bloated stylesheets which can significantly increase page load time and affect performance. `grunt-uncss` is an attempt to help with by generating a CSS file containing only the CSS actually used in your project.
+User-interface libraries like Twitter Bootstrap, TopCoat and so on are fairly prolific, however many developers
+use less than 10% of the CSS they provide (when opting for the full build, which most do). As a result, they can 
+end up with fairly bloated stylesheets which can significantly increase page load time and affect performance. 
+`grunt-uncss` is an attempt to help with by generating a CSS file containing only the CSS used in your project,
+based on selector testing.
 
 ## Research and alternative solutions
 
-There have been many efforts to try solving the problem of finding unused CSS in the past. Opera created [ucss](https://github.com/operasoftware/ucss), @aanand created [, they don't actually generate what you're really after - a leaner build of your project CSS containing only those rules you used. Finding that a more recent project called [uncss](https://github.com/giakki/uncss) did try tackling this, I set out to create a grunt task that would add this to your build chain.deadweight](https://github.com/aanand/deadweight), Brian Le Roux [CSS Slap Chop](https://github.com/brianleroux/css-slap-chop) and there were a number of client-side solutions also crafted, such as [Helium-CSS](https://github.com/geuis/helium-css) and [CSSESS](https://github.com/driverdan/cssess).
+There have been many efforts to try solving the problem of finding unused CSS in the past. Opera created 
+[ucss](https://github.com/operasoftware/ucss), @aanand created (https://github.com/aanand/deadweight), 
+, Brian Le Roux [CSS Slap Chop](https://github.com/brianleroux/css-slap-chop) and there were a number of 
+client-side solutions also crafted, such as [Helium-CSS](https://github.com/geuis/helium-css), 
+[CSSESS](https://github.com/driverdan/cssess) and the Python [mincss](http://www.peterbe.com/plog/mincss).
 
-The challenge with many of these projects is that whilst they solve the problem of discovering unused CSS
+Unfortunately, most of these solutions don't actually generate what you're really after - a leaner build 
+of your project CSS containing only those rules you used. Finding that a more recent project called 
+[uncss](https://github.com/giakki/uncss) did try tackling this, I set out to share some of the problems we
+need to solve in this space with the developer and build a Grunt task to enable usage of it in builds more
+easily.
 
-I am currently also investigating [mincss](http://www.peterbe.com/plog/mincss) which might do what I'm after but is a Python script.
+Huge thanks go out to Giacomo Martino for his help with the Node module this task uses.
+
 
 ## Limitations
 
