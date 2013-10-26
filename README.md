@@ -140,7 +140,7 @@ There is a test project included under the `app` directory which you can build b
 
 ## The problem
 
-User-interface libraries like Twitter Bootstrap, TopCoat and so on are fairly prolific, however many developers
+User-interface libraries like Bootstrap, TopCoat and so on are fairly prolific, however many developers
 use less than 10% of the CSS they provide (when opting for the full build, which most do). As a result, they can 
 end up with fairly bloated stylesheets which can significantly increase page load time and affect performance. 
 `grunt-uncss` is an attempt to help with by generating a CSS file containing only the CSS used in your project,
