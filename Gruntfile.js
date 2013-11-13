@@ -31,7 +31,7 @@ module.exports = function(grunt) {
     uncss: {
       dist: {
         files: {
-          'dist/css/tidy.css': ['app/index.html','app/about.html']
+          'dist/css/tidy.css': ['app/index.html','app/about.html','app/contact.html']
           }
         },
         options: {
@@ -43,7 +43,8 @@ module.exports = function(grunt) {
       dist: {
         files: {
           'dist/index.html': ['app/index.html'],
-          'dist/about.html': ['app/about.html']
+          'dist/about.html': ['app/about.html'],
+          'dist/contact.html': ['app/contact.html']
         }
       }
     },
