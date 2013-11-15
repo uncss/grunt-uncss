@@ -2,7 +2,7 @@
 
 >A grunt task for removing unused CSS from your projects. Works across multiple files.
 
-*Note: this project has not yet been released*
+*Note: this project is currently in early developer preview*
 
 ## Preview
 
