@@ -77,17 +77,25 @@ processhtml: {
 
 ## Options
 
-### compress
+Sample use of all supported options:
 
-`compress` will compress your CSS once it has removed the unused styles from your project.
-
-### ignore
-
-`ignore` allows you to tell the CSS removal parser to ignore specific selectors during processing. For example:
-
-```javascript
-ignore: ['#added_at_runtime', '.created_by_jQuery']
 ```
+compress: true,
+ignore: ['#added_at_runtime', /test\-[0-9]+/],
+csspath: "../public/css/",
+raw: 'h1 { color: green }',
+stylesheets: ["lib/bootstrap/dist/css/bootstrap.css", "src/public/css/main.css"],
+timeout: 1000
+```
+
+### What do the options do?
+
+- __compress__ [Boolean]: Whether the CSS output should be compressed.
+- __ignore__ [Array]: provide a list of selectors that should not be removed by UnCSS. For example, styles added by user interaction with the page (hover, click), since those are not detectable by UnCSS yet. Both literal names and regex patterns are recognized.
+- __csspath__ [String]: Path where the CSS files are related to the html files. By default, UnCSS uses the path specified in the <link rel="stylesheet" href="path/to/file.css"\>
+- __stylesheets__ [Array]: Force the list of stylesheets to optimize using a path relative to the `Gruntfile.js`. Otherwise, it extracts the stylesheets from the html files.
+- __raw__ [String]: Give the task a raw string of CSS in addition to the existing stylesheet options; useful in scripting when your CSS hasn't yet been written to disk.
+- __timeout__ [Number]: Specify how long to wait for the JS to be loaded.
 
 ### Usage examples
 
@@ -130,12 +138,12 @@ uncss: {
 }
 ```
 
+
 ### Test project
 
 There is a test project included under the `app` directory which you can build by running `grunt` after an `npm install`. It also includes a `grunt compare_size` task for getting a feel of the before and after CSS sizes:
 
 ![](http://i.imgur.com/bUseCPh.png)
-
 
 
 ## The problem
