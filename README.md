@@ -173,8 +173,6 @@ Huge thanks go out to Giacomo Martino for his help with the Node module this tas
 
 ## Limitations
 
-`uncss` currently doesn't run with PhantomJS, but will support this soon. This will allow the project to correctly capture styles dynamically injected into your page. 
-
 Please note that the CSS parser used in the `uncss` module we rely on currently isn't able to work with complex selectors. For example `[data-section=''] > section > [data-section-title] a`. This may mean that at build time you run into exceptions such as `TypeError: Cannot convert undefined or null to object`. If this is the case, please consider moving these selectors to a separate stylesheet which the task does not run on.
 
 We are actively looking at how to improve the CSS parsers used and will update this notice once this problem has been solved.
