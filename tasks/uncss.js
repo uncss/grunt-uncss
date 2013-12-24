@@ -9,6 +9,7 @@
 'use strict';
 
 module.exports = function (grunt) {
+    //var uncss = require('uncss/lib/uncss.js');
     var uncss = require('uncss');
     var path = require('path');
 
@@ -20,8 +21,12 @@ module.exports = function (grunt) {
             ignore: ['']
         });
 
+        console.log('files to iterate over are..', this.files);
+
         this.files.forEach(function (f) {
+            console.log('file', f.src);
             var src = f.src.filter(function (filepath) {
+                console.log('filepath', filepath);
                 // Warn on and remove invalid source files (if nonull was set).
                 if (!grunt.file.exists(filepath)) {
                     grunt.log.warn('Source file "' + filepath + '" not found.');
@@ -36,7 +41,9 @@ module.exports = function (grunt) {
                 return;
             }
             try {
+                console.log(src);
                 uncss(src, options, function (output) {
+                    console.log(output);
                     grunt.file.write(f.dest, output);
                 });
                 done();

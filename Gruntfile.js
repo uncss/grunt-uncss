@@ -29,14 +29,28 @@ module.exports = function(grunt) {
     },
 
     uncss: {
-      dist: {
+      dev: {
         files: {
-          'dist/css/tidy.css': ['app/index.html','app/about.html','app/contact.html']
-          }
+          'dist/css/tidy.css': [
+            'app/index.html',
+            'app/about.html',
+            'app/contact.html']
         },
         options: {
-          compress:true
+          compress: false
         }
+      },
+      dist: {
+        files: {
+          'dist/css/tidy.min.css': [
+          'app/index.html',
+          'app/about.html',
+          'app/contact.html']
+        },
+        options: {
+          compress: true
+        }
+      },
     },
 
     processhtml: {
