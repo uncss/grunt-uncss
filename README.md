@@ -2,7 +2,9 @@
 
 >A grunt task for removing unused CSS from your projects. Works across multiple files.
 
-*Note: this project is currently in early developer preview*
+*Please report issues with the generated output on the [UnCSS](https://github.com/giakki/uncss/issues) issue tracker*
+
+A [Gulp task](https://github.com/addyosmani/gulp-uncss-task) for UnCSS is also now available.
 
 ## Preview
 
