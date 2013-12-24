@@ -147,6 +147,10 @@ There is a test project included under the `app` directory which you can build b
 
 ![](http://i.imgur.com/bUseCPh.png)
 
+## Articles and talks
+
+* [Use Grunt and unCSS to speed up the load time of your site](http://xdamman.com/website-optimization-grunt-uncss)
+* [Removing unused CSS with Grunt](http://www.youtube.com/watch?v=833xr1MyE30)
 
 ## The problem
 
