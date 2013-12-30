@@ -1,8 +1,6 @@
 # grunt-uncss
 
->A grunt task for removing unused CSS from your projects. Works across multiple files.
-
-*Note: this project is currently in early developer preview*
+>A grunt task for removing unused CSS from your projects. Works across multiple files and supports dynamically injected CSS via PhantomJS.
 
 ## Preview
 
