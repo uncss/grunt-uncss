@@ -2,9 +2,7 @@
 
 >A grunt task for removing unused CSS from your projects. Works across multiple files.
 
-*Please report issues with the generated output on the [UnCSS](https://github.com/giakki/uncss/issues) issue tracker*
-
-A [Gulp task](https://github.com/addyosmani/gulp-uncss-task) for UnCSS is also now available.
+*Note: this project is currently in early developer preview*
 
 ## Preview
 
@@ -82,7 +80,6 @@ processhtml: {
 Sample use of all supported options:
 
 ```
-compress: true,
 ignore: ['#added_at_runtime', /test\-[0-9]+/],
 csspath: "../public/css/",
 raw: 'h1 { color: green }',
@@ -92,7 +89,6 @@ timeout: 1000
 
 ### What do the options do?
 
-- __compress__ [Boolean]: Whether the CSS output should be compressed.
 - __ignore__ [Array]: provide a list of selectors that should not be removed by UnCSS. For example, styles added by user interaction with the page (hover, click), since those are not detectable by UnCSS yet. Both literal names and regex patterns are recognized.
 - __csspath__ [String]: Path where the CSS files are related to the html files. By default, UnCSS uses the path specified in the <link rel="stylesheet" href="path/to/file.css"\>
 - __stylesheets__ [Array]: Force the list of stylesheets to optimize using a path relative to the `Gruntfile.js`. Otherwise, it extracts the stylesheets from the html files.
@@ -110,20 +106,6 @@ uncss: {
       }
     }
 },
-```
-
-```shell
-// Remove unused CSS across multiple files, compressing the final output
-uncss: {
-  dist: {
-    files: {
-      'dist/css/tidy.css': ['app/index.html','app/about.html']
-      }
-    },
-    options: {
-      compress:true
-    }
-}
 ```
 
 ```shell
@@ -147,10 +129,6 @@ There is a test project included under the `app` directory which you can build b
 
 ![](http://i.imgur.com/bUseCPh.png)
 
-## Articles and talks
-
-* [Use Grunt and unCSS to speed up the load time of your site](http://xdamman.com/website-optimization-grunt-uncss)
-* [Removing unused CSS with Grunt](http://www.youtube.com/watch?v=833xr1MyE30)
 
 ## The problem
 
@@ -186,4 +164,3 @@ We are actively looking at how to improve the CSS parsers used and will update t
 ## License
 
 (C) Addy Osmani 2013, released under an MIT license
-
