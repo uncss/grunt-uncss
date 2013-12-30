@@ -153,6 +153,12 @@ easily.
 Huge thanks go out to Giacomo Martino for his help with the Node module this task uses.
 
 
+## Coverage
+
+* [Automating the removal of unused CSS - VelocityConf](http://www.youtube.com/watch?v=833xr1MyE30)
+* [Use Grunt and UnCSS to speed up the load time of your site](http://xdamman.com/website-optimization-grunt-uncss)
+* [Automating Front-end Workflow (slides)](https://speakerdeck.com/addyosmani/automating-front-end-workflow)
+
 ## Limitations
 
 Please note that the CSS parser used in the `uncss` module we rely on currently isn't able to work with complex selectors. For example `[data-section=''] > section > [data-section-title] a`. This may mean that at build time you run into exceptions such as `TypeError: Cannot convert undefined or null to object`. If this is the case, please consider moving these selectors to a separate stylesheet which the task does not run on.
