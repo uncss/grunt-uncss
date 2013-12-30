@@ -10,6 +10,9 @@
 
 module.exports = function(grunt) {
 
+  // load all grunt tasks matching the `grunt-*` pattern
+  require('load-grunt-tasks')(grunt);
+
   // Project configuration.
   grunt.initConfig({
     jshint: {
@@ -46,6 +49,17 @@ module.exports = function(grunt) {
       }
     },
 
+    cssmin: {
+        dist: {
+            files: {
+                'dist/css/other.css': [
+                    'app/{,*/}*.css',
+                    '!app/css/bootstrap.css'
+                ]
+            }
+        }
+    },
+
     copy: {
       dist: {
         files: [
@@ -80,16 +94,7 @@ module.exports = function(grunt) {
 
   // Actually load this plugin's task(s).
   grunt.loadTasks('tasks');
-
-  // These plugins provide necessary tasks.
-  grunt.loadNpmTasks('grunt-contrib-jshint');
-  grunt.loadNpmTasks('grunt-contrib-clean');
-  grunt.loadNpmTasks('grunt-contrib-nodeunit');
-  grunt.loadNpmTasks('grunt-contrib-watch');
-  grunt.loadNpmTasks('grunt-processhtml');
-  grunt.loadNpmTasks('grunt-contrib-copy');
-  grunt.loadNpmTasks('grunt-compare-size');
-
+  
   // Whenever the "test" task is run, first clean the "tmp" dir, then run this
   // plugin's task(s), then test the result.
   grunt.registerTask('test', ['clean', 'uncss', 'nodeunit']);
@@ -99,6 +104,7 @@ module.exports = function(grunt) {
   grunt.registerTask('default', [
     'clean',
     'processhtml:dist', 
+    'cssmin',
     'copy:dist',
     'uncss:dist',
     'compare_size'

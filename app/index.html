@@ -12,15 +12,18 @@
 
         <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
 
+        <!-- Stylesheets we want to minify as usual -->
         <!-- build:css css/other.css -->
         <link rel="stylesheet" href="css/main.css">
         <link rel="stylesheet" href="css/normalize.css">
         <link rel="stylesheet" href="css/offcanvas.css">
         <!-- /build -->
 
+        <!-- Stylesheets we would like cleaned -->
         <!-- build:css css/tidy.css -->
         <!-- just here to make sure we reference css/tidy.css -->
         <link rel="stylesheet" href="css/bootstrap.css">
+        <link rel="stylesheet" href="css/phantom.css">
         <!-- /build -->
      
         <script src="js/vendor/modernizr-2.6.2.min.js"></script>
@@ -117,6 +120,10 @@
       </div><!--/row-->
 
       <hr>
+
+      <div class="container" id="add-here">
+        <!-- if PhantomJS works, styled content should appear here -->
+      </div>
 
 
         <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
