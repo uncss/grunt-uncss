@@ -49,6 +49,6 @@
   ],
   "dependencies": {
     "underscore": "~1.4.4",
-    "uncss": "~0.6.1"
+    "uncss": "git://github.com/giakki/uncss.git#master"
   }
 }

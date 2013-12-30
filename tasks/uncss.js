@@ -35,13 +35,13 @@ module.exports = function (grunt) {
                 grunt.log.warn('Destination (' + f.dest + ') not written because src files were empty.');
                 return;
             }
+
             try {
                 uncss(src, options, function (output) {
                     grunt.file.write(f.dest, output);
+                    done();
                 });
-                done();
             } catch (e) {
-                console.log(e);
                 var err = new Error('Uncss failed.');
                 if (e.msg) {
                     err.message += ', ' + e.msg + '.';
