@@ -36,9 +36,6 @@ module.exports = function(grunt) {
             'app/about.html',
             'app/contact.html']
         },
-        options: {
-          compress: false
-        }
       },
       dist: {
         files: {
@@ -47,9 +44,6 @@ module.exports = function(grunt) {
           'app/about.html',
           'app/contact.html']
         },
-        options: {
-          compress: true
-        }
       },
     },
 
