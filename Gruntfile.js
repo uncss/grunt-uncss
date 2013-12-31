@@ -19,7 +19,7 @@ module.exports = function(grunt) {
       all: [
         'Gruntfile.js',
         'tasks/*.js',
-        '<%= nodeunit.tests %>',
+        '<%= simplemocha.test.src %>',
       ],
       options: {
         jshintrc: '.jshintrc',
@@ -36,7 +36,12 @@ module.exports = function(grunt) {
         files: {
           'dist/css/tidy.css': ['app/index.html','app/about.html','app/contact.html']
           }
+      },
+      test: {
+        files: {
+          'tests/output.css': ['tests/index.html']
         }
+      }
     },
 
     processhtml: {
@@ -76,8 +81,10 @@ module.exports = function(grunt) {
     },
 
     // Unit tests.
-    nodeunit: {
-      tests: ['test/*_test.js'],
+    simplemocha: {
+      test:{
+        src: 'tests/selectors.js'
+      }
     },
 
     connect: {
@@ -94,10 +101,15 @@ module.exports = function(grunt) {
 
   // Actually load this plugin's task(s).
   grunt.loadTasks('tasks');
-  
+
   // Whenever the "test" task is run, first clean the "tmp" dir, then run this
   // plugin's task(s), then test the result.
-  grunt.registerTask('test', ['clean', 'uncss', 'nodeunit']);
+  grunt.registerTask('test', [
+    'clean', 
+    'uncss:test', 
+    'simplemocha'
+  ]);
+
   grunt.registerTask('dev', ['jshint', 'connect', 'test', 'watch']);
 
   // By default, lint and run all tests.

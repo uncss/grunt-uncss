@@ -4,3 +4,4 @@ tmp
 .DS_Store
 dist
 .sizecache
+tests/output.css
