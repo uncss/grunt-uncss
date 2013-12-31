@@ -28,7 +28,7 @@ module.exports = function(grunt) {
 
     // Before generating any new files, remove any previously-created files.
     clean: {
-      tests: ['tmp', 'dist'],
+      tests: ['tmp', 'dist','tests/output.css'],
     },
 
     uncss: {
