@@ -1,4 +1,5 @@
-# grunt-uncss
+# grunt-uncss [![Build Status](https://travis-ci.org/addyosmani/grunt-uncss.png?branch=master)](https://travis-ci.org/addyosmani/grunt-uncss) [![Built with Grunt](https://cdn.gruntjs.com/builtwith.png)](http://gruntjs.com/)
+
 
 >A grunt task for removing unused CSS from your projects. Works across multiple files and supports dynamically injected CSS via PhantomJS.
 
