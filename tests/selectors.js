@@ -27,25 +27,23 @@ tests.forEach(function (test, i) {
 
 /*
 Tests without grunt-uncss
-uncss(rfs('index.html'), { csspath: 'tests' }, function (output) {
-    rawcss = output;
-});
 */
-
 describe('uncss', function () {
     /* Wait until uncss finished doing its thing before running our tests */
-    var check = function (done) {
-        if (rawcss) {
-            done();
-        } else {
-            setTimeout(function () {
-                check(done);
-            }, 500);
-        }
-    };
-
     before(function (done) {
-        check(done);
+        uncss(rfs('index.html'), { csspath: 'tests' }, function (output) {
+            rawcss = output;
+            done();
+        });
+        /* new api from issue #44
+        uncss(rfs('index.html'), { csspath: 'tests' }, function (err, output) {
+            if (err) {
+                throw err;
+            }
+            rawcss = output;
+            done();
+        });
+         */
     });
 
     it('should output something', function () {
