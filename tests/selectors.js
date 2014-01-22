@@ -31,11 +31,7 @@ Tests without grunt-uncss
 describe('uncss', function () {
     /* Wait until uncss finished doing its thing before running our tests */
     before(function (done) {
-        uncss(rfs('index.html'), { csspath: 'tests' }, function (output) {
-            rawcss = output;
-            done();
-        });
-        /* new api from issue #44
+        /* new api from issue #44 */
         uncss(rfs('index.html'), { csspath: 'tests' }, function (err, output) {
             if (err) {
                 throw err;
@@ -43,7 +39,7 @@ describe('uncss', function () {
             rawcss = output;
             done();
         });
-         */
+
     });
 
     it('should output something', function () {

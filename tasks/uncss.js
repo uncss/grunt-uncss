@@ -37,7 +37,10 @@ module.exports = function (grunt) {
             }
 
             try {
-                uncss(src, options, function (output) {
+                uncss(src, options, function (error,output) {
+                    if (error) {
+                        throw error;
+                    }
                     grunt.file.write(f.dest, output);
                     done();
                 });
