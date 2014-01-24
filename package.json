@@ -53,6 +53,6 @@
   ],
   "dependencies": {
     "underscore": "~1.5.2",
-    "uncss": "~0.7.4"
+    "uncss": "~0.7.5"
   }
 }
