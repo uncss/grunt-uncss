@@ -1,5 +1,4 @@
-/* jshint node: true */
-/* global describe, it, before, beforeEach, after, afterEach */
+/* global describe, it, before */
 'use strict';
 
 var expect    = require('chai').expect,
@@ -14,7 +13,7 @@ var rfs = function (file) {
 
 var rawcss = rfs('output.css');
 var tests = fs.readdirSync(path.join(__dirname, 'fixtures/'));
-var input = ''; 
+var input = '';
 
 /* Only read through CSS files */
 tests.forEach(function (test, i) {
@@ -59,4 +58,3 @@ describe('uncss', function () {
     });
 
 });
-
