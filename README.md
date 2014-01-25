@@ -1,6 +1,8 @@
-# grunt-uncss [![Build Status](https://travis-ci.org/addyosmani/grunt-uncss.png?branch=master)](https://travis-ci.org/addyosmani/grunt-uncss) [![Built with Grunt](https://cdn.gruntjs.com/builtwith.png)](http://gruntjs.com/) [![Dependency Status](https://david-dm.org/addyosmani/grunt-uncss.png?theme=shields.io)](https://david-dm.org/addyosmani/grunt-uncss)
-[![devDependency Status](https://david-dm.org/addyosmani/grunt-uncss/dev-status.png?theme=shields.io)](https://david-dm.org/addyosmani/grunt-uncss#info=devDependencies)
+# grunt-uncss [![Built with Grunt](https://cdn.gruntjs.com/builtwith.png)](http://gruntjs.com/)
 
+[![Build Status](https://travis-ci.org/addyosmani/grunt-uncss.png?branch=master)](https://travis-ci.org/addyosmani/grunt-uncss)
+[![Dependency Status](https://david-dm.org/addyosmani/grunt-uncss.png?theme=shields.io)](https://david-dm.org/addyosmani/grunt-uncss)
+[![devDependency Status](https://david-dm.org/addyosmani/grunt-uncss/dev-status.png?theme=shields.io)](https://david-dm.org/addyosmani/grunt-uncss#info=devDependencies)
 
 >A grunt task for removing unused CSS from your projects. Works across multiple files and supports dynamically injected CSS via PhantomJS.
 
@@ -38,16 +40,17 @@ Remove unused CSS from projects using [uncss](https://github.com/giakki/uncss).
 
 Use the `grunt-uncss` task by specifying a target destination (file) for your cleaned CSS. Below this is `dist/css/tidy.css`.
 
-Along-side, specify the input HTML files you would like scanned for used selectors. In this case `app/index.html` and `app/about.html` are the two files we would like checked.
+Along-side, specify the input HTML files you would like scanned for used selectors.
+In this case `app/index.html` and `app/about.html` are the two files we would like checked.
 
-```shell
+```js
 uncss: {
   dist: {
     files: {
       'dist/css/tidy.css': ['app/index.html','app/about.html']
       }
     }
-},
+}
 ```
 
 Which you can then use alongside a processor like `processhtml` to
@@ -64,7 +67,7 @@ like:
 
 and some configuration like:
 
-```shell
+```js
 processhtml: {
   dist: {
     files: {
@@ -107,7 +110,7 @@ timeout: 1000
 
 ### Usage examples
 
-```shell
+```js
 // Remove unused CSS across multiple files
 uncss: {
   dist: {
@@ -115,27 +118,28 @@ uncss: {
       'dist/css/tidy.css': ['app/index.html','app/about.html']
       }
     }
-},
+}
 ```
 
-```shell
+```js
 // Remove unused CSS across multiple files, ignoring specific selectors
 uncss: {
   dist: {
     files: {
       'dist/css/tidy.css': ['app/index.html','app/about.html']
-      }
-    },
-    options: {
-      ignore: ['#added_at_runtime', '.created_by_jQuery']
     }
+  },
+  options: {
+    ignore: ['#added_at_runtime', '.created_by_jQuery']
+  }
 }
 ```
 
 
 ### Test project
 
-There is a test project included under the `app` directory which you can build by running `grunt` after an `npm install`. It also includes a `grunt compare_size` task for getting a feel of the before and after CSS sizes:
+There is a test project included under the `app` directory which you can build by running `grunt` after an `npm install`.
+It also includes a `grunt compare_size` task for getting a feel of the before and after CSS sizes:
 
 ![](http://i.imgur.com/bUseCPh.png)
 
@@ -173,7 +177,10 @@ Huge thanks go out to Giacomo Martino for his help with the Node module this tas
 
 ## Limitations
 
-Please note that the CSS parser used in the `uncss` module we rely on currently isn't able to work with complex selectors. For example `[data-section=''] > section > [data-section-title] a`. This may mean that at build time you run into exceptions such as `TypeError: Cannot convert undefined or null to object`. If this is the case, please consider moving these selectors to a separate stylesheet which the task does not run on.
+Please note that the CSS parser used in the `uncss` module we rely on currently isn't able to work with complex selectors.
+For example `[data-section=''] > section > [data-section-title] a`. This may mean that at build time you run into exceptions
+such as `TypeError: Cannot convert undefined or null to object`. If this is the case, please consider moving these selectors
+to a separate stylesheet which the task does not run on.
 
 We are actively looking at how to improve the CSS parsers used and will update this notice once this problem has been solved.
 
