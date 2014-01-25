@@ -55,7 +55,8 @@
     "grunt-processhtml": "~0.2.7",
     "grunt-simple-mocha": "~0.4.0",
     "load-grunt-tasks": "~0.3.0",
-    "mocha": "~1.17.1"
+    "mocha": "~1.17.1",
+    "time-grunt": "~0.2.8"
   },
   "directories": {
     "test": "tests"
