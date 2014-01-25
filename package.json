@@ -20,6 +20,12 @@
       "url": "https://github.com/addyosmani/grunt-uncss/blob/master/LICENSE-MIT"
     }
   ],
+  "files": [
+    "changelog.md",
+    "LICENSE-MIT",
+    "README.md",
+    "tasks"
+  ],
   "main": "Gruntfile.js",
   "engines": {
     "node": ">= 0.8.0"
