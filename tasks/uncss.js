@@ -9,8 +9,8 @@
 'use strict';
 
 module.exports = function (grunt) {
-    var uncss = require('uncss');
-    var path = require('path');
+    var uncss = require('uncss'),
+        path  = require('path');
 
     grunt.registerMultiTask('uncss', 'Remove unused CSS', function () {
 
@@ -37,11 +37,18 @@ module.exports = function (grunt) {
             }
 
             try {
-                uncss(src, options, function (error,output) {
+                uncss(src, options, function (error, output, report) {
                     if (error) {
                         throw error;
                     }
+
                     grunt.file.write(f.dest, output);
+
+                    if (options.report) {
+                        grunt.log.writeln('Original: ' + String(report.original).green + ' bytes.');
+                        grunt.log.writeln('Minified: ' + String(report.tidy).green + ' bytes.');
+                    }
+
                     done();
                 });
             } catch (e) {
