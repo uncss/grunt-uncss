@@ -45,6 +45,7 @@ module.exports = function (grunt) {
                     grunt.file.write(f.dest, output);
 
                     if (options.report) {
+                        grunt.log.writeln('File ' + String(f.dest).cyan + ' created.');
                         grunt.log.writeln('Original: ' + String(report.original).green + ' bytes.');
                         grunt.log.writeln('Minified: ' + String(report.tidy).green + ' bytes.');
                     }
