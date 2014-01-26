@@ -115,9 +115,9 @@ module.exports = function(grunt) {
   // By default, lint and run all tests.
   grunt.registerTask('default', [
     'clean',
-    'processhtml:dist',
+    'processhtml',
     'cssmin',
-    'copy:dist',
+    'copy',
     'uncss:dist',
     'compare_size'
   ]);
