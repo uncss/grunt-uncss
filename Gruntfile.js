@@ -8,10 +8,13 @@
 
 'use strict';
 
+/* jshint indent: 2 */
+
 module.exports = function(grunt) {
 
   // load all grunt tasks matching the `grunt-*` pattern
   require('load-grunt-tasks')(grunt);
+  require('time-grunt')(grunt);
 
   // Project configuration.
   grunt.initConfig({
@@ -19,23 +22,23 @@ module.exports = function(grunt) {
       all: [
         'Gruntfile.js',
         'tasks/*.js',
-        '<%= simplemocha.test.src %>',
+        '<%= simplemocha.test.src %>'
       ],
       options: {
-        jshintrc: '.jshintrc',
-      },
+        jshintrc: '.jshintrc'
+      }
     },
 
     // Before generating any new files, remove any previously-created files.
     clean: {
-      tests: ['tmp', 'dist','tests/output.css'],
+      tests: ['tmp', 'dist','tests/output.css']
     },
 
     uncss: {
       dist: {
         files: {
           'dist/css/tidy.css': ['app/index.html','app/about.html','app/contact.html']
-          }
+        }
       },
       test: {
         files: {
@@ -55,14 +58,11 @@ module.exports = function(grunt) {
     },
 
     cssmin: {
-        dist: {
-            files: {
-                'dist/css/other.css': [
-                    'app/{,*/}*.css',
-                    '!app/css/bootstrap.css'
-                ]
-            }
+      dist: {
+        files: {
+          'dist/css/other.css': ['app/{,*/}*.css', '!app/css/bootstrap.css']
         }
+      }
     },
 
     copy: {
@@ -75,8 +75,8 @@ module.exports = function(grunt) {
 
     compare_size: {
       files: [
-        "app/css/**",
-        "dist/css/**"
+        'app/css/**',
+        'dist/css/**'
       ]
     },
 
@@ -88,12 +88,16 @@ module.exports = function(grunt) {
     },
 
     connect: {
-      port: 3000,
-      base: 'test/fixtures'
+      server: {
+        options: {
+          base: 'tests',
+          port: 3000
+        }
+      }
     },
 
     watch: {
-      files: ['tasks/**/*.js', 'test/**/*.*'],
+      files: ['Gruntfile.js', 'tasks/**/*.js', 'test/**/*.*'],
       tasks: ['jshint', 'test']
     }
 
@@ -102,22 +106,19 @@ module.exports = function(grunt) {
   // Actually load this plugin's task(s).
   grunt.loadTasks('tasks');
 
-  // Whenever the "test" task is run, first clean the "tmp" dir, then run this
-  // plugin's task(s), then test the result.
   grunt.registerTask('test', [
-    'clean', 
-    'uncss:test', 
+    'uncss:test',
     'simplemocha'
   ]);
 
-  grunt.registerTask('dev', ['jshint', 'connect', 'test', 'watch']);
+  grunt.registerTask('dev', ['jshint', 'test', 'connect', 'watch']);
 
   // By default, lint and run all tests.
   grunt.registerTask('default', [
     'clean',
-    'processhtml:dist', 
+    'processhtml',
     'cssmin',
-    'copy:dist',
+    'copy',
     'uncss:dist',
     'compare_size'
   ]);

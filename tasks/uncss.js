@@ -10,7 +10,6 @@
 
 module.exports = function (grunt) {
     var uncss = require('uncss');
-    var path = require('path');
 
     grunt.registerMultiTask('uncss', 'Remove unused CSS', function () {
 
