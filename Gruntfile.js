@@ -31,14 +31,13 @@ module.exports = function(grunt) {
 
     // Before generating any new files, remove any previously-created files.
     clean: {
-      tests: ['tmp', 'dist','tests/output.css']
+      tests: ['tmp', 'dist', 'tests/output.css']
     },
 
     uncss: {
       dist: {
-        files: {
-          'dist/css/tidy.css': ['app/index.html','app/about.html','app/contact.html']
-        }
+        src: ['app/about.html', 'app/contact.html', 'app/index.html'],
+        dest: 'dist/css/tidy.css'
       },
       test: {
         files: {
@@ -50,17 +49,22 @@ module.exports = function(grunt) {
     processhtml: {
       dist: {
         files: {
-          'dist/index.html': ['app/index.html'],
           'dist/about.html': ['app/about.html'],
-          'dist/contact.html': ['app/contact.html']
+          'dist/contact.html': ['app/contact.html'],
+          'dist/index.html': ['app/index.html']
         }
       }
     },
 
     cssmin: {
       dist: {
+        options: {
+          keepSpecialComments: 0,
+          report: "min",
+          selectorsMergeMode: "ie8"
+        },
         files: {
-          'dist/css/other.css': ['app/{,*/}*.css', '!app/css/bootstrap.css']
+          'dist/css/other.css': '<%= uncss.dist.dest %>'
         }
       }
     },
@@ -111,15 +115,20 @@ module.exports = function(grunt) {
     'simplemocha'
   ]);
 
-  grunt.registerTask('dev', ['jshint', 'test', 'connect', 'watch']);
+  grunt.registerTask('dev', [
+    'jshint',
+    'test',
+    'connect',
+    'watch'
+  ]);
 
   // By default, lint and run all tests.
   grunt.registerTask('default', [
     'clean',
-    'processhtml',
-    'cssmin',
     'copy',
     'uncss:dist',
+    'cssmin',
+    'processhtml',
     'compare_size'
   ]);
 
