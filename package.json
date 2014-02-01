@@ -40,7 +40,8 @@
   },
   "dependencies": {
     "uncss": "~0.7.6",
-    "underscore": "~1.5.2"
+    "underscore": "~1.5.2",
+    "chalk": "~0.4.0"
   },
   "devDependencies": {
     "chai": "~1.8.1",
