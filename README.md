@@ -89,7 +89,7 @@ csspath: "../public/css/",
 raw: 'h1 { color: green }',
 stylesheets: ["lib/bootstrap/dist/css/bootstrap.css", "src/public/css/main.css"],
 urls: ["http://localhost:3000/mypage", "..."] //array of urls,
-report: true,
+report: false/'min'/'gzip',
 timeout: 1000
 ```
 
@@ -107,7 +107,7 @@ timeout: 1000
 
 - __urls__ (Array): array of URLs to load with Phantom (on top of the files already passed if any).
 
-- __report__ (Boolean): specify whether to print out a report.
+- __report__ (false/'min'/'gzip'): specify whether to print out a report, using [grunt-lib-contrib's reporting option](https://github.com/gruntjs/grunt-lib-contrib#report).
 
 - __timeout__ (Number): specify how long to wait for the JS to be loaded.
 
@@ -134,7 +134,7 @@ uncss: {
     },
     options: {
       ignore: ['#added_at_runtime', '.created_by_jQuery'],
-      report: true
+      report: 'min'
     }
   },
   options: {

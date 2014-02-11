@@ -50,7 +50,7 @@ module.exports = function (grunt) {
 
                     // ...and report some size information.
                     if (options.report) {
-                        helper.minMaxInfo(output, report.original);
+                        helper.minMaxInfo(output, report.original, options.report);
                     }
 
                     done();
