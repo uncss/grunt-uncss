@@ -9,8 +9,9 @@
 'use strict';
 
 module.exports = function (grunt) {
-    var uncss = require('uncss'),
-        chalk = require('chalk');
+    var uncss  = require('uncss'),
+        chalk  = require('chalk'),
+        helper = require('grunt-lib-contrib').init(grunt);
     
     grunt.registerMultiTask('uncss', 'Remove unused CSS', function () {
 
@@ -47,9 +48,9 @@ module.exports = function (grunt) {
                     // Print a success message.
                     grunt.log.writeln('File ' + chalk.cyan(f.dest) + ' created.');
 
+                    // ...and report some size information.
                     if (options.report) {
-                        grunt.log.writeln('Original: ' + String(report.original).green + ' bytes.');
-                        grunt.log.writeln('Minified: ' + String(report.tidy).green + ' bytes.');
+                        helper.minMaxInfo(output, report.original);
                     }
 
                     done();
