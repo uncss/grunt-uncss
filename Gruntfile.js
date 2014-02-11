@@ -12,8 +12,8 @@
 
 module.exports = function(grunt) {
 
-  // load all grunt tasks matching the `grunt-*` pattern
-  require('load-grunt-tasks')(grunt);
+  // Load all grunt tasks matching the `grunt-*` pattern, excluding grunt-lib-contrib.
+  require('load-grunt-tasks')(grunt, {pattern: ['grunt-*', '!grunt-lib-contrib']});
   require('time-grunt')(grunt);
 
   // Project configuration.
