@@ -43,6 +43,9 @@ module.exports = function(grunt) {
       test: {
         files: {
           'tests/output.css': ['tests/index.html']
+        },
+        options: {
+          report: true
         }
       }
     },
