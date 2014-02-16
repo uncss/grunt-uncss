@@ -36,7 +36,7 @@ module.exports = function(grunt) {
 
     uncss: {
       dist: {
-        src: ['app/about.html', 'app/contact.html', 'app/index.html'],
+        src: ['tests/app/about.html', 'tests/app/contact.html', 'tests/app/index.html'],
         dest: 'dist/css/tidy.css'
       },
       test: {
@@ -49,9 +49,9 @@ module.exports = function(grunt) {
     processhtml: {
       dist: {
         files: {
-          'dist/about.html': ['app/about.html'],
-          'dist/contact.html': ['app/contact.html'],
-          'dist/index.html': ['app/index.html']
+          'dist/about.html': ['tests/app/about.html'],
+          'dist/contact.html': ['tests/app/contact.html'],
+          'dist/index.html': ['tests/app/index.html']
         }
       }
     },
@@ -72,14 +72,14 @@ module.exports = function(grunt) {
     copy: {
       dist: {
         files: [
-          {expand: true, cwd: 'app/', src: ['img/**', 'js/**', '*.png', '*.xml', '*.txt', '*.ico', '!*.html'], dest: 'dist/'}
+          {expand: true, cwd: 'tests/app/', src: ['img/**', 'js/**', '*.png', '*.xml', '*.txt', '*.ico', '!*.html'], dest: 'dist/'}
         ]
       }
     },
 
     compare_size: {
       files: [
-        'app/css/**',
+        'tests/app/css/**',
         'dist/css/**'
       ]
     },

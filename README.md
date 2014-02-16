@@ -138,7 +138,7 @@ uncss: {
 
 ### Test project
 
-There is a test project included under the `app` directory which you can build by running `grunt` after an `npm install`.
+There is a test project included under the `tests/app` directory which you can build by running `grunt` after an `npm install`.
 It also includes a `grunt compare_size` task for getting a feel of the before and after CSS sizes:
 
 ![](http://i.imgur.com/bUseCPh.png)
