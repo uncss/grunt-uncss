@@ -88,7 +88,8 @@ media: ['(min-width: 700px) handheld and (orientation: landscape)'],
 csspath: "../public/css/",
 raw: 'h1 { color: green }',
 stylesheets: ["lib/bootstrap/dist/css/bootstrap.css", "src/public/css/main.css"],
-urls: ["http://localhost:3000/mypage", "..."] //array of urls
+urls: ["http://localhost:3000/mypage", "..."] //array of urls,
+report: false/'min'/'gzip',
 timeout: 1000
 ```
 
@@ -96,7 +97,7 @@ timeout: 1000
 
 - __ignore__ (Array): provide a list of selectors that should not be removed by UnCSS. For example, styles added by user interaction with the page (hover, click), since those are not detectable by UnCSS yet. Both literal names and regex patterns are recognized.
 
-- __media__ (Array): By default UnCSS processes only stylesheets with media query "_all_", "_screen_", and those without one. Specify here which others to include.
+- __media__ (Array): by default UnCSS processes only stylesheets with media query "_all_", "_screen_", and those without one. Specify here which others to include.
 
 - __csspath__ (String): path where the CSS files are related to the html files. By default, UnCSS uses the path specified in the <link rel="stylesheet" href="path/to/file.css"\>
 
@@ -105,6 +106,8 @@ timeout: 1000
 - __raw__ (String): give the task a raw string of CSS in addition to the existing stylesheet options; useful in scripting when your CSS hasn't yet been written to disk.
 
 - __urls__ (Array): array of URLs to load with Phantom (on top of the files already passed if any).
+
+- __report__ (false/'min'/'gzip'): specify whether to print out a report, using [grunt-lib-contrib's reporting option](https://github.com/gruntjs/grunt-lib-contrib#report).
 
 - __timeout__ (Number): specify how long to wait for the JS to be loaded.
 
@@ -122,11 +125,16 @@ uncss: {
 ```
 
 ```js
-// Remove unused CSS across multiple files, ignoring specific selectors
+// Remove unused CSS across multiple files, ignore specific selectors and print a report
 uncss: {
   dist: {
     files: {
       'dist/css/tidy.css': ['app/index.html','app/about.html']
+      }
+    },
+    options: {
+      ignore: ['#added_at_runtime', '.created_by_jQuery'],
+      report: 'min'
     }
   },
   options: {
