@@ -1,3 +1,4 @@
+
 {
   "name": "grunt-uncss",
   "description": "A grunt task for generating CSS files containing only those styles used in your project.",
@@ -39,8 +40,9 @@
     "grunt": "~0.4.1"
   },
   "dependencies": {
-    "uncss": "~0.7.5",
-    "underscore": "~1.6.0"
+    "chalk": "~0.4.0",
+    "uncss": "~0.7.9",
+    "underscore": "~1.5.2"
   },
   "devDependencies": {
     "chai": "~1.9.0",
@@ -52,6 +54,7 @@
     "grunt-contrib-cssmin": "~0.7.0",
     "grunt-contrib-jshint": "~0.8.0",
     "grunt-contrib-watch": "~0.5.3",
+    "grunt-lib-contrib": "~0.6.1",
     "grunt-processhtml": "~0.3.0",
     "grunt-simple-mocha": "~0.4.0",
     "load-grunt-tasks": "~0.3.0",
