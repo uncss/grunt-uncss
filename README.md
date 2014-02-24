@@ -90,7 +90,8 @@ raw: 'h1 { color: green }',
 stylesheets: ["lib/bootstrap/dist/css/bootstrap.css", "src/public/css/main.css"],
 urls: ["http://localhost:3000/mypage", "..."] //array of urls,
 report: false/'min'/'gzip',
-timeout: 1000
+timeout: 1000,
+htmlroot: 'public'
 ```
 
 ### What do the options do?
@@ -110,6 +111,8 @@ timeout: 1000
 - __report__ (false/'min'/'gzip'): specify whether to print out a report, using [grunt-lib-contrib's reporting option](https://github.com/gruntjs/grunt-lib-contrib#report).
 
 - __timeout__ (Number): specify how long to wait for the JS to be loaded.
+
+- __htmlroot__ (String): where the project root is. Useful for example if you are running UnCSS on _local_ files that have absolute href to the stylesheets, i.e. ```href="/css/style.css"```
 
 ### Usage examples
 
