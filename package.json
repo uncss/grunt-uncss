@@ -28,7 +28,6 @@
     "README.md",
     "tasks"
   ],
-  "main": "Gruntfile.js",
   "engines": {
     "node": ">= 0.8.0"
   },
