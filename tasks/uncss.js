@@ -11,8 +11,8 @@
 module.exports = function (grunt) {
     var uncss  = require('uncss'),
         chalk  = require('chalk'),
-        helper = require('grunt-lib-contrib').init(grunt);
-    
+        maxmin = require('maxmin');
+
     grunt.registerMultiTask('uncss', 'Remove unused CSS', function () {
 
         var done    = this.async(),
@@ -46,11 +46,13 @@ module.exports = function (grunt) {
                     grunt.file.write(f.dest, output);
 
                     // Print a success message.
-                    grunt.log.writeln('File ' + chalk.cyan(f.dest) + ' created.');
+                    grunt.log.write('File ' + chalk.cyan(f.dest) + ' created');
 
                     // ...and report some size information.
-                    if (options.report) {
-                        helper.minMaxInfo(output, report.original, options.report);
+                    if (options.report !== false) {
+                        grunt.log.writeln(': ' + maxmin(report.original, output, options.report === 'gzip'));
+                    } else {
+                        grunt.log.writeln('.');
                     }
 
                     done();
