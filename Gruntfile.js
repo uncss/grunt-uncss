@@ -43,7 +43,7 @@ module.exports = function(grunt) {
           'tests/output.css': ['tests/index.html']
         },
         options: {
-          report: 'gzip'
+          report: 'min'
         }
       }
     },

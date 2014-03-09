@@ -45,15 +45,7 @@ module.exports = function (grunt) {
 
                     grunt.file.write(f.dest, output);
 
-                    // Print a success message.
-                    grunt.log.write('File ' + chalk.cyan(f.dest) + ' created');
-
-                    // ...and report some size information.
-                    if (options.report !== false) {
-                        grunt.log.writeln(': ' + maxmin(report.original, output, options.report === 'gzip'));
-                    } else {
-                        grunt.log.writeln('.');
-                    }
+                    grunt.log.writeln('File ' + chalk.cyan(f.dest) + ' created: ' + maxmin(report.original, output, options.report === 'gzip'));
 
                     done();
                 });
