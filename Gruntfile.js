@@ -114,12 +114,12 @@ module.exports = function(grunt) {
   grunt.loadTasks('tasks');
 
   grunt.registerTask('test', [
+    'jshint',
     'uncss:test',
     'simplemocha'
   ]);
 
   grunt.registerTask('dev', [
-    'jshint',
     'test',
     'connect',
     'watch'
