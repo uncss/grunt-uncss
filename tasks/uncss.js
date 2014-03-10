@@ -15,11 +15,11 @@ module.exports = function (grunt) {
     
     grunt.registerMultiTask('uncss', 'Remove unused CSS', function () {
 
-        var done = this.async();
-        var options = this.options({
-            compress: false,
-            ignore: ['']
-        });
+        var done    = this.async(),
+            options = this.options({
+                compress: false,
+                ignore: ['']
+            });
 
         this.files.forEach(function (f) {
             var src = f.src.filter(function (filepath) {
