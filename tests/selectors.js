@@ -1,19 +1,19 @@
 /* global describe, it, before */
 'use strict';
 
-var expect    = require('chai').expect,
-    fs        = require('fs'),
-    path      = require('path'),
-    uncss     = require('uncss');
+var expect = require('chai').expect,
+    fs     = require('fs'),
+    path   = require('path'),
+    uncss  = require('uncss');
 
 /* Read file sync sugar. */
 var rfs = function (file) {
     return fs.readFileSync(path.join(__dirname, file), 'utf-8').toString();
 };
 
-var rawcss = rfs('output.css');
-var tests = fs.readdirSync(path.join(__dirname, 'fixtures/'));
-var input = '';
+var rawcss = rfs('output.css'),
+    tests  = fs.readdirSync(path.join(__dirname, 'fixtures/')),
+    input  = '';
 
 /* Only read through CSS files */
 tests.forEach(function (test, i) {

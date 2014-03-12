@@ -36,6 +36,7 @@
   },
   "dependencies": {
     "chalk": "~0.4.0",
+    "grunt-lib-contrib": "~0.6.1",
     "uncss": "~0.7.9",
     "underscore": "~1.6.0"
   },
@@ -49,10 +50,9 @@
     "grunt-contrib-cssmin": "~0.8.0",
     "grunt-contrib-jshint": "~0.8.0",
     "grunt-contrib-watch": "~0.5.3",
-    "grunt-lib-contrib": "~0.6.1",
     "grunt-processhtml": "~0.3.0",
     "grunt-simple-mocha": "~0.4.0",
-    "load-grunt-tasks": "~0.4.0",
+    "load-grunt-tasks": "~0.3.0",
     "mocha": "~1.17.1",
     "time-grunt": "~0.2.9"
   },

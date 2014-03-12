@@ -12,8 +12,7 @@
 
 module.exports = function(grunt) {
 
-  // Load all grunt tasks matching the `grunt-*` pattern, excluding grunt-lib-contrib.
-  require('load-grunt-tasks')(grunt, {pattern: ['grunt-*', '!grunt-lib-contrib']});
+  require('load-grunt-tasks')(grunt, {scope: 'devDependencies'});
   require('time-grunt')(grunt);
 
   // Project configuration.
@@ -62,9 +61,9 @@ module.exports = function(grunt) {
     cssmin: {
       dist: {
         options: {
-          compatibility: "ie8",
+          compatibility: 'ie8',
           keepSpecialComments: 0,
-          report: "min"
+          report: 'min'
         },
         files: {
           'dist/css/other.css': '<%= uncss.dist.dest %>'
@@ -114,12 +113,12 @@ module.exports = function(grunt) {
   grunt.loadTasks('tasks');
 
   grunt.registerTask('test', [
+    'jshint',
     'uncss:test',
     'simplemocha'
   ]);
 
   grunt.registerTask('dev', [
-    'jshint',
     'test',
     'connect',
     'watch'
