@@ -21,7 +21,7 @@
     "css"
   ],
   "files": [
-    "changelog.md",
+    "CHANGELOG.md",
     "LICENSE-MIT",
     "tasks"
   ],
