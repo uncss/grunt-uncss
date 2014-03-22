@@ -1,3 +1,6 @@
+## v0.3.0
+* Update dependencies including `uncss` to 0.8.0
+* Enable `report` by default and switch to using `maxmin`
 
 ## v0.1.7
 

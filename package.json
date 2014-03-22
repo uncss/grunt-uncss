@@ -1,7 +1,7 @@
 {
   "name": "grunt-uncss",
   "description": "A grunt task for generating CSS files containing only those styles used in your project.",
-  "version": "0.2.2",
+  "version": "0.3.0",
   "homepage": "https://github.com/addyosmani/grunt-uncss",
   "author": "Addy Osmani <addyosmani@gmail.com>",
   "repository": {
