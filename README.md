@@ -1,5 +1,6 @@
 # grunt-uncss [![Built with Grunt](https://cdn.gruntjs.com/builtwith.png)](http://gruntjs.com/)
 
+[![NPM version](https://badge.fury.io/js/grunt-uncss.png)](http://badge.fury.io/js/grunt-uncss)
 [![Build Status](https://travis-ci.org/addyosmani/grunt-uncss.png?branch=master)](https://travis-ci.org/addyosmani/grunt-uncss)
 [![Dependency Status](https://david-dm.org/addyosmani/grunt-uncss.png?theme=shields.io)](https://david-dm.org/addyosmani/grunt-uncss)
 [![devDependency Status](https://david-dm.org/addyosmani/grunt-uncss/dev-status.png?theme=shields.io)](https://david-dm.org/addyosmani/grunt-uncss#info=devDependencies)
@@ -10,7 +11,7 @@
 
 Taking a multi-page project using Bootstrap with >120KB of CSS down to 11KB.
 
-![](http://i.imgur.com/uhWMALH.gif)
+![Demo](http://i.imgur.com/uhWMALH.gif)
 
 ## Getting Started
 
@@ -47,9 +48,9 @@ In this case `app/index.html` and `app/about.html` are the two files we would li
 uncss: {
   dist: {
     files: {
-      'dist/css/tidy.css': ['app/index.html','app/about.html']
-      }
+      'dist/css/tidy.css': ['app/index.html', 'app/about.html']
     }
+  }
 }
 ```
 
@@ -82,37 +83,49 @@ processhtml: {
 
 Sample use of all supported options:
 
-```
-ignore: ['#added_at_runtime', /test\-[0-9]+/],
-media: ['(min-width: 700px) handheld and (orientation: landscape)'],
-csspath: "../public/css/",
-raw: 'h1 { color: green }',
-stylesheets: ["lib/bootstrap/dist/css/bootstrap.css", "src/public/css/main.css"],
-urls: ["http://localhost:3000/mypage", "..."] //array of urls,
-report: 'min'/'gzip',
-timeout: 1000,
-htmlroot: 'public'
+```js
+uncss: {
+  dist: {
+    options: {
+      ignore       : ['#added_at_runtime', /test\-[0-9]+/],
+      media        : ['(min-width: 700px) handheld and (orientation: landscape)'],
+      csspath      : '../public/css/',
+      raw          : 'h1 { color: green }',
+      stylesheets  : ['lib/bootstrap/dist/css/bootstrap.css', 'src/public/css/main.css'],
+      ignoreSheets : [/fonts.googleapis/],
+      urls         : ['http://localhost:3000/mypage', '...'], // Deprecated
+      timeout      : 1000,
+      htmlroot     : 'public',
+      report       : 'min'
+    },
+    files: {
+      'dist/css/tidy.css': ['app/index.html', 'app/about.html']
+    }
+  }
+}
 ```
 
 ### What do the options do?
 
-- __ignore__ (Array): provide a list of selectors that should not be removed by UnCSS. For example, styles added by user interaction with the page (hover, click), since those are not detectable by UnCSS yet. Both literal names and regex patterns are recognized.
+- __ignore__ (Array): provide a list of selectors that should not be removed by UnCSS. For example, styles added by user interaction with the page (`hover`, `click`), since those are not detectable by UnCSS yet. Both literal names and regex patterns are recognized.
 
 - __media__ (Array): by default UnCSS processes only stylesheets with media query "_all_", "_screen_", and those without one. Specify here which others to include.
 
-- __csspath__ (String): path where the CSS files are related to the html files. By default, UnCSS uses the path specified in the <link rel="stylesheet" href="path/to/file.css"\>
-
-- __stylesheets__ (Array): use these stylesheets instead of those extracted from the html files.
+- __csspath__ (String): path where the CSS files are related to the html files. By default, UnCSS uses the path specified in the `<link rel="stylesheet" href="path/to/file.css">`.
 
 - __raw__ (String): give the task a raw string of CSS in addition to the existing stylesheet options; useful in scripting when your CSS hasn't yet been written to disk.
 
-- __urls__ (Array): array of URLs to load with Phantom (on top of the files already passed if any).
+- __stylesheets__ (Array): use these stylesheets instead of those extracted from the html files.
 
-- __report__ ('min'/'gzip'): specify whether to print out only the minification result  or report minification and gzip results, using [maxmin](https://github.com/sindresorhus/maxmin).
+- __ignoreSheets__ (Array):  Do not include the specified stylesheets.
+
+- __urls__ (Array): array of URLs to load with Phantom (on top of the files already passed if any).
 
 - __timeout__ (Number): specify how long to wait for the JS to be loaded.
 
-- __htmlroot__ (String): where the project root is. Useful for example if you are running UnCSS on _local_ files that have absolute href to the stylesheets, i.e. ```href="/css/style.css"```
+- __htmlroot__ (String): where the project root is. Useful for example if you are running UnCSS on _local_ files that have absolute href to the stylesheets, i.e. `href="/css/style.css"`.
+
+- __report__ ('min'/'gzip'): specify whether to print out only the minification result or report minification and gzip results, using [maxmin](https://github.com/sindresorhus/maxmin).
 
 ### Usage examples
 
@@ -121,9 +134,9 @@ htmlroot: 'public'
 uncss: {
   dist: {
     files: {
-      'dist/css/tidy.css': ['app/index.html','app/about.html']
-      }
+      'dist/css/tidy.css': ['app/index.html', 'app/about.html']
     }
+  }
 }
 ```
 
@@ -132,7 +145,7 @@ uncss: {
 uncss: {
   dist: {
     files: {
-      'dist/css/tidy.css': ['app/index.html','app/about.html']
+      'dist/css/tidy.css': ['app/index.html', 'app/about.html']
       }
     },
     options: {
@@ -196,4 +209,4 @@ We are actively looking at how to improve the CSS parsers used and will update t
 
 ## License
 
-(C) Addy Osmani 2013, released under an MIT license
+(C) Addy Osmani 2013, released under the MIT license
