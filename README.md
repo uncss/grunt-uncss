@@ -169,7 +169,7 @@ It also includes a `grunt compare_size` task for getting a feel of the before an
 
 ## The problem
 
-User-interface libraries like Bootstrap, TopCoat and so on are fairly prolific, however many developers
+User-interface libraries like [Bootstrap](http://getbootstrap.com), [TopCoat](http://topcoat.io) and so on are fairly prolific, however many developers
 use less than 10% of the CSS they provide (when opting for the full build, which most do). As a result, they can
 end up with fairly bloated stylesheets which can significantly increase page load time and affect performance.
 `grunt-uncss` is an attempt to help with by generating a CSS file containing only the CSS used in your project,
