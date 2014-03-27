@@ -1,3 +1,9 @@
+## v0.3.2
+* Additional cleanup for `report` option
+
+## v0.3.1
+* Fix failure when `report` wasn't set
+
 ## v0.3.0
 * Update dependencies including `uncss` to 0.8.0
 * Enable `report` by default and switch to using `maxmin`
