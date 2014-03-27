@@ -18,7 +18,8 @@ module.exports = function (grunt) {
         var done    = this.async(),
             options = this.options({
                 compress: false,
-                ignore: ['']
+                ignore: [''],
+                report: 'min'
             });
 
         this.files.forEach(function (f) {
@@ -45,7 +46,7 @@ module.exports = function (grunt) {
 
                     grunt.file.write(f.dest, output);
 
-                    grunt.log.writeln('File ' + chalk.cyan(f.dest) + (report? ' created: ' + maxmin(report.original, output, options.report === 'gzip') : ' created.'));
+                    grunt.log.writeln('File ' + chalk.cyan(f.dest) + ' created: ' + maxmin(report.original, output, options.report === 'gzip'));
 
                     done();
                 });
