@@ -1,5 +1,5 @@
 // Avoid `console` errors in browsers that lack a console.
-(function() {
+(function () {
     var method;
     var noop = function () {};
     var methods = [
@@ -9,13 +9,13 @@
         'timeStamp', 'trace', 'warn'
     ];
     var length = methods.length;
-    var console = (window.console = window.console || {});
+    var console = ( window.console = window.console || {} );
 
-    while (length--) {
+    while ( length-- ) {
         method = methods[length];
 
         // Only stub undefined methods.
-        if (!console[method]) {
+        if ( !console[method] ) {
             console[method] = noop;
         }
     }

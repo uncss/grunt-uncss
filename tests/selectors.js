@@ -1,59 +1,59 @@
 /* global describe, it, before */
 'use strict';
 
-var expect = require('chai').expect,
-    fs     = require('fs'),
-    path   = require('path'),
-    uncss  = require('uncss');
+var expect = require( 'chai' ).expect,
+    fs     = require( 'fs' ),
+    path   = require( 'path' ),
+    uncss  = require( 'uncss' );
 
 /* Read file sync sugar. */
-var rfs = function (file) {
-    return fs.readFileSync(path.join(__dirname, file), 'utf-8').toString();
+var rfs = function ( file ) {
+    return fs.readFileSync( path.join( __dirname, file ), 'utf-8' ).toString();
 };
 
-var rawcss = rfs('output.css'),
-    tests  = fs.readdirSync(path.join(__dirname, 'fixtures/')),
+var rawcss = rfs( 'output.css' ),
+    tests  = fs.readdirSync( path.join( __dirname, 'fixtures/' ) ),
     input  = '';
 
 /* Only read through CSS files */
-tests.forEach(function (test, i) {
-    if (test.indexOf('.css') > -1) {
-        input += rfs('fixtures/' + test);
+tests.forEach(function ( test, i ) {
+    if ( test.indexOf( '.css' ) > -1 ) {
+        input += rfs( 'fixtures/' + test );
     } else {
-        tests.splice(i, 1);
+        tests.splice( i, 1 );
     }
 });
 
 /*
 Tests without grunt-uncss
 */
-describe('uncss', function () {
+describe( 'uncss', function () {
     /* Wait until uncss finished doing its thing before running our tests */
-    before(function (done) {
+    before( function ( done ) {
         /* new api from issue #44 */
-        uncss(rfs('index.html'), { csspath: 'tests' }, function (err, output) {
-            if (err) {
+        uncss( rfs( 'index.html' ), { csspath: 'tests' }, function ( err, output ) {
+            if ( err ) {
                 throw err;
             }
             rawcss = output;
             done();
-        });
+        } );
 
     });
 
-    it('should output something', function () {
-        expect(rawcss).not.to.equal(false);
+    it( 'should output something' , function () {
+        expect( rawcss ).not.to.equal( false );
     });
 
-    it('should not be an empty string', function () {
-        expect(rawcss).to.have.length.above(0);
+    it( 'should not be an empty string' , function () {
+        expect( rawcss ).to.have.length.above( 0 );
     });
 
     /* We're testing that the CSS is stripped out from the result, not that the result contains
        the CSS in the unused folder. */
-    tests.forEach(function (test) {
-        it('should handle ' + test.split('.')[0], function () {
-            expect(rawcss).to.not.include.string(rfs('unused/' + test));
+    tests.forEach( function ( test ) {
+        it( 'should handle ' + test.split( '.' )[0], function () {
+            expect( rawcss ).to.not.include.string( rfs( 'unused/' + test ) );
         });
     });
 
