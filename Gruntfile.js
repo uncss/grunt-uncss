@@ -18,14 +18,14 @@ module.exports = function(grunt) {
   // Project configuration.
   grunt.initConfig({
     jshint: {
+      options: {
+        jshintrc: '.jshintrc'
+      },
       all: [
         'Gruntfile.js',
         'tasks/*.js',
         '<%= simplemocha.test.src %>'
-      ],
-      options: {
-        jshintrc: '.jshintrc'
-      }
+      ]
     },
 
     // Before generating any new files, remove any previously-created files.
@@ -73,9 +73,12 @@ module.exports = function(grunt) {
 
     copy: {
       dist: {
-        files: [
-          {expand: true, cwd: 'tests/app/', src: ['img/**', 'js/**', '*.png', '*.xml', '*.txt', '*.ico', '!*.html'], dest: 'dist/'}
-        ]
+        files: [{
+          expand: true,
+          cwd: 'tests/app/',
+          src: ['img/**', 'js/**', '*.png', '*.xml', '*.txt', '*.ico', '!*.html'],
+          dest: 'dist/'
+        }]
       }
     },
 
@@ -88,7 +91,7 @@ module.exports = function(grunt) {
 
     // Unit tests.
     simplemocha: {
-      test:{
+      test: {
         src: 'tests/selectors.js'
       }
     },
