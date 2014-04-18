@@ -199,6 +199,10 @@ Huge thanks go out to Giacomo Martino for his help with the Node module this tas
 * [Automating Front-end Workflow (slides)](https://speakerdeck.com/addyosmani/automating-front-end-workflow)
 * [Automatically removing unused CSS - Windows](http://deanhume.com/Home/BlogPost/automatically-removing-unused-css-using-grunt/6101)
 
+## WordPress
+
+While UnCSS works best (and quickest) with static html files, it is possible to pass in a URL array that contains all the URLs on your website, and process all used selectors that way. [@lgladdy](https://github.com/lgladdy) wrote a guide on how to do this [on his blog](http://www.gladdy.co.uk/blog/2014/04/13/using-uncss-and-grunt-uncss-with-wordpress/)
+
 ## Limitations
 
 Please note that the CSS parser used in the `uncss` module we rely on currently isn't able to work with complex selectors.
