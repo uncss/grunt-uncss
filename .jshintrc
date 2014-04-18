@@ -12,7 +12,6 @@
   "quotmark": "single",
   "strict": true,
   "sub": true,
-  "trailing": true,
   "undef": true,
   "unused": true
 }
