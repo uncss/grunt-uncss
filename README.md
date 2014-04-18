@@ -1,9 +1,9 @@
 # grunt-uncss [![Built with Grunt](https://cdn.gruntjs.com/builtwith.png)](http://gruntjs.com/)
 
-[![NPM version](https://badge.fury.io/js/grunt-uncss.png)](http://badge.fury.io/js/grunt-uncss)
-[![Build Status](https://travis-ci.org/addyosmani/grunt-uncss.png?branch=master)](https://travis-ci.org/addyosmani/grunt-uncss)
-[![Dependency Status](https://david-dm.org/addyosmani/grunt-uncss.png?theme=shields.io)](https://david-dm.org/addyosmani/grunt-uncss)
-[![devDependency Status](https://david-dm.org/addyosmani/grunt-uncss/dev-status.png?theme=shields.io)](https://david-dm.org/addyosmani/grunt-uncss#info=devDependencies)
+[![NPM version](https://badge.fury.io/js/grunt-uncss.svg)](http://badge.fury.io/js/grunt-uncss)
+[![Build Status](https://travis-ci.org/addyosmani/grunt-uncss.svg?branch=master)](https://travis-ci.org/addyosmani/grunt-uncss)
+[![Dependency Status](https://david-dm.org/addyosmani/grunt-uncss.svg?theme=shields.io)](https://david-dm.org/addyosmani/grunt-uncss)
+[![devDependency Status](https://david-dm.org/addyosmani/grunt-uncss/dev-status.svg?theme=shields.io)](https://david-dm.org/addyosmani/grunt-uncss#info=devDependencies)
 
 >A grunt task for removing unused CSS from your projects. Works across multiple files and supports dynamically injected CSS via PhantomJS.
 
