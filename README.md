@@ -17,7 +17,10 @@ Taking a multi-page project using Bootstrap with >120KB of CSS down to 11KB.
 
 This plugin requires Grunt `~0.4.0`
 
-If you haven't used [Grunt](http://gruntjs.com/) before, be sure to check out the [Getting Started](http://gruntjs.com/getting-started) guide, as it explains how to create a [Gruntfile](http://gruntjs.com/sample-gruntfile) as well as install and use Grunt plugins. Once you're familiar with that process, you may install this plugin with this command:
+If you haven't used [Grunt](http://gruntjs.com/) before, be sure to check out the
+[Getting Started](http://gruntjs.com/getting-started) guide, as it explains how to create
+a [Gruntfile](http://gruntjs.com/sample-gruntfile) as well as install and use Grunt plugins.
+Once you're familiar with that process, you may install this plugin with this command:
 
 ```shell
 npm install grunt-uncss --save-dev
@@ -35,11 +38,12 @@ _Run this task with the `grunt uncss` command._
 
 Task targets, files and options may be specified according to the grunt [Configuring tasks](http://gruntjs.com/configuring-tasks) guide.
 
-Remove unused CSS from projects using [uncss](https://github.com/giakki/uncss).
+Remove unused CSS from projects using [UnCSS](https://github.com/giakki/uncss).
 
 ### Usage
 
-Use the `grunt-uncss` task by specifying a target destination (file) for your cleaned CSS. Below this is `dist/css/tidy.css`.
+Use the `grunt-uncss` task by specifying a target destination (file) for your cleaned CSS.
+Below this is `dist/css/tidy.css`.
 
 Along-side, specify the input HTML files you would like scanned for used selectors.
 In this case `app/index.html` and `app/about.html` are the two files we would like checked.
@@ -144,16 +148,12 @@ uncss: {
 // Remove unused CSS across multiple files and ignore specific selectors
 uncss: {
   dist: {
-    files: {
-      'dist/css/tidy.css': ['app/index.html', 'app/about.html']
-      }
-    },
     options: {
       ignore: ['#added_at_runtime', '.created_by_jQuery']
+    },
+    files: {
+      'dist/css/tidy.css': ['app/index.html', 'app/about.html']
     }
-  },
-  options: {
-    ignore: ['#added_at_runtime', '.created_by_jQuery']
   }
 }
 ```
@@ -164,16 +164,17 @@ uncss: {
 There is a test project included under the `tests/app` directory which you can build by running `grunt` after an `npm install`.
 It also includes a `grunt compare_size` task for getting a feel of the before and after CSS sizes:
 
-![](http://i.imgur.com/bUseCPh.png)
+![grunt compare_size](http://i.imgur.com/bUseCPh.png)
 
 
 ## The problem
 
-User-interface libraries like [Bootstrap](http://getbootstrap.com), [TopCoat](http://topcoat.io) and so on are fairly prolific, however many developers
-use less than 10% of the CSS they provide (when opting for the full build, which most do). As a result, they can
-end up with fairly bloated stylesheets which can significantly increase page load time and affect performance.
-`grunt-uncss` is an attempt to help with by generating a CSS file containing only the CSS used in your project,
-based on selector testing.
+User-interface libraries like [Bootstrap](http://getbootstrap.com), [TopCoat](http://topcoat.io)
+and so on are fairly prolific, however many developers use less than 10% of the CSS they provide
+(when opting for the full build, which most do). As a result, they can end up with fairly bloated
+stylesheets which can significantly increase page load time and affect performance.
+`grunt-uncss` is an attempt to help with by generating a CSS file containing only the CSS used
+in your project, based on selector testing.
 
 ## Research and alternative solutions
 
@@ -185,7 +186,7 @@ client-side solutions also crafted, such as [Helium-CSS](https://github.com/geui
 
 Unfortunately, most of these solutions don't actually generate what you're really after - a leaner build
 of your project CSS containing only those rules you used. Finding that a more recent project called
-[uncss](https://github.com/giakki/uncss) did try tackling this, I set out to share some of the problems we
+[UnCSS](https://github.com/giakki/uncss) did try tackling this, I set out to share some of the problems we
 need to solve in this space with the developer and build a Grunt task to enable usage of it in builds more
 easily.
 
@@ -201,7 +202,10 @@ Huge thanks go out to Giacomo Martino for his help with the Node module this tas
 
 ## WordPress
 
-While UnCSS works best (and quickest) with static html files, it is possible to pass in a URL array that contains all the URLs on your website, and process all used selectors that way. [@lgladdy](https://github.com/lgladdy) wrote a guide on how to do this [on his blog](http://www.gladdy.co.uk/blog/2014/04/13/using-uncss-and-grunt-uncss-with-wordpress/)
+While UnCSS works best (and quickest) with static html files, it is possible to pass in
+a URL array that contains all the URLs on your website, and process all used selectors that way.
+[@lgladdy](https://github.com/lgladdy) wrote a guide on how to do this
+[on his blog](http://www.gladdy.co.uk/blog/2014/04/13/using-uncss-and-grunt-uncss-with-wordpress/)
 
 ## Limitations
 

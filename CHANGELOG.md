@@ -1,3 +1,7 @@
+## v0.3.4
+* Update dependencies
+* Update README.md
+
 ## v0.3.3
 * Update "uncss"
 
