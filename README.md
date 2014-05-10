@@ -5,7 +5,7 @@
 [![Dependency Status](https://david-dm.org/addyosmani/grunt-uncss.svg?theme=shields.io)](https://david-dm.org/addyosmani/grunt-uncss)
 [![devDependency Status](https://david-dm.org/addyosmani/grunt-uncss/dev-status.svg?theme=shields.io)](https://david-dm.org/addyosmani/grunt-uncss#info=devDependencies)
 
->A grunt task for removing unused CSS from your projects. Works across multiple files and supports dynamically injected CSS via PhantomJS.
+>A grunt task for removing unused CSS from your projects with [UnCSS](https://github.com/giakki/uncss). Works across multiple files and supports dynamically injected CSS via PhantomJS.
 
 ## Preview
 
@@ -38,7 +38,6 @@ _Run this task with the `grunt uncss` command._
 
 Task targets, files and options may be specified according to the grunt [Configuring tasks](http://gruntjs.com/configuring-tasks) guide.
 
-Remove unused CSS from projects using [UnCSS](https://github.com/giakki/uncss).
 
 ### Usage
 
@@ -199,6 +198,7 @@ Huge thanks go out to Giacomo Martino for his help with the Node module this tas
 * [Use Grunt and UnCSS to speed up the load time of your site](http://xdamman.com/website-optimization-grunt-uncss)
 * [Automating Front-end Workflow (slides)](https://speakerdeck.com/addyosmani/automating-front-end-workflow)
 * [Automatically removing unused CSS - Windows](http://deanhume.com/Home/BlogPost/automatically-removing-unused-css-using-grunt/6101)
+* [Workflow for responsive email with Grunt and UnCSS](https://medium.com/p/32d607879082)
 
 ## WordPress
 
