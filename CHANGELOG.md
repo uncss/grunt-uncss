@@ -1,3 +1,7 @@
+## v0.3.5
+* Lock "uncss" to v0.8.1 due to various issues
+* Update the other dependencies
+
 ## v0.3.4
 * Update dependencies
 * Update README.md
