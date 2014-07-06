@@ -2,8 +2,8 @@
 
 [![NPM version](https://badge.fury.io/js/grunt-uncss.svg)](http://badge.fury.io/js/grunt-uncss)
 [![Build Status](https://travis-ci.org/addyosmani/grunt-uncss.svg?branch=master)](https://travis-ci.org/addyosmani/grunt-uncss)
-[![Dependency Status](https://david-dm.org/addyosmani/grunt-uncss.svg?theme=shields.io)](https://david-dm.org/addyosmani/grunt-uncss)
-[![devDependency Status](https://david-dm.org/addyosmani/grunt-uncss/dev-status.svg?theme=shields.io)](https://david-dm.org/addyosmani/grunt-uncss#info=devDependencies)
+[![Dependency Status](https://david-dm.org/addyosmani/grunt-uncss.svg)](https://david-dm.org/addyosmani/grunt-uncss)
+[![devDependency Status](https://david-dm.org/addyosmani/grunt-uncss/dev-status.svg)](https://david-dm.org/addyosmani/grunt-uncss#info=devDependencies)
 
 >A grunt task for removing unused CSS from your projects with [UnCSS](https://github.com/giakki/uncss). Works across multiple files and supports dynamically injected CSS via PhantomJS.
 
