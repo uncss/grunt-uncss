@@ -165,6 +165,26 @@ It also includes a `grunt compare_size` task for getting a feel of the before an
 
 ![grunt compare_size](http://i.imgur.com/bUseCPh.png)
 
+## Examples
+
+### Sites
+
+* [HTML5Boilerplate.com website](https://github.com/h5bp/html5boilerplate.com)
+* [Mozilla's DXR documentation viewer](https://github.com/mozilla/dxr)
+* [Vanilla forums docs site](https://github.com/vanilla/vanilladocs)
+
+### Apps
+
+* [GitHub Team Viewer - Angular app](https://github.com/vinitkumar/github-team-viewer)
+* [Angular Todo application](https://github.com/JeremyCarlsten/grunt-uncss-angular-example)
+* [CashSplitter - Angular app with PouchDB, Bootstrap](https://github.com/carlo-colombo/CashSplitter)
+* [This Week's Comics Express app](https://github.com/WillsonSmith/thisWeeksComics)
+* [Sample grunt-uncss in a Sass project](https://github.com/addyosmani/grunt-uncss-sass-example)
+
+### Other
+
+* [Using grunt-uncss with Wordpress](https://github.com/sboodhoo/Grunt-UnCSS-WordPress)
+* [JSON Sitemap generator for grunt-uncss](https://github.com/phoenixMag00/JSON-Sitemap-Generator-for-Grunt-UnCSS-with-WordPress)
 
 ## The problem
 
