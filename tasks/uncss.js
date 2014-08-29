@@ -19,6 +19,8 @@ module.exports = function ( grunt ) {
             options = this.options({
                 report: 'min'
             });
+            
+        options.urls = options.urls || [];
 
         this.files.forEach(function ( f ) {
             var src = f.src.filter(function ( filepath ) {
@@ -28,6 +30,13 @@ module.exports = function ( grunt ) {
                     return false;
                 } else {
                     return true;
+                }
+            });
+            
+            f.orig.src.forEach(function (source) {
+                if (/^https?/.test(source)) {
+                    src.push(source);
+                    options.urls.push(source);
                 }
             });
 
