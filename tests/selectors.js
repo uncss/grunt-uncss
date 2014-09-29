@@ -1,4 +1,4 @@
-/* global describe, it, before */
+/* jshint mocha:true */
 'use strict';
 
 var expect = require( 'chai' ).expect,
