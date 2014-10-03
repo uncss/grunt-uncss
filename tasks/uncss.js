@@ -3,7 +3,7 @@
  * https://github.com/addyosmani/grunt-uncss
  *
  * Copyright (c) 2014 Addy Osmani
- * Licensed under the MIT license. 
+ * Licensed under the MIT license.
  */
 
 'use strict';
@@ -19,7 +19,7 @@ module.exports = function ( grunt ) {
             options = this.options({
                 report: 'min'
             });
-            
+
         options.urls = options.urls || [];
 
         this.files.forEach(function ( f ) {
@@ -32,7 +32,7 @@ module.exports = function ( grunt ) {
                     return true;
                 }
             });
-            
+
             f.orig.src.forEach(function (source) {
                 if (/^https?/.test(source)) {
                     src.push(source);
