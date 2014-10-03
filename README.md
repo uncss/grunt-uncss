@@ -242,6 +242,11 @@ to a separate stylesheet which the task does not run on.
 
 We are actively looking at how to improve the CSS parsers used and will update this notice once this problem has been solved.
 
+## Maintainers
+
+* [@addyosmani](http://github.com/addyosmani)
+* [@XhmikosR](http://github.com/XhmikosR)
+
 ## License
 
 (C) Addy Osmani 2014, released under the MIT license
