@@ -26,12 +26,16 @@ module.exports = function ( grunt ) {
             var src = f.src.filter(function ( filepath ) {
                 // Warn on and remove invalid source files (if nonull was set).
                 if ( !grunt.file.exists( filepath ) ) {
-                    grunt.log.warn( 'Source file "' + filepath + '" not found.' );
+                    grunt.log.warn( 'Source file ' + chalk.cyan( filepath ) + ' not found.' );
                     return false;
                 } else {
                     return true;
                 }
             });
+
+            if ( src.length === 0 ) {
+                grunt.fail.warn( 'Destination (' + f.dest + ') not written because src files were empty.' );
+            }
 
             f.orig.src.forEach(function (source) {
                 if (/^https?/.test(source)) {
@@ -39,11 +43,6 @@ module.exports = function ( grunt ) {
                     options.urls.push(source);
                 }
             });
-
-            if ( src.length === 0 ) {
-                grunt.log.warn( 'Destination (' + f.dest + ') not written because src files were empty.' );
-                return;
-            }
 
             try {
                 uncss( src, options, function ( error, output, report ) {
