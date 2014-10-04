@@ -233,6 +233,10 @@ a URL array that contains all the URLs on your website, and process all used sel
 
 At present we have decided to lock grunt-uncss into [UnCSS 0.8.1](https://github.com/giakki/uncss/). This is the most recent version we consider stable for production use. We will be reviewing future UnCSS releases and deciding to upgrade when we feel sufficient stability is back.
 
+## Yeoman Generator
+
+If you're looking for a webapp starting point with grunt-uncss integrated, see [generator-webapp-uncss](https://github.com/addyosmani/generator-webapp-uncss).
+
 ## Limitations
 
 Please note that the CSS parser used in the `uncss` module we rely on currently isn't able to work with complex selectors.
