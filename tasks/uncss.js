@@ -33,7 +33,7 @@ module.exports = function ( grunt ) {
                 }
             });
 
-            if ( src.length === 0 ) {
+            if ( src.length === 0 && f.orig.src.length === 0 ) {
                 grunt.fail.warn( 'Destination (' + f.dest + ') not written because src files were empty.' );
             }
 
