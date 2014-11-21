@@ -57,7 +57,8 @@ uncss: {
 }
 ```
 
-Which you can then use alongside a processor like `processhtml` to
+Which you can then use alongside a processor like 
+[`processhtml`](https://github.com/dciccale/grunt-processhtml) to
 rewrite the location of your stylesheet to `tidy.css` using a block
 like:
 
