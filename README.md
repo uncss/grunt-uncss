@@ -2,6 +2,7 @@
 
 [![NPM version](https://badge.fury.io/js/grunt-uncss.svg)](http://badge.fury.io/js/grunt-uncss)
 [![Build Status](https://travis-ci.org/addyosmani/grunt-uncss.svg?branch=master)](https://travis-ci.org/addyosmani/grunt-uncss)
+[![Windows Build status](https://ci.appveyor.com/api/projects/status/j9fvs0ch261y556q/branch/master?svg=true)](https://ci.appveyor.com/project/addyosmani/grunt-uncss/branch/master)
 [![Dependency Status](https://david-dm.org/addyosmani/grunt-uncss.svg)](https://david-dm.org/addyosmani/grunt-uncss)
 [![devDependency Status](https://david-dm.org/addyosmani/grunt-uncss/dev-status.svg)](https://david-dm.org/addyosmani/grunt-uncss#info=devDependencies)
 
