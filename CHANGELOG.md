@@ -1,3 +1,7 @@
+## v0.3.8
+* Update devDependencies
+* Fail when no files and URLs are defined
+
 ## v0.3.7
 * Update all dependencies except for "uncss"
 * Remove the unused "underscore" dependency
