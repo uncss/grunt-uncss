@@ -198,7 +198,7 @@ in your project, based on selector testing.
 ## Research and alternative solutions
 
 There have been many efforts to try solving the problem of finding unused CSS in the past. Opera created
-[ucss](https://github.com/operasoftware/ucss), @aanand created (https://github.com/aanand/deadweight),
+[ucss](https://github.com/operasoftware/ucss), @aanand created <https://github.com/aanand/deadweight>,
 Brian Le Roux [CSS Slap Chop](https://github.com/brianleroux/css-slap-chop) and there were a number of
 client-side solutions also crafted, such as [Helium-CSS](https://github.com/geuis/helium-css),
 [CSSESS](https://github.com/driverdan/cssess) and the Python [mincss](http://www.peterbe.com/plog/mincss).
@@ -248,8 +248,8 @@ We are actively looking at how to improve the CSS parsers used and will update t
 
 ## Maintainers
 
-* [@addyosmani](http://github.com/addyosmani)
-* [@XhmikosR](http://github.com/XhmikosR)
+* [@addyosmani](https://github.com/addyosmani)
+* [@XhmikosR](https://github.com/XhmikosR)
 
 ## License
 
