@@ -3,7 +3,11 @@
   "description": "A grunt task for generating CSS files containing only those styles used in your project.",
   "version": "0.3.8",
   "homepage": "https://github.com/addyosmani/grunt-uncss",
-  "author": "Addy Osmani <addyosmani@gmail.com>",
+  "author": "Addy Osmani <addyosmani@gmail.com> (http://addyosmani.com)",
+  "maintainers": [
+    "Addy Osmani <addyosmani@gmail.com> (http://addyosmani.com)",
+    "XhmikosR <xhmikosr@gmail.com> (https://github.com/XhmikosR)"
+  ],
   "repository": {
     "type": "git",
     "url": "https://github.com/addyosmani/grunt-uncss.git"
