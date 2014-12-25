@@ -1,10 +1,10 @@
 # grunt-uncss [![Built with Grunt](https://cdn.gruntjs.com/builtwith.png)](http://gruntjs.com/)
 
-[![NPM version](https://badge.fury.io/js/grunt-uncss.svg)](http://badge.fury.io/js/grunt-uncss)
-[![Build Status](https://travis-ci.org/addyosmani/grunt-uncss.svg?branch=master)](https://travis-ci.org/addyosmani/grunt-uncss)
-[![Windows Build status](https://ci.appveyor.com/api/projects/status/j9fvs0ch261y556q/branch/master?svg=true)](https://ci.appveyor.com/project/addyosmani/grunt-uncss/branch/master)
-[![Dependency Status](https://david-dm.org/addyosmani/grunt-uncss.svg)](https://david-dm.org/addyosmani/grunt-uncss)
-[![devDependency Status](https://david-dm.org/addyosmani/grunt-uncss/dev-status.svg)](https://david-dm.org/addyosmani/grunt-uncss#info=devDependencies)
+[![NPM version](https://img.shields.io/npm/v/grunt-uncss.svg?style=flat)](https://www.npmjs.com/package/grunt-uncss)
+[![Build Status](https://img.shields.io/travis/addyosmani/grunt-uncss.svg?style=flat)](https://travis-ci.org/addyosmani/grunt-uncss)
+[![Windows Build status](https://img.shields.io/appveyor/ci/addyosmani/grunt-uncss/master.svg?style=flat)](https://ci.appveyor.com/project/addyosmani/grunt-uncss/branch/master)
+[![Dependency Status](https://img.shields.io/david/addyosmani/grunt-uncss.svg?style=flat)](https://david-dm.org/addyosmani/grunt-uncss)
+[![devDependency Status](https://img.shields.io/david/dev/addyosmani/grunt-uncss.svg?style=flat)](https://david-dm.org/addyosmani/grunt-uncss#info=devDependencies)
 
 >A grunt task for removing unused CSS from your projects with [UnCSS](https://github.com/giakki/uncss). Works across multiple files and supports dynamically injected CSS via PhantomJS.
 
