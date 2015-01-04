@@ -1,8 +1,8 @@
 # grunt-uncss [![Built with Grunt](https://cdn.gruntjs.com/builtwith.png)](http://gruntjs.com/)
 
 [![NPM version](https://img.shields.io/npm/v/grunt-uncss.svg?style=flat)](https://www.npmjs.com/package/grunt-uncss)
-[![Build Status](https://img.shields.io/travis/addyosmani/grunt-uncss.svg?style=flat)](https://travis-ci.org/addyosmani/grunt-uncss)
-[![Windows Build status](https://img.shields.io/appveyor/ci/addyosmani/grunt-uncss/master.svg?style=flat)](https://ci.appveyor.com/project/addyosmani/grunt-uncss/branch/master)
+[![Linux Build Status](https://img.shields.io/travis/addyosmani/grunt-uncss/master.svg?style=flat&label=Linux%20build)](https://travis-ci.org/addyosmani/grunt-uncss)
+[![Windows Build status](https://img.shields.io/appveyor/ci/addyosmani/grunt-uncss/master.svg?style=flat&label=Windows%20build)](https://ci.appveyor.com/project/addyosmani/grunt-uncss/branch/master)
 [![Dependency Status](https://img.shields.io/david/addyosmani/grunt-uncss.svg?style=flat)](https://david-dm.org/addyosmani/grunt-uncss)
 [![devDependency Status](https://img.shields.io/david/dev/addyosmani/grunt-uncss.svg?style=flat)](https://david-dm.org/addyosmani/grunt-uncss#info=devDependencies)
 
@@ -158,7 +158,6 @@ uncss: {
 }
 ```
 
-
 ### Test project
 
 There is a test project included under the `tests/app` directory which you can build by running `grunt` after an `npm install`.
@@ -211,7 +210,6 @@ need to solve in this space with the developer and build a Grunt task to enable 
 easily.
 
 Huge thanks go out to Giacomo Martino for his help with the Node module this task uses.
-
 
 ## Coverage
 
