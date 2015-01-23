@@ -8,12 +8,6 @@
 
 >A grunt task for removing unused CSS from your projects with [UnCSS](https://github.com/giakki/uncss). Works across multiple files and supports dynamically injected CSS via PhantomJS.
 
-## Preview
-
-Taking a multi-page project using Bootstrap with >120KB of CSS down to 11KB.
-
-![Demo](http://i.imgur.com/uhWMALH.gif)
-
 ## Getting Started
 
 This plugin requires Grunt `~0.4.0`
@@ -33,14 +27,31 @@ Once the plugin has been installed, it may be enabled inside your Gruntfile with
 grunt.loadNpmTasks('grunt-uncss');
 ```
 
+## Preview
+
+Taking a multi-page project using Bootstrap with >120KB of CSS down to 11KB.
+
+![Demo](http://i.imgur.com/uhWMALH.gif)
+
 ## Uncss task
 
 _Run this task with the `grunt uncss` command._
 
 Task targets, files and options may be specified according to the grunt [Configuring tasks](http://gruntjs.com/configuring-tasks) guide.
 
+## Options
 
-### Usage
+Options are passed to [UnCSS](https://github.com/giakki/uncss#within-nodejs). In addition this task defines an extra option:
+
+### report
+
+Choices: `'min'`, `'gzip'`  
+Default: `'min'`
+
+Report minification result or both minification and gzip results.
+This is useful to see exactly how well clean-css is performing but using `'gzip'` will make the task take 5-10x longer to complete. [Example output](https://github.com/sindresorhus/maxmin#readme).
+
+## Usage examples
 
 Use the `grunt-uncss` task by specifying a target destination (file) for your cleaned CSS.
 Below this is `dist/css/tidy.css`.
@@ -82,56 +93,6 @@ processhtml: {
   }
 }
 ```
-
-## Options
-
-Sample use of all supported options:
-
-```js
-uncss: {
-  dist: {
-    options: {
-      ignore       : ['#added_at_runtime', /test\-[0-9]+/],
-      media        : ['(min-width: 700px) handheld and (orientation: landscape)'],
-      csspath      : '../public/css/',
-      raw          : 'h1 { color: green }',
-      stylesheets  : ['lib/bootstrap/dist/css/bootstrap.css', 'src/public/css/main.css'],
-      ignoreSheets : [/fonts.googleapis/],
-      urls         : ['http://localhost:3000/mypage', '...'], // Deprecated
-      timeout      : 1000,
-      htmlroot     : 'public',
-      report       : 'min'
-    },
-    files: {
-      'dist/css/tidy.css': ['app/index.html', 'app/about.html']
-    }
-  }
-}
-```
-
-### What do the options do?
-
-- **ignore** (Array): provide a list of selectors that should not be removed by UnCSS. For example, styles added by user interaction with the page (`hover`, `click`), since those are not detectable by UnCSS yet. Both literal names and regex patterns are recognized.
-
-- **media** (Array): by default UnCSS processes only stylesheets with media query "_all_", "_screen_", and those without one. Specify here which others to include.
-
-- **csspath** (String): path where the CSS files are related to the html files. By default, UnCSS uses the path specified in the `<link rel="stylesheet" href="path/to/file.css">`.
-
-- **raw** (String): give the task a raw string of CSS in addition to the existing stylesheet options; useful in scripting when your CSS hasn't yet been written to disk.
-
-- **stylesheets** (Array): use these stylesheets instead of those extracted from the html files.
-
-- **ignoreSheets** (Array):  Do not include the specified stylesheets.
-
-- **urls** (Array): array of URLs to load with Phantom (on top of the files already passed if any).
-
-- **timeout** (Number): specify how long to wait for the JS to be loaded.
-
-- **htmlroot** (String): where the project root is. Useful for example if you are running UnCSS on _local_ files that have absolute href to the stylesheets, i.e. `href="/css/style.css"`.
-
-- **report** ('min'/'gzip'): specify whether to print out only the minification result or report minification and gzip results, using [maxmin](https://github.com/sindresorhus/maxmin).
-
-### Usage examples
 
 ```js
 // Remove unused CSS across multiple files
