@@ -213,4 +213,4 @@ We are actively looking at how to improve the CSS parsers used and will update t
 
 ## License
 
-(C) Addy Osmani 2014, released under the MIT license
+(C) Addy Osmani 2015, released under the MIT license
