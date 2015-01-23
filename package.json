@@ -41,7 +41,7 @@
   "dependencies": {
     "chalk": "~0.5.1",
     "maxmin": "~1.0.0",
-    "uncss": "0.8.1"
+    "uncss": "~0.12.0"
   },
   "devDependencies": {
     "chai": "~1.10.0",
