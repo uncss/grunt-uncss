@@ -1,3 +1,7 @@
+## v0.4.0
+* Update devDependencies including uncss to v0.12.0
+* Add Windows testing via AppVeyor
+
 ## v0.3.8
 * Update devDependencies
 * Fail when no files and URLs are defined

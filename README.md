@@ -41,7 +41,7 @@ Task targets, files and options may be specified according to the grunt [Configu
 
 ## Options
 
-Options are passed to [UnCSS](https://github.com/giakki/uncss#within-nodejs). In addition this task defines an extra option:
+Options are passed to [UnCSS](https://github.com/giakki/uncss/blob/0.12.0/README.md#within-node). In addition this task defines an extra option:
 
 ### report
 
