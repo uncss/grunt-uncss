@@ -8,7 +8,8 @@ init:
 environment:
   matrix:
     - nodejs_version: 0.10
-    - nodejs_version: 0.11
+    - nodejs_version: 0.12
+    - nodejs_version: 1.0
 
 install:
   - ps: Install-Product node $env:nodejs_version
@@ -23,8 +24,6 @@ test_script:
 
 matrix:
   fast_finish: true
-  allow_failures:
-    - nodejs_version: 0.11
 
 cache:
   - C:\Users\appveyor\AppData\Roaming\npm\node_modules  # global npm modules
