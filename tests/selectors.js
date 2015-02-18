@@ -49,8 +49,16 @@ describe( 'uncss', function () {
         expect( rawcss ).to.have.length.above( 0 );
     });
 
-    /* We're testing that the CSS is stripped out from the result, not that the result contains
-       the CSS in the unused folder. */
+    it( 'should read .uncssrc files', function () {
+        uncss( rfs('index.html'), { uncssrc: path.normalize('tests/.uncssrc') }, function ( err, res, report ) {
+            expect( err ).to.equal( null );
+            expect( res ).to.equal( rawcss );
+            expect( report.original ).not.to.equal( null );
+        } );
+    });
+
+    /* We're testing that the CSS is stripped out from the result,
+       not that the result contains the CSS in the unused folder. */
     tests.forEach( function ( test ) {
         it( 'should handle ' + test.split( '.' )[0], function () {
             expect( rawcss ).to.not.include.string( rfs( 'unused/' + test ) );
