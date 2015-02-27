@@ -27,6 +27,8 @@ Once the plugin has been installed, it may be enabled inside your Gruntfile with
 grunt.loadNpmTasks('grunt-uncss');
 ```
 
+**Issues with the output should be reported on the UnCSS [issue tracker](https://github.com/giakki/uncss/issues).**
+
 ## Preview
 
 Taking a multi-page project using Bootstrap with >120KB of CSS down to 11KB.
@@ -35,13 +37,13 @@ Taking a multi-page project using Bootstrap with >120KB of CSS down to 11KB.
 
 ## Uncss task
 
-_Run this task with the `grunt uncss` command._
+*Run this task with the `grunt uncss` command.*
 
 Task targets, files and options may be specified according to the grunt [Configuring tasks](http://gruntjs.com/configuring-tasks) guide.
 
 ## Options
 
-Options are passed to [UnCSS](https://github.com/giakki/uncss/blob/0.12.0/README.md#within-node). In addition this task defines an extra option:
+Options are passed to [UnCSS](https://github.com/giakki/uncss/blob/0.12.0/README.md#within-nodejs). In addition this task defines an extra option:
 
 ### report
 
