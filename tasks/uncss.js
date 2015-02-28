@@ -33,16 +33,16 @@ module.exports = function ( grunt ) {
                 }
             });
 
-            if ( src.length === 0 && f.orig.src.length === 0 ) {
-                grunt.fail.warn( 'Destination (' + f.dest + ') not written because src files were empty.' );
-            }
-
             f.orig.src.forEach(function (source) {
                 if (/^https?/.test(source)) {
                     src.push(source);
                     options.urls.push(source);
                 }
             });
+
+            if ( src.length === 0 ) {
+                grunt.fail.warn( 'Destination (' + f.dest + ') not written because src files were empty.' );
+            }
 
             try {
                 uncss( src, options, function ( error, output, report ) {
