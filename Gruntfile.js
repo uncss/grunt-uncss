@@ -2,7 +2,7 @@
  * grunt-uncss
  * https://github.com/addyosmani/grunt-uncss
  *
- * Copyright (c) 2014 Addy Osmani
+ * Copyright (c) 2015 Addy Osmani
  * Licensed under the MIT license.
  */
 
@@ -40,7 +40,7 @@ module.exports = function(grunt) {
       },
       test: {
         files: {
-          'tests/output.css': ['tests/index.html']
+          'tests/output.css': 'tests/index.html'
         },
         options: {
           report: 'gzip'
@@ -48,7 +48,7 @@ module.exports = function(grunt) {
       },
       testUncssrc: {
         files: {
-          'tests/output.css': ['tests/index.html']
+          'tests/output.css': 'tests/index.html'
         },
         options: {
           uncssrc: 'tests/.uncssrc'
@@ -59,9 +59,9 @@ module.exports = function(grunt) {
     processhtml: {
       dist: {
         files: {
-          'dist/about.html': ['tests/app/about.html'],
-          'dist/contact.html': ['tests/app/contact.html'],
-          'dist/index.html': ['tests/app/index.html']
+          'dist/about.html': 'tests/app/about.html',
+          'dist/contact.html': 'tests/app/contact.html',
+          'dist/index.html': 'tests/app/index.html'
         }
       }
     },
@@ -70,11 +70,10 @@ module.exports = function(grunt) {
       dist: {
         options: {
           compatibility: 'ie8',
-          keepSpecialComments: 0,
-          report: 'min'
+          keepSpecialComments: 0
         },
         files: {
-          'dist/css/other.css': '<%= uncss.dist.dest %>'
+          '<%= uncss.dist.dest %>': '<%= uncss.dist.dest %>'
         }
       }
     },
