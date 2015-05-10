@@ -41,7 +41,7 @@
     "uncss": "~0.12.1"
   },
   "devDependencies": {
-    "chai": "~2.2.0",
+    "chai": "^2.3.0",
     "grunt": "~0.4.5",
     "grunt-compare-size": "~0.4.0",
     "grunt-contrib-clean": "~0.6.0",
@@ -54,7 +54,7 @@
     "grunt-simple-mocha": "~0.4.0",
     "load-grunt-tasks": "~3.1.0",
     "mocha": "~2.2.4",
-    "time-grunt": "~1.1.1"
+    "time-grunt": "^1.2.0"
   },
   "peerDependencies": {
     "grunt": ">=0.4.0"
