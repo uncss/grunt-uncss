@@ -52,7 +52,9 @@ module.exports = function ( grunt ) {
 
                     grunt.file.write( file.dest, output );
                     grunt.log.writeln('File ' + chalk.cyan( file.dest ) + ' created: ' + maxmin( report.original, output, options.report === 'gzip' ) );
-
+                    if (typeof(options.reportFile) !== 'undefined' && options.reportFile.length > 0) {
+                        grunt.file.write(options.reportFile, JSON.stringify(report));
+                    }
                     done();
                 });
             } catch ( e ) {
