@@ -47,13 +47,13 @@
     "grunt-contrib-clean": "~0.6.0",
     "grunt-contrib-connect": "~0.11.2",
     "grunt-contrib-copy": "~0.8.0",
-    "grunt-contrib-cssmin": "~0.13.0",
+    "grunt-contrib-cssmin": "~0.14.0",
     "grunt-contrib-jshint": "~0.11.2",
     "grunt-contrib-watch": "~0.6.1",
     "grunt-processhtml": "~0.3.8",
     "grunt-simple-mocha": "~0.4.0",
     "load-grunt-tasks": "~3.2.0",
-    "mocha": "~2.2.5",
+    "mocha": "~2.3.2",
     "time-grunt": "~1.2.1"
   },
   "peerDependencies": {
