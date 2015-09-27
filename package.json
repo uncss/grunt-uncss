@@ -38,7 +38,7 @@
     "uncss": "~0.12.1"
   },
   "devDependencies": {
-    "chai": "~3.2.0",
+    "chai": "~3.3.0",
     "grunt": "~0.4.5",
     "grunt-compare-size": "~0.4.0",
     "grunt-contrib-clean": "~0.6.0",
@@ -49,7 +49,7 @@
     "grunt-contrib-watch": "~0.6.1",
     "grunt-processhtml": "~0.3.8",
     "grunt-simple-mocha": "~0.4.0",
-    "load-grunt-tasks": "~3.2.0",
+    "load-grunt-tasks": "~3.3.0",
     "mocha": "~2.3.2",
     "time-grunt": "~1.2.1"
   },
