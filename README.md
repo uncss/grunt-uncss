@@ -134,7 +134,7 @@ It also includes a `grunt compare_size` task for getting a feel of the before an
 
 * [HTML5Boilerplate.com website](https://github.com/h5bp/html5boilerplate.com)
 * [Mozilla's DXR documentation viewer](https://github.com/mozilla/dxr)
-* [Vanilla forums docs site](https://github.com/vanilla/vanilladocs)
+* [Vanilla forums docs site](https://github.com/vanilla/vanilla-docs)
 
 ### Apps
 
@@ -161,7 +161,7 @@ in your project, based on selector testing.
 ## Research and alternative solutions
 
 There have been many efforts to try solving the problem of finding unused CSS in the past. Opera created
-[ucss](https://github.com/operasoftware/ucss), @aanand created <https://github.com/aanand/deadweight>,
+[ucss](https://github.com/oyvindeh/ucss), @aanand created <https://github.com/aanand/deadweight>,
 Brian Le Roux [CSS Slap Chop](https://github.com/brianleroux/css-slap-chop) and there were a number of
 client-side solutions also crafted, such as [Helium-CSS](https://github.com/geuis/helium-css),
 [CSSESS](https://github.com/driverdan/cssess) and the Python [mincss](http://www.peterbe.com/plog/mincss).
@@ -177,9 +177,9 @@ Huge thanks go out to Giacomo Martino for his help with the Node module this tas
 ## Coverage
 
 * [Spring-cleaning unused CSS with Grunt, Gulp & other build systems](http://addyosmani.com/blog/removing-unused-css/)
-* [Automating the removal of unused CSS - VelocityConf](http://www.youtube.com/watch?v=833xr1MyE30)
+* [Automating the removal of unused CSS - VelocityConf](https://www.youtube.com/watch?v=833xr1MyE30)
 * [Use Grunt and UnCSS to speed up the load time of your site](http://xdamman.com/website-optimization-grunt-uncss)
-* [Foundation 5, Sass and Grunt UnCSS](http://corydowdy.com/blog/foundation-5-sass-and-grunt-uncss)
+* [Foundation 5, Sass and Grunt UnCSS](https://corydowdy.com/blog/foundation-5-sass-and-grunt-uncss)
 * [Automating Front-end Workflow (slides)](https://speakerdeck.com/addyosmani/automating-front-end-workflow)
 * [Automatically removing unused CSS - Windows](http://deanhume.com/Home/BlogPost/automatically-removing-unused-css-using-grunt/6101)
 * [Workflow for responsive email with Grunt and UnCSS](https://medium.com/p/32d607879082)
@@ -189,7 +189,7 @@ Huge thanks go out to Giacomo Martino for his help with the Node module this tas
 While UnCSS works best (and quickest) with static html files, it is possible to pass in
 a URL array that contains all the URLs on your website, and process all used selectors that way.
 [@lgladdy](https://github.com/lgladdy) wrote a guide on how to do this
-[on his blog](http://www.gladdy.co.uk/blog/2014/04/13/using-uncss-and-grunt-uncss-with-wordpress/)
+[on his blog](https://gladdy.uk/blog/2014/04/13/using-uncss-and-grunt-uncss-with-wordpress/)
 
 ## Yeoman Generator
 
