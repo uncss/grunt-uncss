@@ -46,6 +46,15 @@ module.exports = function(grunt) {
           report: 'gzip'
         }
       },
+      testMany: {
+        files: {
+          'tests/output.css': 'tests/index.html',
+          'tests/output2.css': 'tests/index2.html',
+        },
+        options: {
+          report: 'gzip'
+        }
+      },
       testUncssrc: {
         files: {
           'tests/output.css': 'tests/index.html'
@@ -125,6 +134,7 @@ module.exports = function(grunt) {
   grunt.registerTask('test', [
     'jshint',
     'uncss:test',
+    'uncss:testMany',
     'uncss:testUncssrc',
     'simplemocha'
   ]);

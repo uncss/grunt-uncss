@@ -33,6 +33,7 @@
     "test": "grunt test"
   },
   "dependencies": {
+    "async": "^1.5.0",
     "chalk": "~1.1.0",
     "maxmin": "~1.1.0",
     "uncss": "~0.12.1"

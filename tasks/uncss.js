@@ -9,7 +9,8 @@
 'use strict';
 var uncss  = require( 'uncss' ),
     chalk  = require( 'chalk' ),
-    maxmin = require( 'maxmin' );
+    maxmin = require( 'maxmin' ),
+    async = require( 'async' );
 
 module.exports = function ( grunt ) {
     grunt.registerMultiTask( 'uncss', 'Remove unused CSS', function () {
@@ -21,7 +22,7 @@ module.exports = function ( grunt ) {
 
         options.urls = options.urls || [];
 
-        this.files.forEach(function ( file ) {
+        function processFile ( file, done ) {
 
             var src = file.src.filter(function ( filepath ) {
                 // Warn on and remove invalid source files (if nonull was set).
@@ -67,7 +68,15 @@ module.exports = function ( grunt ) {
                 grunt.fail.warn( err );
             }
 
-        });
+        }
+        
+        if (this.files.length === 1) {
+            processFile( this.files[0], done );
+        } else {
+            // Processing multiple files must be done sequentially
+            // until https://github.com/giakki/uncss/issues/136 is resolved.
+            async.eachSeries( this.files, processFile, done );
+        }
 
     });
 
