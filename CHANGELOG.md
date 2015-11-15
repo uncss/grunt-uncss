@@ -1,3 +1,7 @@
+## v0.5.0
+* Update devDependencies
+* Drop Node.js 0.10 support
+
 ## v0.4.0
 * Update devDependencies including uncss to v0.12.0
 * Add Windows testing via AppVeyor
