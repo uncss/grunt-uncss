@@ -47,7 +47,7 @@ Options are passed to [UnCSS](https://github.com/giakki/uncss/blob/0.12.0/README
 
 ### report
 
-Choices: `'min'`, `'gzip'`  
+Choices: `'min'`, `'gzip'`
 Default: `'min'`
 
 Report minification result or both minification and gzip results.
@@ -211,4 +211,4 @@ We are actively looking at how to improve the CSS parsers used and will update t
 
 ## License
 
-(C) Addy Osmani 2015, released under the MIT license
+(C) Addy Osmani 2016, released under the MIT license
