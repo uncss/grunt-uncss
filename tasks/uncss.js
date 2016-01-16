@@ -2,7 +2,7 @@
  * grunt-uncss
  * https://github.com/addyosmani/grunt-uncss
  *
- * Copyright (c) 2015 Addy Osmani
+ * Copyright (c) 2016 Addy Osmani
  * Licensed under the MIT license.
  */
 
