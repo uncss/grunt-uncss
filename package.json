@@ -36,10 +36,10 @@
     "async": "~1.5.0",
     "chalk": "~1.1.0",
     "maxmin": "~2.1.0",
-    "uncss": "~0.12.1"
+    "uncss": "~0.13.0"
   },
   "devDependencies": {
-    "chai": "~3.4.1",
+    "chai": "~3.5.0",
     "grunt": "~0.4.5",
     "grunt-compare-size": "~0.4.0",
     "grunt-contrib-clean": "~0.7.0",
@@ -51,7 +51,7 @@
     "grunt-processhtml": "~0.3.8",
     "grunt-simple-mocha": "~0.4.0",
     "load-grunt-tasks": "~3.4.0",
-    "mocha": "~2.3.2",
+    "mocha": "~2.4.2",
     "time-grunt": "~1.3.0"
   },
   "peerDependencies": {
