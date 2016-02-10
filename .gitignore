@@ -1,7 +1,8 @@
-node_modules
-npm-debug.log
-tmp
+dist/
+node_modules/
+tmp/
 .DS_Store
-dist
 .sizecache
+npm-debug.log
 tests/output.css
+tests/output2.css
