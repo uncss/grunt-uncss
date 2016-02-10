@@ -69,7 +69,7 @@ module.exports = function ( grunt ) {
             }
 
         }
-        
+
         if (this.files.length === 1) {
             processFile( this.files[0], done );
         } else {
