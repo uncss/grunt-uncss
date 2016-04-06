@@ -98,13 +98,6 @@ module.exports = function(grunt) {
       }
     },
 
-    compare_size: {
-      files: [
-        'tests/app/css/**',
-        'dist/css/**'
-      ]
-    },
-
     // Unit tests.
     simplemocha: {
       test: {
@@ -151,8 +144,7 @@ module.exports = function(grunt) {
     'copy',
     'uncss:dist',
     'cssmin',
-    'processhtml',
-    'compare_size'
+    'processhtml'
   ]);
 
 };
