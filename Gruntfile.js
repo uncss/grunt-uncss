@@ -62,6 +62,11 @@ module.exports = function(grunt) {
         options: {
           uncssrc: 'tests/.uncssrc'
         }
+      },
+      testUrl: {
+        files: {
+          'tests/outputUrl.css': 'http://getbootstrap.com/examples/jumbotron/'
+        },
       }
     },
 
@@ -129,6 +134,7 @@ module.exports = function(grunt) {
     'uncss:test',
     'uncss:testMany',
     'uncss:testUncssrc',
+    'uncss:testUrl',
     'simplemocha'
   ]);
 

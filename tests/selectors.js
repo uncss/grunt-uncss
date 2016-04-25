@@ -12,6 +12,7 @@ var rfs = function ( file ) {
 };
 
 var rawcss = rfs( 'output.css' ),
+    urlcss = rfs( 'outputUrl.css' ),
     tests  = fs.readdirSync( path.join( __dirname, 'fixtures/' ) ),
     input  = '';
 
@@ -43,6 +44,7 @@ describe( 'uncss', function () {
 
     it( 'should output something' , function () {
         expect( rawcss ).not.to.equal( false );
+        expect( urlcss ).not.to.equal( false );
     });
 
     it( 'should not be an empty string' , function () {
