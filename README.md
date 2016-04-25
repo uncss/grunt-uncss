@@ -119,6 +119,17 @@ uncss: {
 }
 ```
 
+```js
+// Remove unused CSS from URLs (php, node, etc.)
+uncss: {
+  dist: {
+    files: {
+      'dist/css/tidy.css': ['http://localhost:8080']
+    }
+  }
+}
+```
+
 ### Test project
 
 There is a test project included under the `tests/app` directory which you can build by running `grunt` after an `npm install`.
