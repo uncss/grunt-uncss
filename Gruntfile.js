@@ -64,9 +64,11 @@ module.exports = function(grunt) {
         }
       },
       testUrl: {
-        files: {
-          'tests/outputUrl.css': 'http://getbootstrap.com/examples/jumbotron/'
-        },
+        files: [{
+          nonull: true,
+          src: ['http://getbootstrap.com/examples/jumbotron/'],
+          dest: 'tests/outputUrl.css'
+        }]
       }
     },
 
