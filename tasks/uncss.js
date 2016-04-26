@@ -20,24 +20,19 @@ module.exports = function ( grunt ) {
                 report: 'min'
             });
 
-        options.urls = options.urls || [];
-
         function processFile ( file, done ) {
 
             var src = file.src.filter(function ( filepath ) {
-                // Warn on and remove invalid source files (if nonull was set).
-                if ( !grunt.file.exists( filepath ) ) {
+                if (/^https?:\/\//.test(filepath)) {
+                    // This is a remote file: leave it in src array for uncss to handle.
+                    return true;
+                }
+                else if ( !grunt.file.exists( filepath ) ) {
+                    // Warn on and remove invalid local source files (if nonull was set).
                     grunt.log.warn( 'Source file ' + chalk.cyan( filepath ) + ' not found.' );
                     return false;
                 } else {
                     return true;
-                }
-            });
-
-            file.orig.src.forEach(function (source) {
-                if (/^https?/.test(source)) {
-                    src.push(source);
-                    options.urls.push(source);
                 }
             });
 
