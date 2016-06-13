@@ -119,6 +119,22 @@ uncss: {
 }
 ```
 
+```js
+// Remove unused CSS from URLs (php, node, etc.)
+// (Note that nonull must be true, or else Grunt removes remote paths that it can't find locally)
+uncss: {
+  dist: {
+    files: [
+      {
+        nonull: true,
+        src: ['http://localhost:8080/path1', 'http://localhost:8080/path2'],
+        dest: 'dist/css/tidy.css'
+      }
+    ]
+  }
+}
+```
+
 ### Test project
 
 There is a test project included under the `tests/app` directory which you can build by running `grunt` after an `npm install`.

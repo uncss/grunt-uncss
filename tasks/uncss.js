@@ -20,13 +20,15 @@ module.exports = function ( grunt ) {
                 report: 'min'
             });
 
-        options.urls = options.urls || [];
-
         function processFile ( file, done ) {
 
             var src = file.src.filter(function ( filepath ) {
-                // Warn on and remove invalid source files (if nonull was set).
-                if ( !grunt.file.exists( filepath ) ) {
+                if (/^https?:\/\//.test(filepath)) {
+                    // This is a remote file: leave it in src array for uncss to handle.
+                    return true;
+                }
+                else if ( !grunt.file.exists( filepath ) ) {
+                    // Warn on and remove invalid local source files (if nonull was set).
                     grunt.log.warn( 'Source file ' + chalk.cyan( filepath ) + ' not found.' );
                     return false;
                 } else {
@@ -37,13 +39,6 @@ module.exports = function ( grunt ) {
             if ( src.length === 0 && file.src.length === 0 ) {
                 grunt.fail.warn( 'Destination (' + file.dest + ') not written because src files were empty.' );
             }
-
-            file.src.forEach(function (source) {
-                if (/^https?/.test(source)) {
-                    src.push(source);
-                    options.urls.push(source);
-                }
-            });
 
             try {
                 uncss( src, options, function ( error, output, report ) {
