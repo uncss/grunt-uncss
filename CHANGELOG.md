@@ -1,5 +1,15 @@
 # grunt-uncss Changelog
 
+## v0.5.2
+
+* Update devDependencies
+* Fix specifying URLs [#142](https://github.com/addyosmani/grunt-uncss/pull/142)
+
+## v0.5.1
+
+* Update devDependencies
+* Update CI configs
+
 ## v0.5.0
 
 * Update devDependencies including UnCSS to v0.13.0
