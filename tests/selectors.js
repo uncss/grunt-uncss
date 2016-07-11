@@ -1,4 +1,5 @@
 /* jshint mocha:true */
+
 'use strict';
 
 var expect = require( 'chai' ).expect,
@@ -6,20 +7,19 @@ var expect = require( 'chai' ).expect,
     path   = require( 'path' ),
     uncss  = require( 'uncss' );
 
-/* Read file sync sugar. */
-var rfs = function ( file ) {
-    return fs.readFileSync( path.join( __dirname, file ), 'utf-8' ).toString();
+var readFile = function ( file ) {
+    return fs.readFileSync( path.join( __dirname, file ), 'utf-8' );
 };
 
-var rawcss = rfs( 'output.css' ),
-    urlcss = rfs( 'outputUrl.css' ),
+var rawcss = readFile( 'output.css' ),
+    urlcss = readFile( 'outputUrl.css' ),
     tests  = fs.readdirSync( path.join( __dirname, 'fixtures/' ) ),
     input  = '';
 
 /* Only read through CSS files */
 tests.forEach(function ( test, i ) {
     if ( test.indexOf( '.css' ) > -1 ) {
-        input += rfs( 'fixtures/' + test );
+        input += readFile( 'fixtures/' + test );
     } else {
         tests.splice( i, 1 );
     }
@@ -32,7 +32,9 @@ describe( 'uncss', function () {
     /* Wait until uncss finished doing its thing before running our tests */
     before( function ( done ) {
         /* new api from issue #44 */
-        uncss( rfs( 'index.html' ), { csspath: 'tests' }, function ( err, output ) {
+        uncss( readFile( 'index.html' ), {
+            csspath: 'tests'
+        }, function ( err, output ) {
             if ( err ) {
                 throw err;
             }
@@ -52,7 +54,9 @@ describe( 'uncss', function () {
     });
 
     it( 'should read .uncssrc files', function () {
-        uncss( rfs('index.html'), { uncssrc: path.normalize('tests/.uncssrc') }, function ( err, res, report ) {
+        uncss( readFile('index.html'), {
+            uncssrc: path.normalize('tests/.uncssrc')
+        }, function ( err, res, report ) {
             expect( err ).to.equal( null );
             expect( res ).to.equal( rawcss );
             expect( report.original ).not.to.equal( null );
@@ -63,7 +67,7 @@ describe( 'uncss', function () {
        not that the result contains the CSS in the unused folder. */
     tests.forEach( function ( test ) {
         it( 'should handle ' + test.split( '.' )[0], function () {
-            expect( rawcss ).to.not.include.string( rfs( 'unused/' + test ) );
+            expect( rawcss ).to.not.include.string( readFile( 'unused/' + test ) );
         });
     });
 

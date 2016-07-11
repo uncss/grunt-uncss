@@ -7,6 +7,7 @@
  */
 
 'use strict';
+
 var uncss  = require( 'uncss' ),
     chalk  = require( 'chalk' ),
     maxmin = require( 'maxmin' ),
@@ -64,7 +65,7 @@ module.exports = function ( grunt ) {
 
         }
 
-        if (this.files.length === 1) {
+        if ( this.files.length === 1 ) {
             processFile( this.files[0], done );
         } else {
             // Processing multiple files must be done sequentially
