@@ -31,7 +31,7 @@ grunt.loadNpmTasks('grunt-uncss');
 
 Taking a multi-page project using Bootstrap with >120KB of CSS down to 11KB.
 
-![Demo](http://i.imgur.com/uhWMALH.gif)
+![Demo](https://i.imgur.com/uhWMALH.gif)
 
 ## Uncss task
 
@@ -41,12 +41,12 @@ Task targets, files and options may be specified according to the grunt [Configu
 
 ## Options
 
-Options are passed to [UnCSS](https://github.com/giakki/uncss/blob/0.12.0/README.md#within-nodejs). In addition this task defines an extra option:
+Options are passed to [UnCSS](https://github.com/giakki/uncss#within-nodejs). In addition this task defines an extra option:
 
 ### report
 
-Choices: `'min'`, `'gzip'`  
-Default: `'min'`
+* Choices: `'min'`, `'gzip'`
+* Default: `'min'`
 
 Report minification result or both minification and gzip results.
 This is useful to see exactly how well clean-css is performing but using `'gzip'` will make the task take 5-10x longer to complete. [Example output](https://github.com/sindresorhus/maxmin#readme).
@@ -139,7 +139,7 @@ uncss: {
 There is a test project included under the `tests/app` directory which you can build by running `grunt` after an `npm install`.
 It also includes a `grunt compare_size` task for getting a feel of the before and after CSS sizes:
 
-![grunt compare_size](http://i.imgur.com/bUseCPh.png)
+![grunt compare_size](https://i.imgur.com/bUseCPh.png)
 
 ## Examples
 
@@ -164,7 +164,7 @@ It also includes a `grunt compare_size` task for getting a feel of the before an
 
 ## The problem
 
-User-interface libraries like [Bootstrap](http://getbootstrap.com), [TopCoat](http://topcoat.io)
+User-interface libraries like [Bootstrap](https://getbootstrap.com), [TopCoat](http://topcoat.io)
 and so on are fairly prolific, however many developers use less than 10% of the CSS they provide
 (when opting for the full build, which most do). As a result, they can end up with fairly bloated
 stylesheets which can significantly increase page load time and affect performance.
@@ -177,7 +177,7 @@ There have been many efforts to try solving the problem of finding unused CSS in
 [ucss](https://github.com/oyvindeh/ucss), @aanand created <https://github.com/aanand/deadweight>,
 Brian Le Roux [CSS Slap Chop](https://github.com/brianleroux/css-slap-chop) and there were a number of
 client-side solutions also crafted, such as [Helium-CSS](https://github.com/geuis/helium-css),
-[CSSESS](https://github.com/driverdan/cssess) and the Python [mincss](http://www.peterbe.com/plog/mincss).
+[CSSESS](https://github.com/driverdan/cssess) and the Python [mincss](https://www.peterbe.com/plog/mincss).
 
 Unfortunately, most of these solutions don't actually generate what you're really after - a leaner build
 of your project CSS containing only those rules you used. Finding that a more recent project called
@@ -189,7 +189,7 @@ Huge thanks go out to Giacomo Martino for his help with the Node module this tas
 
 ## Coverage
 
-* [Spring-cleaning unused CSS with Grunt, Gulp & other build systems](http://addyosmani.com/blog/removing-unused-css/)
+* [Spring-cleaning unused CSS with Grunt, Gulp & other build systems](https://addyosmani.com/blog/removing-unused-css/)
 * [Automating the removal of unused CSS - VelocityConf](https://www.youtube.com/watch?v=833xr1MyE30)
 * [Use Grunt and UnCSS to speed up the load time of your site](http://xdamman.com/website-optimization-grunt-uncss)
 * [Foundation 5, Sass and Grunt UnCSS](https://corydowdy.com/blog/foundation-5-sass-and-grunt-uncss)
@@ -199,7 +199,7 @@ Huge thanks go out to Giacomo Martino for his help with the Node module this tas
 
 ## WordPress
 
-While UnCSS works best (and quickest) with static html files, it is possible to pass in
+While UnCSS works best (and quickest) with static HTML files, it is possible to pass in
 a URL array that contains all the URLs on your website, and process all used selectors that way.
 [@lgladdy](https://github.com/lgladdy) wrote a guide on how to do this
 [on his blog](https://gladdy.uk/blog/2014/04/13/using-uncss-and-grunt-uncss-with-wordpress/)
