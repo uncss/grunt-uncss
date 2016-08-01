@@ -1,11 +1,11 @@
 {
   "name": "grunt-uncss",
   "description": "A grunt task for generating CSS files containing only those styles used in your project.",
-  "version": "0.6.0",
+  "version": "0.6.1",
   "homepage": "https://github.com/addyosmani/grunt-uncss",
-  "author": "Addy Osmani <addyosmani@gmail.com> (http://addyosmani.com)",
+  "author": "Addy Osmani <addyosmani@gmail.com> (https://addyosmani.com)",
   "maintainers": [
-    "Addy Osmani <addyosmani@gmail.com> (http://addyosmani.com)",
+    "Addy Osmani <addyosmani@gmail.com> (https://addyosmani.com)",
     "XhmikosR <xhmikosr@gmail.com> (https://github.com/XhmikosR)"
   ],
   "repository": {
@@ -27,7 +27,7 @@
     "LICENSE-MIT"
   ],
   "engines": {
-    "node": ">= 0.12.0"
+    "node": ">=0.12.0"
   },
   "scripts": {
     "test": "grunt test"

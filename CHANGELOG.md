@@ -1,5 +1,9 @@
 # grunt-uncss Changelog
 
+## v0.6.1
+
+* Update async to v2.0.1.
+
 ## v0.6.0
 
 * Update UnCSS to v0.14.0
