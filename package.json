@@ -22,9 +22,7 @@
     "css"
   ],
   "files": [
-    "tasks",
-    "CHANGELOG.md",
-    "LICENSE-MIT"
+    "tasks"
   ],
   "engines": {
     "node": ">=0.12.0"
