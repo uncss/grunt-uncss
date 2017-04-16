@@ -30,7 +30,7 @@ module.exports = function ( grunt ) {
                 } else if ( !grunt.file.exists( filepath ) ) {
                     // Warn on and remove invalid local source files (if nonull was set).
                     grunt.log.warn( 'Source file ' + chalk.cyan( filepath ) + ' not found.' );
-                    return false;
+                    return false || f.nonull;
                 } else {
                     return true;
                 }
