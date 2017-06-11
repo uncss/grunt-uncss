@@ -1,5 +1,9 @@
 # grunt-uncss Changelog
 
+## v0.6.2
+
+* Update devDependencies to their latest versions.
+
 ## v0.6.1
 
 * Update async to v2.0.1.
