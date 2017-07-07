@@ -25,7 +25,7 @@
     "tasks"
   ],
   "engines": {
-    "node": ">=0.12.0"
+    "node": ">=4.0"
   },
   "scripts": {
     "test": "grunt test"
@@ -34,7 +34,7 @@
     "async": "^2.0.1",
     "chalk": "^1.1.0",
     "maxmin": "^2.1.0",
-    "uncss": "^0.14.0"
+    "uncss": "^0.15.0"
   },
   "devDependencies": {
     "chai": "^4.0.2",
