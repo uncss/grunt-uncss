@@ -11,7 +11,7 @@
 var uncss  = require( 'uncss' ),
     chalk  = require( 'chalk' ),
     maxmin = require( 'maxmin' ),
-    async = require( 'async' );
+    async  = require( 'async' );
 
 module.exports = function ( grunt ) {
     grunt.registerMultiTask( 'uncss', 'Remove unused CSS', function () {
@@ -23,7 +23,7 @@ module.exports = function ( grunt ) {
 
         function processFile ( file, done ) {
 
-            var src = file.src.filter(function ( filepath ) {
+            var src = file.src.filter( function ( filepath ) {
                 if ( /^https?:\/\//.test(filepath) ) {
                     // This is a remote file: leave it in src array for uncss to handle.
                     return true;
@@ -48,16 +48,19 @@ module.exports = function ( grunt ) {
 
                     grunt.file.write( file.dest, output );
                     grunt.log.writeln('File ' + chalk.cyan( file.dest ) + ' created: ' + maxmin( report.original, output, options.report === 'gzip' ) );
-                    if (typeof(options.reportFile) !== 'undefined' && options.reportFile.length > 0) {
-                        grunt.file.write(options.reportFile, JSON.stringify(report));
+
+                    if ( typeof options.reportFile !== 'undefined' && options.reportFile.length > 0 ) {
+                        grunt.file.write( options.reportFile, JSON.stringify( report ) );
                     }
                     done();
                 });
             } catch ( e ) {
                 var err = new Error( 'Uncss failed.' );
+
                 if ( e.msg ) {
                     err.message += ', ' + e.msg + '.';
                 }
+
                 err.origError = e;
                 grunt.log.warn( 'Uncssing source "' + src + '" failed.' );
                 grunt.fail.warn( err );
