@@ -10,8 +10,7 @@
 
 var uncss  = require( 'uncss' ),
     chalk  = require( 'chalk' ),
-    maxmin = require( 'maxmin' ),
-    async  = require( 'async' );
+    maxmin = require( 'maxmin' );
 
 module.exports = function ( grunt ) {
     grunt.registerMultiTask( 'uncss', 'Remove unused CSS', function () {
@@ -21,7 +20,7 @@ module.exports = function ( grunt ) {
                 report: 'min'
             });
 
-        function processFile ( file, done ) {
+        this.files.forEach( function ( file ) {
 
             var src = file.src.filter( function ( filepath ) {
                 if ( /^https?:\/\//.test(filepath) ) {
@@ -66,15 +65,7 @@ module.exports = function ( grunt ) {
                 grunt.fail.warn( err );
             }
 
-        }
-
-        if ( this.files.length === 1 ) {
-            processFile( this.files[0], done );
-        } else {
-            // Processing multiple files must be done sequentially
-            // until https://github.com/giakki/uncss/issues/136 is resolved.
-            async.eachSeries( this.files, processFile, done );
-        }
+        });
 
     });
 
