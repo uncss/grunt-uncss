@@ -53,13 +53,19 @@ describe( 'uncss', function () {
         expect( rawcss ).to.have.length.above( 0 );
     });
 
-    it( 'should read .uncssrc files', function () {
+    it( 'should read .uncssrc files', function ( done ) {
         uncss( readFile('index.html'), {
+            csspath: 'tests',
+            report: true,
             uncssrc: path.normalize('tests/.uncssrc')
         }, function ( err, res, report ) {
+            if ( err ) {
+                return done( err );
+            }
             expect( err ).to.equal( null );
             expect( res ).to.equal( rawcss );
             expect( report.original ).not.to.equal( null );
+            done();
         } );
     });
 
