@@ -36,6 +36,7 @@
     "uncss": "^0.15.0"
   },
   "devDependencies": {
+    "canvas-prebuilt": "^1.6.5-prerelease.1",
     "chai": "^4.0.2",
     "grunt": "^1.0.1",
     "grunt-contrib-clean": "^1.0.0",
