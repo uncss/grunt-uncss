@@ -113,16 +113,24 @@ module.exports = function(grunt) {
     },
 
     connect: {
-      server: {
+      options: {
+        hostname: 'localhost',
+        livereload: 35729,
+        port: 3000
+      },
+      livereload: {
         options: {
-          base: 'tests',
-          port: 3000
+          base: 'dist/',
+          open: true  // Automatically open the webpage in the default browser
         }
       }
     },
 
     watch: {
-      files: ['Gruntfile.js', 'tasks/**/*.js', 'test/**/*.*'],
+      options: {
+          livereload: '<%= connect.options.livereload %>'
+      },
+      files: ['Gruntfile.js', 'tasks/**/*.js', 'tests/**/*.*'],
       tasks: ['jshint', 'test']
     }
 
@@ -137,7 +145,8 @@ module.exports = function(grunt) {
     'uncss:testMany',
     'uncss:testUncssrc',
     'uncss:testUrl',
-    'simplemocha'
+    'simplemocha',
+    'default'
   ]);
 
   grunt.registerTask('dev', [
