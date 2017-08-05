@@ -1,25 +1,35 @@
-var container, row, column, heading, text;
+(function main() {
+    'use strict';
 
-container = document.getElementById( 'add-here' );
+    var container;
+    var row;
+    var column;
+    var heading;
+    var text;
 
-row = document.createElement( 'div' );
-row.className = 'row';
+    container = document.getElementById( 'add-here' );
 
-column = document.createElement( 'div' );
-column.className = 'col-lg-4';
+    row = document.createElement( 'div' );
+    row.className = 'row';
 
-heading = document.createElement( 'h3' );
-heading.className = 'test-green';
-heading.innerHTML = 'PhantomJS';
+    column = document.createElement( 'div' );
+    column.className = 'col-lg-4';
 
-text = document.createTextNode( 'PhantomJS works! This paragraph was added at runtime.' );
+    heading = document.createElement( 'h3' );
+    heading.className = 'test-green';
+    heading.innerHTML = 'PhantomJS';
 
-column.appendChild( heading );
-column.appendChild( text );
-row.appendChild( column );
+    text = document.createTextNode( 'PhantomJS works! This paragraph was added at runtime.' );
 
-if ( container.firstChild ) {
-    container.insertBefore( row, container.firstChild );
-} else {
-    container.appendChild( row );
-}
+    column.appendChild( heading );
+    column.appendChild( text );
+    row.appendChild( column );
+
+    if ( !container ) {
+        return;
+    } else if ( container.firstChild ) {
+        container.insertBefore( row, container.firstChild );
+    } else {
+        container.appendChild( row );
+    }
+})();
