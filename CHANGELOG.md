@@ -1,5 +1,12 @@
 # grunt-uncss Changelog
 
+## v0.7.0
+
+* Update UnCSS to v0.15.0 (Node.js >= 4 is required)
+* Update chalk to v2.0.1
+* Update devDependencies to their latest versions
+* Fix tests issues
+
 ## v0.6.2
 
 * Update devDependencies to their latest versions.
