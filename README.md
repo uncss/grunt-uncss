@@ -6,7 +6,7 @@
 [![dependencies Status](https://img.shields.io/david/addyosmani/grunt-uncss.svg)](https://david-dm.org/addyosmani/grunt-uncss)
 [![devDependencies Status](https://img.shields.io/david/dev/addyosmani/grunt-uncss.svg)](https://david-dm.org/addyosmani/grunt-uncss?type=dev)
 
->A grunt task for removing unused CSS from your projects with [UnCSS](https://github.com/giakki/uncss). Works across multiple files and supports dynamically injected CSS via PhantomJS.
+>A grunt task for removing unused CSS from your projects with [UnCSS](https://github.com/giakki/uncss).
 
 ## Getting Started
 
@@ -61,11 +61,11 @@ In this case `app/index.html` and `app/about.html` are the two files we would li
 
 ```js
 uncss: {
-  dist: {
-    files: {
-      'dist/css/tidy.css': ['app/index.html', 'app/about.html']
+    dist: {
+        files: {
+            'dist/css/tidy.css': ['app/index.html', 'app/about.html']
+        }
     }
-  }
 }
 ```
 
@@ -85,37 +85,37 @@ and some configuration like:
 
 ```js
 processhtml: {
-  dist: {
-    files: {
-      'dist/index.html': ['app/index.html'],
-      'dist/about.html': ['app/about.html']
+    dist: {
+        files: {
+            'dist/index.html': ['app/index.html'],
+            'dist/about.html': ['app/about.html']
+        }
     }
-  }
 }
 ```
 
 ```js
 // Remove unused CSS across multiple files
 uncss: {
-  dist: {
-    files: {
-      'dist/css/tidy.css': ['app/index.html', 'app/about.html']
+    dist: {
+        files: {
+            'dist/css/tidy.css': ['app/index.html', 'app/about.html']
+        }
     }
-  }
 }
 ```
 
 ```js
 // Remove unused CSS across multiple files and ignore specific selectors
 uncss: {
-  dist: {
-    options: {
-      ignore: ['#added_at_runtime', '.created_by_jQuery']
-    },
-    files: {
-      'dist/css/tidy.css': ['app/index.html', 'app/about.html']
+    dist: {
+        options: {
+            ignore: ['#added_at_runtime', '.created_by_jQuery']
+        },
+        files: {
+            'dist/css/tidy.css': ['app/index.html', 'app/about.html']
+        }
     }
-  }
 }
 ```
 
@@ -124,22 +124,19 @@ uncss: {
 // (Note that`nonull` must be true, or else Grunt
 // removes remote paths that it can't find locally)
 uncss: {
-  dist: {
-    files: [{
-      nonull: true,
-      src: ['http://localhost:8080/path1', 'http://localhost:8080/path2'],
-      dest: 'dist/css/tidy.css'
-    }]
-  }
+    dist: {
+        files: [{
+            nonull: true,
+            src: ['http://localhost:8080/path1', 'http://localhost:8080/path2'],
+            dest: 'dist/css/tidy.css'
+        }]
+    }
 }
 ```
 
 ### Test project
 
-There is a test project included under the `tests/app` directory which you can build by running `grunt` after an `npm install`.
-It also includes a `grunt compare_size` task for getting a feel of the before and after CSS sizes:
-
-![grunt compare_size](https://i.imgur.com/bUseCPh.png)
+There is a test project included under the `tests/app` directory which you can build by running `grunt` or `grunt dev` after an `npm install`.
 
 ## Examples
 
