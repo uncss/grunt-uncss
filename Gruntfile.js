@@ -8,18 +8,18 @@
 
 'use strict';
 
-/* jshint indent: 2 */
+/* eslint indent: ["error", 2], global-require: 0 */
 
 module.exports = function(grunt) {
 
-  require('load-grunt-tasks')(grunt, {scope: 'devDependencies'});
+  require('load-grunt-tasks')(grunt, { scope: 'devDependencies' });
   require('time-grunt')(grunt);
 
   // Project configuration.
   grunt.initConfig({
-    jshint: {
+    eslint: {
       options: {
-        jshintrc: '.jshintrc'
+        config: '.eslintrc.json'
       },
       all: [
         'Gruntfile.js',
@@ -49,7 +49,7 @@ module.exports = function(grunt) {
       testMany: {
         files: {
           'tests/output.css': 'tests/index.html',
-          'tests/output2.css': 'tests/index2.html',
+          'tests/output2.css': 'tests/index2.html'
         },
         options: {
           report: 'gzip'
@@ -128,10 +128,10 @@ module.exports = function(grunt) {
 
     watch: {
       options: {
-          livereload: '<%= connect.options.livereload %>'
+        livereload: '<%= connect.options.livereload %>'
       },
       files: ['Gruntfile.js', 'tasks/**/*.js', 'tests/**/*.*'],
-      tasks: ['jshint', 'test']
+      tasks: ['eslint', 'test']
     }
 
   });
@@ -140,7 +140,7 @@ module.exports = function(grunt) {
   grunt.loadTasks('tasks');
 
   grunt.registerTask('test', [
-    'jshint',
+    'eslint',
     'uncss:test',
     'uncss:testMany',
     'uncss:testUncssrc',

@@ -2,7 +2,6 @@ dist/
 node_modules/
 tmp/
 .DS_Store
-.sizecache
 npm-debug.log
 tests/output.css
 tests/output2.css
