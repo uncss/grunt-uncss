@@ -1,5 +1,10 @@
 # grunt-uncss Changelog
 
+## v0.7.1
+
+* Switch to ESLint
+* Fix tests issue
+
 ## v0.7.0
 
 * Update UnCSS to v0.15.0 (Node.js >= 4 is required)
