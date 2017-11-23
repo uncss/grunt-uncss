@@ -1,5 +1,9 @@
 # grunt-uncss Changelog
 
+## v0.8.0
+
+* Update UnCSS to v0.16.0 (Node.js >= 6 is required)
+
 ## v0.7.1
 
 * Switch to ESLint
