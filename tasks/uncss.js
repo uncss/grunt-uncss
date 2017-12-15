@@ -8,20 +8,18 @@
 
 'use strict';
 
-var uncss  = require('uncss'),
-    chalk  = require('chalk'),
-    maxmin = require('maxmin');
+var uncss = require('uncss');
+var chalk = require('chalk');
+var maxmin = require('maxmin');
 
 module.exports = function (grunt) {
     grunt.registerMultiTask('uncss', 'Remove unused CSS', function () {
-
-        var done = this.async(),
-            options = this.options({
-                report: 'min'
-            });
+        var done = this.async();
+        var options = this.options({
+            report: 'min'
+        });
 
         this.files.forEach(function (file) {
-
             var src = file.src.filter(function (filepath) {
                 if (/^https?:\/\//.test(filepath)) {
                     // This is a remote file: leave it in src array for uncss to handle.
@@ -32,7 +30,6 @@ module.exports = function (grunt) {
                     return false;
                 }
                 return true;
-
             });
 
             if (src.length === 0 && file.src.length === 0) {
@@ -53,20 +50,17 @@ module.exports = function (grunt) {
                     }
                     done();
                 });
-            } catch (e) {
-                var err = new Error('Uncss failed.');
+            } catch (err) {
+                var error = new Error('Uncss failed.');
 
-                if (e.msg) {
-                    err.message += ', ' + e.msg + '.';
+                if (err.msg) {
+                    error.message += ', ' + err.msg + '.';
                 }
 
-                err.origError = e;
+                error.origError = err;
                 grunt.log.warn('Uncssing source "' + src + '" failed.');
-                grunt.fail.warn(err);
+                grunt.fail.warn(error);
             }
-
         });
-
     });
-
 };

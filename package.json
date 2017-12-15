@@ -33,7 +33,7 @@
   "dependencies": {
     "chalk": "^2.3.0",
     "maxmin": "^2.1.0",
-    "uncss": "^0.16.0"
+    "uncss": "^0.16.1"
   },
   "devDependencies": {
     "canvas-prebuilt": "^1.6.5-prerelease.1",
@@ -44,13 +44,25 @@
     "grunt-contrib-copy": "^1.0.0",
     "grunt-contrib-cssmin": "^2.2.1",
     "grunt-contrib-watch": "^1.0.0",
-    "grunt-eslint": "^20.1.0",
     "grunt-processhtml": "^0.4.1",
     "grunt-simple-mocha": "^0.4.1",
+    "grunt-xo": "^0.16.0",
     "load-grunt-tasks": "^3.5.2",
     "time-grunt": "^1.4.0"
   },
   "peerDependencies": {
     "grunt": ">=0.4.0"
+  },
+  "xo": {
+    "esnext": false,
+    "space": 4,
+    "rules": {
+      "capitalized-comments": "off",
+      "object-curly-spacing": [
+        "error",
+        "always"
+      ],
+      "unicorn/filename-case": "off"
+    }
   }
 }

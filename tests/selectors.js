@@ -2,18 +2,18 @@
 
 'use strict';
 
-var expect = require('chai').expect,
-    fs     = require('fs'),
-    path   = require('path'),
-    uncss  = require('uncss');
+var fs = require('fs');
+var path = require('path');
+var expect = require('chai').expect;
+var uncss = require('uncss');
 
 var readFile = function (file) {
     return fs.readFileSync(path.join(__dirname, file), 'utf-8');
 };
 
-var rawcss = readFile('output.css'),
-    urlcss = readFile('outputUrl.css'),
-    tests  = fs.readdirSync(path.join(__dirname, 'fixtures/'));
+var rawcss = readFile('output.css');
+var urlcss = readFile('outputUrl.css');
+var tests = fs.readdirSync(path.join(__dirname, 'fixtures/'));
 
 /* Only read through CSS files */
 tests.forEach(function (test) {
@@ -28,7 +28,7 @@ Tests without grunt-uncss
 describe('uncss', function () {
     /* Wait until uncss finished doing its thing before running our tests */
     before(function (done) {
-        /* new api from issue #44 */
+        /* New api from issue #44 */
         uncss(readFile('index.html'), {
             csspath: 'tests'
         }, function (err, output) {
@@ -38,7 +38,6 @@ describe('uncss', function () {
             rawcss = output;
             done();
         });
-
     });
 
     it('should output something', function () {
@@ -73,5 +72,4 @@ describe('uncss', function () {
             expect(rawcss).to.not.include.string(readFile('unused/' + test));
         });
     });
-
 });

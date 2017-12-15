@@ -8,160 +8,153 @@
 
 'use strict';
 
-/* eslint indent: ["error", 2], global-require: 0 */
+module.exports = function (grunt) {
+    require('load-grunt-tasks')(grunt, { scope: 'devDependencies' });
+    require('time-grunt')(grunt);
 
-module.exports = function(grunt) {
-
-  require('load-grunt-tasks')(grunt, { scope: 'devDependencies' });
-  require('time-grunt')(grunt);
-
-  // Project configuration.
-  grunt.initConfig({
-    eslint: {
-      options: {
-        config: '.eslintrc.json'
-      },
-      all: [
-        'Gruntfile.js',
-        'tasks/*.js',
-        '<%= simplemocha.test.src %>'
-      ]
-    },
-
-    // Before generating any new files, remove any previously-created files.
-    clean: {
-      tests: ['tmp', 'dist', 'tests/output.css']
-    },
-
-    uncss: {
-      dist: {
-        src: ['tests/app/about.html', 'tests/app/contact.html', 'tests/app/index.html'],
-        dest: 'dist/css/tidy.css'
-      },
-      test: {
-        files: {
-          'tests/output.css': 'tests/index.html'
+    // Project configuration.
+    grunt.initConfig({
+        xo: {
+            all: [
+                'Gruntfile.js',
+                'tasks/*.js',
+                '<%= simplemocha.test.src %>'
+            ]
         },
-        options: {
-          report: 'gzip'
-        }
-      },
-      testMany: {
-        files: {
-          'tests/output.css': 'tests/index.html',
-          'tests/output2.css': 'tests/index2.html'
+
+        // Before generating any new files, remove any previously-created files.
+        clean: {
+            tests: ['tmp', 'dist', 'tests/output.css']
         },
-        options: {
-          report: 'gzip'
-        }
-      },
-      testUncssrc: {
-        files: {
-          'tests/output.css': 'tests/index.html'
+
+        uncss: {
+            dist: {
+                src: ['tests/app/about.html', 'tests/app/contact.html', 'tests/app/index.html'],
+                dest: 'dist/css/tidy.css'
+            },
+            test: {
+                files: {
+                    'tests/output.css': 'tests/index.html'
+                },
+                options: {
+                    report: 'gzip'
+                }
+            },
+            testMany: {
+                files: {
+                    'tests/output.css': 'tests/index.html',
+                    'tests/output2.css': 'tests/index2.html'
+                },
+                options: {
+                    report: 'gzip'
+                }
+            },
+            testUncssrc: {
+                files: {
+                    'tests/output.css': 'tests/index.html'
+                },
+                options: {
+                    uncssrc: 'tests/.uncssrc'
+                }
+            },
+            testUrl: {
+                files: [{
+                    nonull: true,
+                    src: ['https://getbootstrap.com/docs/3.3/examples/jumbotron/'],
+                    dest: 'tests/outputUrl.css'
+                }]
+            }
         },
-        options: {
-          uncssrc: 'tests/.uncssrc'
-        }
-      },
-      testUrl: {
-        files: [{
-          nonull: true,
-          src: ['https://getbootstrap.com/docs/3.3/examples/jumbotron/'],
-          dest: 'tests/outputUrl.css'
-        }]
-      }
-    },
 
-    processhtml: {
-      dist: {
-        files: {
-          'dist/about.html': 'tests/app/about.html',
-          'dist/contact.html': 'tests/app/contact.html',
-          'dist/index.html': 'tests/app/index.html'
-        }
-      }
-    },
-
-    cssmin: {
-      dist: {
-        options: {
-          compatibility: 'ie8',
-          keepSpecialComments: 0
+        processhtml: {
+            dist: {
+                files: {
+                    'dist/about.html': 'tests/app/about.html',
+                    'dist/contact.html': 'tests/app/contact.html',
+                    'dist/index.html': 'tests/app/index.html'
+                }
+            }
         },
-        files: {
-          '<%= uncss.dist.dest %>': '<%= uncss.dist.dest %>'
+
+        cssmin: {
+            dist: {
+                options: {
+                    compatibility: 'ie8',
+                    keepSpecialComments: 0
+                },
+                files: {
+                    '<%= uncss.dist.dest %>': '<%= uncss.dist.dest %>'
+                }
+            }
+        },
+
+        copy: {
+            dist: {
+                files: [{
+                    expand: true,
+                    cwd: 'tests/app/',
+                    src: ['img/**', 'js/**', '*.png', '*.xml', '*.txt', '*.ico', '!*.html'],
+                    dest: 'dist/'
+                }]
+            }
+        },
+
+        // Unit tests.
+        simplemocha: {
+            test: {
+                src: 'tests/selectors.js'
+            }
+        },
+
+        connect: {
+            options: {
+                hostname: 'localhost',
+                livereload: 35729,
+                port: 3000
+            },
+            livereload: {
+                options: {
+                    base: 'dist/',
+                    open: true  // Automatically open the webpage in the default browser
+                }
+            }
+        },
+
+        watch: {
+            options: {
+                livereload: '<%= connect.options.livereload %>'
+            },
+            files: ['Gruntfile.js', 'tasks/**/*.js', 'tests/**/*.*'],
+            tasks: ['xo', 'test']
         }
-      }
-    },
 
-    copy: {
-      dist: {
-        files: [{
-          expand: true,
-          cwd: 'tests/app/',
-          src: ['img/**', 'js/**', '*.png', '*.xml', '*.txt', '*.ico', '!*.html'],
-          dest: 'dist/'
-        }]
-      }
-    },
+    });
 
-    // Unit tests.
-    simplemocha: {
-      test: {
-        src: 'tests/selectors.js'
-      }
-    },
+    // Actually load this plugin's task(s).
+    grunt.loadTasks('tasks');
 
-    connect: {
-      options: {
-        hostname: 'localhost',
-        livereload: 35729,
-        port: 3000
-      },
-      livereload: {
-        options: {
-          base: 'dist/',
-          open: true  // Automatically open the webpage in the default browser
-        }
-      }
-    },
+    grunt.registerTask('test', [
+        'xo',
+        'uncss:test',
+        'uncss:testMany',
+        'uncss:testUncssrc',
+        'uncss:testUrl',
+        'simplemocha',
+        'default'
+    ]);
 
-    watch: {
-      options: {
-        livereload: '<%= connect.options.livereload %>'
-      },
-      files: ['Gruntfile.js', 'tasks/**/*.js', 'tests/**/*.*'],
-      tasks: ['eslint', 'test']
-    }
+    grunt.registerTask('dev', [
+        'test',
+        'connect',
+        'watch'
+    ]);
 
-  });
-
-  // Actually load this plugin's task(s).
-  grunt.loadTasks('tasks');
-
-  grunt.registerTask('test', [
-    'eslint',
-    'uncss:test',
-    'uncss:testMany',
-    'uncss:testUncssrc',
-    'uncss:testUrl',
-    'simplemocha',
-    'default'
-  ]);
-
-  grunt.registerTask('dev', [
-    'test',
-    'connect',
-    'watch'
-  ]);
-
-  // By default, lint and run all tests.
-  grunt.registerTask('default', [
-    'clean',
-    'copy',
-    'uncss:dist',
-    'cssmin',
-    'processhtml'
-  ]);
-
+    // By default, lint and run all tests.
+    grunt.registerTask('default', [
+        'clean',
+        'copy',
+        'uncss:dist',
+        'cssmin',
+        'processhtml'
+    ]);
 };
