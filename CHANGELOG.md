@@ -31,7 +31,7 @@
 ## v0.5.2
 
 * Update devDependencies
-* Fix specifying URLs [#142](https://github.com/addyosmani/grunt-uncss/pull/142)
+* Fix specifying URLs [#142](https://github.com/uncss/grunt-uncss/pull/142)
 
 ## v0.5.1
 
@@ -41,7 +41,7 @@
 ## v0.5.0
 
 * Update devDependencies including UnCSS to v0.13.0
-* Handle multiple files sequentially ([#178](https://github.com/addyosmani/grunt-uncss/pull/178))
+* Handle multiple files sequentially ([#178](https://github.com/uncss/grunt-uncss/pull/178))
 * Drop Node.js 0.10 support
 
 ## v0.4.0

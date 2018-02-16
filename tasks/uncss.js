@@ -1,6 +1,6 @@
 /**
  * grunt-uncss
- * https://github.com/addyosmani/grunt-uncss
+ * https://github.com/uncss/grunt-uncss
  *
  * Copyright (c) 2017 Addy Osmani
  * Licensed under the MIT license.

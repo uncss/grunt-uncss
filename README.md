@@ -1,12 +1,12 @@
 # grunt-uncss [![Built with Grunt](https://cdn.gruntjs.com/builtwith.png)](http://gruntjs.com/)
 
 [![NPM version](https://img.shields.io/npm/v/grunt-uncss.svg)](https://www.npmjs.com/package/grunt-uncss)
-[![Linux Build Status](https://img.shields.io/travis/addyosmani/grunt-uncss/master.svg?label=Linux%20build)](https://travis-ci.org/addyosmani/grunt-uncss)
-[![Windows Build status](https://img.shields.io/appveyor/ci/addyosmani/grunt-uncss/master.svg?label=Windows%20build)](https://ci.appveyor.com/project/addyosmani/grunt-uncss/branch/master)
-[![dependencies Status](https://img.shields.io/david/addyosmani/grunt-uncss.svg)](https://david-dm.org/addyosmani/grunt-uncss)
-[![devDependencies Status](https://img.shields.io/david/dev/addyosmani/grunt-uncss.svg)](https://david-dm.org/addyosmani/grunt-uncss?type=dev)
+[![Linux Build Status](https://img.shields.io/travis/uncss/grunt-uncss/master.svg?label=Linux%20build)](https://travis-ci.org/uncss/grunt-uncss)
+[![Windows Build status](https://img.shields.io/appveyor/ci/uncss/grunt-uncss/master.svg?label=Windows%20build)](https://ci.appveyor.com/project/uncss/grunt-uncss/branch/master)
+[![dependencies Status](https://img.shields.io/david/uncss/grunt-uncss.svg)](https://david-dm.org/uncss/grunt-uncss)
+[![devDependencies Status](https://img.shields.io/david/dev/uncss/grunt-uncss.svg)](https://david-dm.org/uncss/grunt-uncss?type=dev)
 
->A grunt task for removing unused CSS from your projects with [UnCSS](https://github.com/giakki/uncss).
+>A grunt task for removing unused CSS from your projects with [UnCSS](https://github.com/uncss/uncss).
 
 ## Getting Started
 
@@ -25,7 +25,7 @@ Once the plugin has been installed, it may be enabled inside your Gruntfile with
 grunt.loadNpmTasks('grunt-uncss');
 ```
 
-**Issues with the output should be reported on the UnCSS [issue tracker](https://github.com/giakki/uncss/issues).**
+**Issues with the output should be reported on the UnCSS [issue tracker](https://github.com/uncss/uncss/issues).**
 
 ## Preview
 
@@ -41,7 +41,7 @@ Task targets, files and options may be specified according to the grunt [Configu
 
 ## Options
 
-Options are passed to [UnCSS](https://github.com/giakki/uncss#within-nodejs). In addition this task defines an extra option:
+Options are passed to [UnCSS](https://github.com/uncss/uncss#within-nodejs). In addition this task defines an extra option:
 
 ### report
 
@@ -152,7 +152,7 @@ There is a test project included under the `tests/app` directory which you can b
 * [Angular Todo application](https://github.com/JeremyCarlsten/grunt-uncss-angular-example)
 * [CashSplitter - Angular app with PouchDB, Bootstrap](https://github.com/carlo-colombo/CashSplitter)
 * [This Week's Comics Express app](https://github.com/WillsonSmith/thisWeeksComics)
-* [Sample grunt-uncss in a Sass project](https://github.com/addyosmani/grunt-uncss-sass-example)
+* [Sample grunt-uncss in a Sass project](https://github.com/uncss/grunt-uncss-sass-example)
 
 ### Other
 
@@ -178,7 +178,7 @@ client-side solutions also crafted, such as [Helium-CSS](https://github.com/geui
 
 Unfortunately, most of these solutions don't actually generate what you're really after - a leaner build
 of your project CSS containing only those rules you used. Finding that a more recent project called
-[UnCSS](https://github.com/giakki/uncss) did try tackling this, I set out to share some of the problems we
+[UnCSS](https://github.com/uncss/uncss) did try tackling this, I set out to share some of the problems we
 need to solve in this space with the developer and build a Grunt task to enable usage of it in builds more
 easily.
 
