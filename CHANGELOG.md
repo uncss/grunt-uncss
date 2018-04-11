@@ -1,5 +1,10 @@
 # grunt-uncss Changelog
 
+## v0.8.2
+
+* Update devDependencies.
+* Switch to ES6.
+
 ## v0.8.1
 
 * Switch to xo for linting.
