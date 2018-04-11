@@ -7,9 +7,7 @@ const path = require('path');
 const expect = require('chai').expect;
 const uncss = require('uncss');
 
-const readFile = function (file) {
-    return fs.readFileSync(path.join(__dirname, file), 'utf-8');
-};
+const readFile = file => fs.readFileSync(path.join(__dirname, file), 'utf-8');
 
 let rawcss = readFile('output.css');
 const urlcss = readFile('outputUrl.css');
@@ -17,8 +15,8 @@ const tests = fs.readdirSync(path.join(__dirname, 'fixtures/'));
 
 /* Only read through CSS files */
 tests.forEach(test => {
-    if (test.indexOf('.css') > -1) {
-        readFile('fixtures/' + test);
+    if (test.includes('.css')) {
+        readFile(`fixtures/${test}`);
     }
 });
 
@@ -68,8 +66,8 @@ describe('uncss', () => {
     /* We're testing that the CSS is stripped out from the result,
        not that the result contains the CSS in the unused folder. */
     tests.forEach(test => {
-        it('should handle ' + test.split('.')[0], () => {
-            expect(rawcss).to.not.include.string(readFile('unused/' + test));
+        it(`should handle ${test.split('.')[0]}`, () => {
+            expect(rawcss).to.not.include.string(readFile(`unused/${test}`));
         });
     });
 });

@@ -1,6 +1,6 @@
 # grunt-uncss Changelog
 
-## v0.8.2
+## v0.8.3
 
 * Update devDependencies.
 * Switch to ES6.
