@@ -31,9 +31,9 @@
     "test": "grunt test"
   },
   "dependencies": {
-    "chalk": "^2.3.1",
+    "chalk": "^2.3.2",
     "maxmin": "^2.1.0",
-    "uncss": "^0.16.1"
+    "uncss": "^0.16.2"
   },
   "devDependencies": {
     "canvas-prebuilt": "^1.6.5-prerelease.1",
@@ -46,7 +46,7 @@
     "grunt-contrib-watch": "^1.0.0",
     "grunt-processhtml": "^0.4.1",
     "grunt-simple-mocha": "^0.4.1",
-    "grunt-xo": "^0.16.0",
+    "grunt-xo": "^0.17.0",
     "load-grunt-tasks": "^3.5.2",
     "time-grunt": "^1.4.0"
   },
@@ -54,14 +54,20 @@
     "grunt": ">=0.4.0"
   },
   "xo": {
-    "esnext": false,
     "space": 4,
     "rules": {
       "capitalized-comments": "off",
+      "no-else-return": "off",
+      "no-multi-spaces": [
+        "error", {
+          "ignoreEOLComments": true
+        }
+      ],
       "object-curly-spacing": [
         "error",
         "always"
       ],
+      "prefer-destructuring": "off",
       "unicorn/filename-case": "off"
     }
   }

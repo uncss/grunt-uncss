@@ -8,19 +8,19 @@
 
 'use strict';
 
-var uncss = require('uncss');
-var chalk = require('chalk');
-var maxmin = require('maxmin');
+const uncss = require('uncss');
+const chalk = require('chalk');
+const maxmin = require('maxmin');
 
 module.exports = function (grunt) {
     grunt.registerMultiTask('uncss', 'Remove unused CSS', function () {
-        var done = this.async();
-        var options = this.options({
+        const done = this.async();
+        const options = this.options({
             report: 'min'
         });
 
-        this.files.forEach(function (file) {
-            var src = file.src.filter(function (filepath) {
+        this.files.forEach(file => {
+            const src = file.src.filter(filepath => {
                 if (/^https?:\/\//.test(filepath)) {
                     // This is a remote file: leave it in src array for uncss to handle.
                     return true;
@@ -37,7 +37,7 @@ module.exports = function (grunt) {
             }
 
             try {
-                uncss(src, options, function (error, output, report) {
+                uncss(src, options, (error, output, report) => {
                     if (error) {
                         throw error;
                     }
@@ -51,7 +51,7 @@ module.exports = function (grunt) {
                     done();
                 });
             } catch (err) {
-                var error = new Error('Uncss failed.');
+                const error = new Error('Uncss failed.');
 
                 if (err.msg) {
                     error.message += ', ' + err.msg + '.';

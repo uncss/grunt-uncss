@@ -2,21 +2,21 @@
 
 'use strict';
 
-var fs = require('fs');
-var path = require('path');
-var expect = require('chai').expect;
-var uncss = require('uncss');
+const fs = require('fs');
+const path = require('path');
+const expect = require('chai').expect;
+const uncss = require('uncss');
 
-var readFile = function (file) {
+const readFile = function (file) {
     return fs.readFileSync(path.join(__dirname, file), 'utf-8');
 };
 
-var rawcss = readFile('output.css');
-var urlcss = readFile('outputUrl.css');
-var tests = fs.readdirSync(path.join(__dirname, 'fixtures/'));
+let rawcss = readFile('output.css');
+const urlcss = readFile('outputUrl.css');
+const tests = fs.readdirSync(path.join(__dirname, 'fixtures/'));
 
 /* Only read through CSS files */
-tests.forEach(function (test) {
+tests.forEach(test => {
     if (test.indexOf('.css') > -1) {
         readFile('fixtures/' + test);
     }
@@ -25,13 +25,13 @@ tests.forEach(function (test) {
 /*
 Tests without grunt-uncss
 */
-describe('uncss', function () {
+describe('uncss', () => {
     /* Wait until uncss finished doing its thing before running our tests */
-    before(function (done) {
+    before(done => {
         /* New api from issue #44 */
         uncss(readFile('index.html'), {
             csspath: 'tests'
-        }, function (err, output) {
+        }, (err, output) => {
             if (err) {
                 throw err;
             }
@@ -40,21 +40,21 @@ describe('uncss', function () {
         });
     });
 
-    it('should output something', function () {
+    it('should output something', () => {
         expect(rawcss).not.to.equal(false);
         expect(urlcss).not.to.equal(false);
     });
 
-    it('should not be an empty string', function () {
+    it('should not be an empty string', () => {
         expect(rawcss).to.have.length.above(0);
     });
 
-    it('should read .uncssrc files', function (done) {
+    it('should read .uncssrc files', done => {
         uncss(readFile('index.html'), {
             csspath: 'tests',
             report: true,
             uncssrc: path.normalize('tests/.uncssrc')
-        }, function (err, res, report) {    // eslint-disable-line consistent-return
+        }, (err, res, report) => {    // eslint-disable-line consistent-return
             if (err) {
                 return done(err);
             }
@@ -67,8 +67,8 @@ describe('uncss', function () {
 
     /* We're testing that the CSS is stripped out from the result,
        not that the result contains the CSS in the unused folder. */
-    tests.forEach(function (test) {
-        it('should handle ' + test.split('.')[0], function () {
+    tests.forEach(test => {
+        it('should handle ' + test.split('.')[0], () => {
             expect(rawcss).to.not.include.string(readFile('unused/' + test));
         });
     });
