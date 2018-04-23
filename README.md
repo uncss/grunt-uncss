@@ -1,4 +1,4 @@
-# grunt-uncss [![Built with Grunt](https://cdn.gruntjs.com/builtwith.png)](http://gruntjs.com/)
+# grunt-uncss [![Built with Grunt](https://gruntjs.com/cdn/builtwith.svg)](http://gruntjs.com/)
 
 [![NPM version](https://img.shields.io/npm/v/grunt-uncss.svg)](https://www.npmjs.com/package/grunt-uncss)
 [![Linux Build Status](https://img.shields.io/travis/uncss/grunt-uncss/master.svg?label=Linux%20build)](https://travis-ci.org/uncss/grunt-uncss)
