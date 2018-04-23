@@ -18,6 +18,7 @@ module.exports = function (grunt) {
             all: [
                 'Gruntfile.js',
                 'tasks/*.js',
+                'tests/app/js/*.js',
                 '<%= simplemocha.test.src %>'
             ]
         },

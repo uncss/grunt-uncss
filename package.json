@@ -59,7 +59,8 @@
       "capitalized-comments": "off",
       "no-else-return": "off",
       "no-multi-spaces": [
-        "error", {
+        "error",
+        {
           "ignoreEOLComments": true
         }
       ],
@@ -69,6 +70,12 @@
       ],
       "prefer-destructuring": "off",
       "unicorn/filename-case": "off"
-    }
+    },
+    "overrides": [
+      {
+        "files": "tests/app/js/main.js",
+        "esnext": false
+      }
+    ]
   }
 }

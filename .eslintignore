@@ -1,4 +1,4 @@
 /.git/
 /dist/
 /node_modules/
-/tests/app/
+/tests/app/js/vendor/

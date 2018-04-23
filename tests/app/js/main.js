@@ -1,15 +1,19 @@
 /* eslint-env browser */
 
-(function main() {
+(function () {
     'use strict';
 
-    var container,
-        row,
-        column,
-        heading,
-        text;
+    var container;
+    var row;
+    var column;
+    var heading;
+    var text;
 
     container = document.getElementById('add-here');
+
+    if (!container) {
+        return;
+    }
 
     row = document.createElement('div');
     row.className = 'row';
@@ -27,9 +31,7 @@
     column.appendChild(text);
     row.appendChild(column);
 
-    if (!container) {
-        return;
-    } else if (container.firstChild) {
+    if (container.firstChild) {
         container.insertBefore(row, container.firstChild);
     } else {
         container.appendChild(row);
