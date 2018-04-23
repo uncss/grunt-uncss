@@ -14,15 +14,6 @@ module.exports = function (grunt) {
 
     // Project configuration.
     grunt.initConfig({
-        xo: {
-            all: [
-                'Gruntfile.js',
-                'tasks/*.js',
-                'tests/app/js/*.js',
-                '<%= simplemocha.test.src %>'
-            ]
-        },
-
         // Before generating any new files, remove any previously-created files.
         clean: {
             tests: ['tmp', 'dist', 'tests/output.css']
@@ -126,7 +117,7 @@ module.exports = function (grunt) {
                 livereload: '<%= connect.options.livereload %>'
             },
             files: ['Gruntfile.js', 'tasks/**/*.js', 'tests/**/*.*'],
-            tasks: ['xo', 'test']
+            tasks: ['test']
         }
 
     });
@@ -135,7 +126,6 @@ module.exports = function (grunt) {
     grunt.loadTasks('tasks');
 
     grunt.registerTask('test', [
-        'xo',
         'uncss:test',
         'uncss:testMany',
         'uncss:testUncssrc',

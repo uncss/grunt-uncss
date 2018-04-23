@@ -28,7 +28,7 @@
     "node": ">=6"
   },
   "scripts": {
-    "test": "grunt test"
+    "test": "xo --quiet && grunt test"
   },
   "dependencies": {
     "chalk": "^2.4.0",
@@ -46,9 +46,9 @@
     "grunt-contrib-watch": "^1.0.1",
     "grunt-processhtml": "^0.4.1",
     "grunt-simple-mocha": "^0.4.1",
-    "grunt-xo": "^0.17.0",
     "load-grunt-tasks": "^3.5.2",
-    "time-grunt": "^1.4.0"
+    "time-grunt": "^1.4.0",
+    "xo": "^0.20.3"
   },
   "peerDependencies": {
     "grunt": ">=0.4.0"
