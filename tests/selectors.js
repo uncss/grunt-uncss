@@ -52,7 +52,7 @@ describe('uncss', () => {
             csspath: 'tests',
             report: true,
             uncssrc: path.normalize('tests/.uncssrc')
-        }, (err, res, report) => {    // eslint-disable-line consistent-return
+        }, (err, res, report) => {
             if (err) {
                 return done(err);
             }
