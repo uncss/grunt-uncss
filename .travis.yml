@@ -1,4 +1,5 @@
-sudo: false
+git:
+  depth: 5
 
 language: node_js
 
@@ -13,3 +14,6 @@ matrix:
 cache:
   directories:
     - node_modules
+
+notifications:
+  email: false

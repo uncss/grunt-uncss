@@ -1,22 +1,21 @@
-clone_depth: 10
+clone_depth: 5
 
 version: "{build}"
 
 environment:
+  PLATFORM: x64
   matrix:
-    - nodejs_version: "6"
-      platform: x64
-    - nodejs_version: "8"
-      platform: x64
-    - nodejs_version: "10"
-      platform: x64
+    - NODEJS_VERSION: "6"
+    - NODEJS_VERSION: "8"
+    - NODEJS_VERSION: "10"
 
 install:
-  - ps: Install-Product node $env:nodejs_version $env:platform
+  - ps: Install-Product node $env:NODEJS_VERSION $env:PLATFORM
   - npm install
 
 test_script:
-  - node --version && npm --version
+  - node --version
+  - npm --version
   - npm test
 
 build: off
@@ -25,4 +24,4 @@ matrix:
   fast_finish: true
 
 cache:
-  - node_modules -> appveyor.yml,package.json,package-lock.json
+  - 'node_modules -> appveyor.yml,package.json,package-lock.json'
