@@ -107,7 +107,7 @@ module.exports = function (grunt) {
             livereload: {
                 options: {
                     base: 'dist/',
-                    open: true  // Automatically open the webpage in the default browser
+                    open: true // Automatically open the webpage in the default browser
                 }
             }
         },
