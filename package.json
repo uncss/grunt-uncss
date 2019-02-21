@@ -57,25 +57,14 @@
     "space": 4,
     "rules": {
       "capitalized-comments": "off",
-      "no-else-return": "off",
-      "no-multi-spaces": [
-        "error",
-        {
-          "ignoreEOLComments": true
-        }
-      ],
       "object-curly-spacing": [
         "error",
         "always"
       ],
-      "prefer-destructuring": "off",
       "unicorn/filename-case": "off"
     },
-    "overrides": [
-      {
-        "files": "tests/app/js/main.js",
-        "esnext": false
-      }
+    "ignores": [
+      "tests/app/"
     ]
   }
 }

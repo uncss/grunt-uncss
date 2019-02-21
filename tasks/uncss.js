@@ -24,11 +24,14 @@ module.exports = function (grunt) {
                 if (/^https?:\/\//.test(filepath)) {
                     // This is a remote file: leave it in src array for uncss to handle.
                     return true;
-                } else if (!grunt.file.exists(filepath)) {
+                }
+
+                if (!grunt.file.exists(filepath)) {
                     // Warn on and remove invalid local source files (if nonull was set).
                     grunt.log.warn(`Source file ${chalk.cyan(filepath)} not found.`);
                     return false;
                 }
+
                 return true;
             });
 
@@ -48,18 +51,19 @@ module.exports = function (grunt) {
                     if (typeof options.reportFile !== 'undefined' && options.reportFile.length > 0) {
                         grunt.file.write(options.reportFile, JSON.stringify(report));
                     }
+
                     done();
                 });
-            } catch (err) {
-                const error = new Error('Uncss failed.');
+            } catch (error) {
+                const err = new Error('Uncss failed.');
 
-                if (err.msg) {
-                    error.message += `, ${err.msg}.`;
+                if (error.msg) {
+                    err.message += `, ${error.msg}.`;
                 }
 
-                error.origError = err;
+                err.origError = error;
                 grunt.log.warn(`Uncssing source "${src}" failed.`);
-                grunt.fail.warn(error);
+                grunt.fail.warn(err);
             }
         });
     });

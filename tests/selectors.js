@@ -4,7 +4,7 @@
 
 const fs = require('fs');
 const path = require('path');
-const expect = require('chai').expect;
+const { expect } = require('chai');
 const uncss = require('uncss');
 
 const readFile = file => fs.readFileSync(path.join(__dirname, file), 'utf-8');
@@ -33,6 +33,7 @@ describe('uncss', () => {
             if (err) {
                 throw err;
             }
+
             rawcss = output;
             done();
         });
@@ -56,6 +57,7 @@ describe('uncss', () => {
             if (err) {
                 return done(err);
             }
+
             expect(err).to.equal(null);
             expect(res).to.equal(rawcss);
             expect(report.original).not.to.equal(null);
