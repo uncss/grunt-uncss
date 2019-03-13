@@ -22,14 +22,24 @@ module.exports = function (grunt) {
         uncss: {
             dist: {
                 src: ['tests/app/about.html', 'tests/app/contact.html', 'tests/app/index.html'],
-                dest: 'dist/css/tidy.css'
+                dest: 'dist/css/tidy.css',
+                options: {
+                    logUnused: true
+                }
+            },
+            no_output: {
+                src: ['tests/app/about.html', 'tests/app/contact.html', 'tests/app/index.html'],
+                options: {
+                    logUnused: true
+                }
             },
             test: {
                 files: {
                     'tests/output.css': 'tests/index.html'
                 },
                 options: {
-                    report: 'gzip'
+
+                    report: 'min'
                 }
             },
             testMany: {

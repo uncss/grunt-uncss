@@ -16,7 +16,8 @@ module.exports = function (grunt) {
     grunt.registerMultiTask('uncss', 'Remove unused CSS', function () {
         const done = this.async();
         const options = this.options({
-            report: 'min'
+            report: 'min',
+            logUnused: false
         });
 
         this.files.forEach(file => {
@@ -45,8 +46,20 @@ module.exports = function (grunt) {
                         throw error;
                     }
 
-                    grunt.file.write(file.dest, output);
-                    grunt.log.writeln(`File ${chalk.cyan(file.dest)} created: ${maxmin(report.original, output, options.report === 'gzip')}`);
+                    if (options.logUnused === true) {
+                        const unusedSelectors = report.selectors.unused;
+
+                        grunt.log.writeln(JSON.stringify(unusedSelectors, null, 2));
+                        grunt.log.writeln(`Total unused selectors: ${unusedSelectors.length}`);
+                    }
+
+                    if (file.dest !== undefined) {
+                        grunt.file.write(file.dest, output);
+                        grunt.log.writeln(`File ${chalk.cyan(file.dest)} created: ${maxmin(report.original, output, options.report === 'gzip')}`);
+                    } else {
+                        grunt.log.error('`options.dest` file path was not provided. ' +
+                            'Therefore, resulting css file will not be output.')
+                    }
 
                     if (typeof options.reportFile !== 'undefined' && options.reportFile.length > 0) {
                         grunt.file.write(options.reportFile, JSON.stringify(report));
