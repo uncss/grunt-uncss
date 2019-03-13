@@ -51,7 +51,7 @@
     "xo": "^0.24.0"
   },
   "peerDependencies": {
-    "grunt": ">=0.4.0"
+    "grunt": ">=1.0.3"
   },
   "xo": {
     "space": 4,
