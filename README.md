@@ -134,6 +134,17 @@ uncss: {
 }
 ```
 
+```js
+// Run without generating an output file and just log the unused selectors. 
+uncss: {
+    src: ['/about.html', '/contact.html', '/index.html'],
+    options: {
+        // omitting `dest` option is an option which avoids outputting cleaned file.
+        logUnused: true // log unused selectors.
+    }
+}
+```
+
 ### Test project
 
 There is a test project included under the `tests/app` directory which you can build by running `grunt` or `grunt dev` after an `npm install`.
