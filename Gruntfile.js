@@ -8,6 +8,10 @@
 
 'use strict';
 
+var localWeb = 'http://localhost:9080';
+var testPages = ['tests/app/about.html', 'tests/app/contact.html', 'tests/app/index.html'];
+var testUrls = testPages.map((page) => `${localWeb}/${page}`);
+
 module.exports = function (grunt) {
     require('load-grunt-tasks')(grunt, { scope: 'devDependencies' });
     require('time-grunt')(grunt);
@@ -29,6 +33,12 @@ module.exports = function (grunt) {
             },
             noOutput: {
                 src: ['tests/app/about.html', 'tests/app/contact.html', 'tests/app/index.html'],
+                options: {
+                    logUnused: true
+                }
+            },
+            noOutputRemote: {
+                src: testUrls,
                 options: {
                     logUnused: true
                 }

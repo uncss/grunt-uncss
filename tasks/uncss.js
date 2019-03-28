@@ -20,7 +20,17 @@ module.exports = function (grunt) {
             logUnused: false
         });
 
+        // grunt.log.writeln(JSON.stringify(this));
+        // grunt.log.writeln(JSON.stringify(this.files));
+
         this.files.forEach(file => {
+
+            file.orig.src.forEach((url)=>{
+                if (!file.src.includes(url)) {
+                    file.src.push(url);
+                }
+            });
+
             const src = file.src.filter(filepath => {
                 if (/^https?:\/\//.test(filepath)) {
                     // This is a remote file: leave it in src array for uncss to handle.
@@ -42,13 +52,13 @@ module.exports = function (grunt) {
 
             try {
                 uncss(src, options, (error, output, report) => {
+
                     if (error) {
                         throw error;
                     }
 
                     if (options.logUnused === true) {
                         const unusedSelectors = report.selectors.unused;
-
                         grunt.log.writeln(JSON.stringify(unusedSelectors, null, 2));
                         grunt.log.writeln(`Total unused selectors: ${unusedSelectors.length}`);
                     }
