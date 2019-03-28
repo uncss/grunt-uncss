@@ -22,7 +22,7 @@
     "css"
   ],
   "files": [
-    "tasks"
+    "tasks/*.js"
   ],
   "engines": {
     "node": ">=6"
