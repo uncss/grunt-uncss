@@ -1,5 +1,10 @@
 # grunt-uncss Changelog
 
+## v0.8.6
+
+* Update (dev)dependencies.
+* CI tweaks.
+
 ## v0.8.5
 
 * Update dependencies.
