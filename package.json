@@ -28,26 +28,27 @@
     "node": ">=6"
   },
   "scripts": {
-    "test": "xo --quiet && grunt test"
+    "xo": "xo",
+    "test": "npm run xo && grunt test"
   },
   "dependencies": {
-    "chalk": "^2.4.1",
+    "chalk": "^2.4.2",
     "maxmin": "^2.1.0",
     "uncss": "^0.16.2"
   },
   "devDependencies": {
-    "chai": "^4.1.2",
-    "grunt": "^1.0.2",
-    "grunt-contrib-clean": "^1.1.0",
-    "grunt-contrib-connect": "^1.0.2",
+    "chai": "^4.2.0",
+    "grunt": "^1.0.4",
+    "grunt-contrib-clean": "^2.0.0",
+    "grunt-contrib-connect": "^2.0.0",
     "grunt-contrib-copy": "^1.0.0",
-    "grunt-contrib-cssmin": "^2.2.1",
+    "grunt-contrib-cssmin": "^3.0.0",
     "grunt-contrib-watch": "^1.1.0",
-    "grunt-processhtml": "^0.4.1",
+    "grunt-processhtml": "^0.4.2",
     "grunt-simple-mocha": "^0.4.1",
     "load-grunt-tasks": "^4.0.0",
-    "time-grunt": "^1.4.0",
-    "xo": "^0.21.1"
+    "time-grunt": "^2.0.0",
+    "xo": "^0.24.0"
   },
   "peerDependencies": {
     "grunt": ">=0.4.0"
