@@ -8,10 +8,11 @@ environment:
     - NODEJS_VERSION: "6"
     - NODEJS_VERSION: "8"
     - NODEJS_VERSION: "10"
+    - NODEJS_VERSION: "12"
 
 install:
   - ps: Install-Product node $env:NODEJS_VERSION $env:PLATFORM
-  - npm install
+  - npm install # switch to `npm ci` when Node 6 is gone
 
 test_script:
   - node --version
@@ -24,4 +25,5 @@ matrix:
   fast_finish: true
 
 cache:
-  - 'node_modules -> appveyor.yml,package.json,package-lock.json'
+  - '%APPDATA%\npm-cache\ -> appveyor.yml,package.json,package-lock.json'
+  - 'node_modules -> appveyor.yml,package.json,package-lock.json' # remove this when Node 6 is gone
