@@ -1,5 +1,11 @@
 # grunt-uncss Changelog
 
+## v0.9.0
+
+* Update UnCSS to v0.17.2.
+* Update (dev)dependencies.
+* Add Node.js 12 in CI.
+
 ## v0.8.6
 
 * Update (dev)dependencies.
