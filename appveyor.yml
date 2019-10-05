@@ -12,7 +12,7 @@ environment:
 
 install:
   - ps: Install-Product node $env:NODEJS_VERSION $env:PLATFORM
-  - npm install # switch to `npm ci` when Node 6 is gone
+  - if "%NODEJS_VERSION%" lss "8" (npm install) else (npm ci)
 
 test_script:
   - node --version
