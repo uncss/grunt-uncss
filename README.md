@@ -1,8 +1,6 @@
 # grunt-uncss [![Built with Grunt](https://gruntjs.com/cdn/builtwith.svg)](http://gruntjs.com/)
 
-[![NPM version](https://img.shields.io/npm/v/grunt-uncss.svg)](https://www.npmjs.com/package/grunt-uncss)
-[![Linux Build Status](https://img.shields.io/travis/uncss/grunt-uncss/master.svg?label=Linux%20build)](https://travis-ci.org/uncss/grunt-uncss)
-[![Windows Build status](https://img.shields.io/appveyor/ci/uncss/grunt-uncss/master.svg?label=Windows%20build)](https://ci.appveyor.com/project/uncss/grunt-uncss/branch/master)
+[![Build Status](https://github.com/uncss/grunt-uncss/workflows/Tests/badge.svg)](https://github.com/uncss/grunt-uncss/actions?workflow=Tests)
 [![dependencies Status](https://img.shields.io/david/uncss/grunt-uncss.svg)](https://david-dm.org/uncss/grunt-uncss)
 [![devDependencies Status](https://img.shields.io/david/dev/uncss/grunt-uncss.svg)](https://david-dm.org/uncss/grunt-uncss?type=dev)
 
