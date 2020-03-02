@@ -1,5 +1,11 @@
 # grunt-uncss Changelog
 
+## v0.9.1
+
+* Update UnCSS to v0.17.3.
+* Update (dev)dependencies.
+* Switch to GitHub Actions CI
+
 ## v0.9.0
 
 * Update UnCSS to v0.17.2.
