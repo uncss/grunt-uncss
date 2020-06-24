@@ -32,7 +32,7 @@
     "test": "npm run xo && grunt test"
   },
   "dependencies": {
-    "chalk": "^4.0.0",
+    "chalk": "^4.1.0",
     "maxmin": "^2.1.0",
     "uncss": "^0.17.3"
   },
@@ -48,7 +48,7 @@
     "grunt-simple-mocha": "^0.4.1",
     "load-grunt-tasks": "^5.1.0",
     "time-grunt": "^2.0.0",
-    "xo": "^0.30.0"
+    "xo": "^0.32.0"
   },
   "peerDependencies": {
     "grunt": ">=0.4.0"
