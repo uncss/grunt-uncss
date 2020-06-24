@@ -132,10 +132,6 @@ uncss: {
 }
 ```
 
-### Test project
-
-There is a test project included under the `tests/app` directory which you can build by running `grunt` or `grunt dev` after an `npm install`.
-
 ## Examples
 
 ### Sites

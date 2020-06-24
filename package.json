@@ -39,14 +39,7 @@
   "devDependencies": {
     "chai": "^4.2.0",
     "grunt": "^1.1.0",
-    "grunt-contrib-clean": "^2.0.0",
-    "grunt-contrib-connect": "^2.1.0",
-    "grunt-contrib-copy": "^1.0.0",
-    "grunt-contrib-cssmin": "^3.0.0",
-    "grunt-contrib-watch": "^1.1.0",
-    "grunt-processhtml": "^0.4.2",
     "grunt-simple-mocha": "^0.4.1",
-    "load-grunt-tasks": "^5.1.0",
     "time-grunt": "^2.0.0",
     "xo": "^0.32.0"
   },
