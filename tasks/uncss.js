@@ -48,11 +48,11 @@ module.exports = function (grunt) {
                 }
             }).catch((error) => {
                 const err = new Error('Uncss failed.');
-    
+
                 if (error.msg) {
                     err.message += `, ${error.msg}.`;
                 }
-    
+
                 err.origError = error;
                 grunt.log.warn(`Uncssing source "${src}" failed.`);
                 grunt.fail.warn(err);
