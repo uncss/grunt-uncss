@@ -2,7 +2,7 @@
  * grunt-uncss
  * https://github.com/uncss/grunt-uncss
  *
- * Copyright (c) 2020 Addy Osmani
+ * Copyright (c) 2019 Addy Osmani
  * Licensed under the MIT license.
  */
 
@@ -19,7 +19,7 @@ module.exports = function (grunt) {
             report: 'min'
         });
 
-        this.files.forEach(file => {
+        return Promise.all(this.files.map(file => {
             const src = file.src.filter(filepath => {
                 if (/^https?:\/\//.test(filepath)) {
                     // This is a remote file: leave it in src array for uncss to handle.
@@ -39,32 +39,24 @@ module.exports = function (grunt) {
                 grunt.fail.warn(`Destination (${file.dest}) not written because src files were empty.`);
             }
 
-            try {
-                uncss(src, options, (error, output, report) => {
-                    if (error) {
-                        throw error;
-                    }
-
-                    grunt.file.write(file.dest, output);
-                    grunt.log.writeln(`File ${chalk.cyan(file.dest)} created: ${maxmin(report.original, output, options.report === 'gzip')}`);
-
-                    if (typeof options.reportFile !== 'undefined' && options.reportFile.length > 0) {
-                        grunt.file.write(options.reportFile, JSON.stringify(report));
-                    }
-
-                    done();
-                });
-            } catch (error) {
+            return uncss(src, options).then(({ css, report}) => {
+                grunt.file.write(file.dest, css);
+                grunt.log.writeln(`File ${chalk.cyan(file.dest)} created: ${maxmin(report.original, css, options.report === 'gzip')}`);
+    
+                if (typeof options.reportFile !== 'undefined' && options.reportFile.length > 0) {
+                    grunt.file.write(options.reportFile, JSON.stringify(report));
+                }
+            }).catch((error) => {
                 const err = new Error('Uncss failed.');
-
+    
                 if (error.msg) {
                     err.message += `, ${error.msg}.`;
                 }
-
+    
                 err.origError = error;
                 grunt.log.warn(`Uncssing source "${src}" failed.`);
                 grunt.fail.warn(err);
-            }
-        });
+            });
+        })).then(done);
     });
 };
