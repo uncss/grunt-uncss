@@ -43,9 +43,10 @@ module.exports = function (grunt) {
                 fileInProcess++;
                 uncss(src, options, (error, output, report) => {
                     fileInProcess--;
-                    if(fileInProcess==0){
+                    if (fileInProcess === 0){
                         done();
                     }
+                    
                     if (error) {
                         throw error;
                     }
