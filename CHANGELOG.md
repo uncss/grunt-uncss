@@ -1,5 +1,10 @@
 # grunt-uncss Changelog
 
+## v0.10.0
+
+* Drop Node.js < 10 support.
+* Update (dev)dependencies.
+
 ## v0.9.1
 
 * Update UnCSS to v0.17.3.
