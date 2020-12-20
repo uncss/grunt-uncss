@@ -18,7 +18,9 @@ module.exports = function (grunt) {
         const options = this.options({
             report: 'min'
         });
+
         let fileInProcess = 0;
+
         this.files.forEach(file => {
             const src = file.src.filter(filepath => {
                 if (/^https?:\/\//.test(filepath)) {
