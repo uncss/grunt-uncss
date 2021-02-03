@@ -41,7 +41,7 @@
     "grunt": "^1.1.0",
     "grunt-simple-mocha": "^0.4.1",
     "time-grunt": "^2.0.0",
-    "xo": "^0.36.1"
+    "xo": "^0.37.1"
   },
   "peerDependencies": {
     "grunt": ">=0.4.0"
