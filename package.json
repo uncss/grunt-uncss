@@ -28,8 +28,9 @@
     "node": ">=10"
   },
   "scripts": {
+    "mocha": "mocha \"tests/*.js\"",
     "xo": "xo",
-    "test": "npm run xo && grunt test"
+    "test": "npm run xo && grunt test && npm run mocha"
   },
   "dependencies": {
     "chalk": "^4.1.0",
@@ -39,7 +40,7 @@
   "devDependencies": {
     "chai": "^4.2.0",
     "grunt": "^1.1.0",
-    "grunt-simple-mocha": "^0.4.1",
+    "mocha": "^8.2.1",
     "time-grunt": "^2.0.0",
     "xo": "^0.37.1"
   },

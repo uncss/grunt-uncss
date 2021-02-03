@@ -50,25 +50,12 @@ module.exports = function (grunt) {
                     dest: 'tests/outputUrl.css'
                 }]
             }
-        },
-
-        // Unit tests.
-        simplemocha: {
-            test: {
-                src: 'tests/selectors.js'
-            }
         }
     });
 
     // Actually load this plugin's task(s).
     grunt.loadTasks('tasks');
-    grunt.loadNpmTasks('grunt-simple-mocha');
 
-    grunt.registerTask('test', [
-        'uncss',
-        'simplemocha'
-    ]);
-
-    // By default, lint and run all tests.
-    grunt.registerTask('default', 'test');
+    grunt.registerTask('test', 'uncss');
+    grunt.registerTask('default', 'uncss');
 };
