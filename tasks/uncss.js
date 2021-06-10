@@ -19,7 +19,7 @@ module.exports = function (grunt) {
             report: 'min'
         });
 
-        this.files.forEach(file => {
+        for (const file of this.files) {
             const src = file.src.filter(filepath => {
                 if (/^https?:\/\//.test(filepath)) {
                     // This is a remote file: leave it in src array for uncss to handle.
@@ -65,6 +65,6 @@ module.exports = function (grunt) {
                 grunt.log.warn(`Uncssing source "${src}" failed.`);
                 grunt.fail.warn(err);
             }
-        });
+        }
     });
 };

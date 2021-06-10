@@ -14,11 +14,11 @@ const urlcss = readFile('outputUrl.css');
 const tests = fs.readdirSync(path.join(__dirname, 'fixtures/'));
 
 /* Only read through CSS files */
-tests.forEach(test => {
+for (const test of tests) {
     if (test.includes('.css')) {
         readFile(`fixtures/${test}`);
     }
-});
+}
 
 /*
 Tests without grunt-uncss
@@ -67,9 +67,9 @@ describe('uncss', () => {
 
     /* We're testing that the CSS is stripped out from the result,
        not that the result contains the CSS in the unused folder. */
-    tests.forEach(test => {
+    for (const test of tests) {
         it(`should handle ${test.split('.')[0]}`, () => {
             expect(rawcss).to.not.include.string(readFile(`unused/${test}`));
         });
-    });
+    }
 });
