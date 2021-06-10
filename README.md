@@ -1,4 +1,4 @@
-# grunt-uncss [![Built with Grunt](https://gruntjs.com/cdn/builtwith.svg)](http://gruntjs.com/)
+# grunt-uncss [![Built with Grunt](https://gruntjs.com/cdn/builtwith.svg)](https://gruntjs.com/)
 
 [![Build Status](https://github.com/uncss/grunt-uncss/workflows/Tests/badge.svg)](https://github.com/uncss/grunt-uncss/actions?workflow=Tests)
 [![dependencies Status](https://img.shields.io/david/uncss/grunt-uncss.svg)](https://david-dm.org/uncss/grunt-uncss)
@@ -8,9 +8,9 @@
 
 ## Getting Started
 
-If you haven't used [Grunt](http://gruntjs.com/) before, be sure to check out the
-[Getting Started](http://gruntjs.com/getting-started) guide, as it explains how to create
-a [Gruntfile](http://gruntjs.com/sample-gruntfile) as well as install and use Grunt plugins.
+If you haven't used [Grunt](https://gruntjs.com/) before, be sure to check out the
+[Getting Started](https://gruntjs.com/getting-started) guide, as it explains how to create
+a [Gruntfile](https://gruntjs.com/sample-gruntfile) as well as install and use Grunt plugins.
 Once you're familiar with that process, you may install this plugin with this command:
 
 ```shell
@@ -35,7 +35,7 @@ Taking a multi-page project using Bootstrap with >120KB of CSS down to 11KB.
 
 *Run this task with the `grunt uncss` command.*
 
-Task targets, files and options may be specified according to the grunt [Configuring tasks](http://gruntjs.com/configuring-tasks) guide.
+Task targets, files and options may be specified according to the grunt [Configuring tasks](https://gruntjs.com/configuring-tasks) guide.
 
 ## Options
 
@@ -182,10 +182,9 @@ Huge thanks go out to Giacomo Martino for his help with the Node module this tas
 
 * [Spring-cleaning unused CSS with Grunt, Gulp & other build systems](https://addyosmani.com/blog/removing-unused-css/)
 * [Automating the removal of unused CSS - VelocityConf](https://www.youtube.com/watch?v=833xr1MyE30)
-* [Use Grunt and UnCSS to speed up the load time of your site](http://xdamman.com/website-optimization-grunt-uncss)
 * [Foundation 5, Sass and Grunt UnCSS](https://corydowdy.com/blog/foundation-5-sass-and-grunt-uncss)
 * [Automating Front-end Workflow (slides)](https://speakerdeck.com/addyosmani/automating-front-end-workflow)
-* [Automatically removing unused CSS - Windows](http://deanhume.com/Home/BlogPost/automatically-removing-unused-css-using-grunt/6101)
+* [Automatically removing unused CSS - Windows](http://deanhume.com/automatically-removing-unused-css-using-grunt/)
 * [Workflow for responsive email with Grunt and UnCSS](https://medium.com/p/32d607879082)
 
 ## WordPress
