@@ -1,7 +1,0 @@
-node_modules/
-.DS_Store
-npm-debug.log
-tests/app/css/tidy.css
-tests/output.css
-tests/output2.css
-tests/outputUrl.css
