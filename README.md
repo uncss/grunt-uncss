@@ -1,8 +1,6 @@
-# grunt-uncss [![Built with Grunt](https://gruntjs.com/cdn/builtwith.svg)](https://gruntjs.com/)
+# grunt-uncss
 
-[![Build Status](https://github.com/uncss/grunt-uncss/workflows/Tests/badge.svg)](https://github.com/uncss/grunt-uncss/actions?workflow=Tests)
-[![dependencies Status](https://img.shields.io/david/uncss/grunt-uncss.svg)](https://david-dm.org/uncss/grunt-uncss)
-[![devDependencies Status](https://img.shields.io/david/dev/uncss/grunt-uncss.svg)](https://david-dm.org/uncss/grunt-uncss?type=dev)
+[![Built with Grunt](https://gruntjs.com/cdn/builtwith.svg)](https://gruntjs.com/) [![Build Status](https://github.com/uncss/grunt-uncss/workflows/Tests/badge.svg)](https://github.com/uncss/grunt-uncss/actions?workflow=Tests)
 
 >A grunt task for removing unused CSS from your projects with [UnCSS](https://github.com/uncss/uncss).
 
