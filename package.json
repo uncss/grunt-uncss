@@ -30,16 +30,17 @@
   "scripts": {
     "mocha": "mocha \"tests/*.js\"",
     "xo": "xo",
+    "fix": "xo --fix",
     "test": "npm run xo && grunt test && npm run mocha"
   },
   "dependencies": {
-    "chalk": "^4.1.1",
+    "chalk": "^4.1.2",
     "maxmin": "^3.0.0",
     "uncss": "^0.17.3"
   },
   "devDependencies": {
-    "chai": "^4.3.4",
-    "grunt": "^1.1.0",
+    "chai": "^4.3.6",
+    "grunt": "^1.5.3",
     "mocha": "^8.4.0",
     "time-grunt": "^2.0.0",
     "xo": "^0.39.1"
