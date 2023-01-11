@@ -2,12 +2,12 @@
 
 'use strict';
 
-const fs = require('fs');
-const path = require('path');
+const fs = require('node:fs');
+const path = require('node:path');
 const { expect } = require('chai');
 const uncss = require('uncss');
 
-const readFile = file => fs.readFileSync(path.join(__dirname, file), 'utf-8');
+const readFile = file => fs.readFileSync(path.join(__dirname, file), 'utf8');
 
 let rawcss = readFile('output.css');
 const urlcss = readFile('outputUrl.css');
