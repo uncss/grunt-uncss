@@ -43,7 +43,7 @@
     "grunt": "^1.5.3",
     "mocha": "^10.2.0",
     "time-grunt": "^2.0.0",
-    "xo": "^0.53.1"
+    "xo": "^0.54.1"
   },
   "peerDependencies": {
     "grunt": ">=0.4.0"
